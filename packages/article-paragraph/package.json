@@ -34,6 +34,9 @@
     "url": "https://github.com/newsuk/times-components/issues"
   },
   "homepage": "https://github.com/newsuk/times-components#readme",
+  "resolutions": {
+    "babel-core": "^7.0.0-bridge.0"
+  },
   "dependencies": {
     "@times-components/context": "0.5.2",
     "@times-components/markup-forest": "1.2.0",
@@ -51,17 +54,17 @@
     "@times-components/storybook": "3.1.19",
     "@times-components/test-utils": "1.2.2",
     "@times-components/webpack-configurator": "2.0.10",
-    "babel-cli": "6.26.0",
+    "@babel/cli": "7.1.2",
     "babel-plugin-styled-components": "1.5.1",
     "eslint": "4.19.1",
     "jest": "23.3.0",
     "jest-styled-components": "5.0.1",
     "prettier": "1.14.3",
-    "react": "16.5.2",
+    "react": "16.6.0-alpha.8af6728",
     "react-dom": "16.5.2",
-    "react-native": "0.55.4",
-    "react-test-renderer": "16.5.2",
-    "webpack": "4.6.0",
+    "react-native": "0.57.3",
+    "react-test-renderer": "16.6.0-alpha.8af6728",
+    "webpack": "4.22.0",
     "webpack-cli": "2.1.4"
   },
   "peerDependencies": {

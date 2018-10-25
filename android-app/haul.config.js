@@ -1,4 +1,5 @@
 import { createWebpackConfig } from "haul";
+import webpack from "webpack";
 
 export default {
   webpack: env => {
@@ -9,7 +10,11 @@ export default {
       initializeCoreLocation:
         "../node_modules/react-native/Libraries/Core/InitializeCore.js"
     });
-
+    
+    config.plugins = [
+      new webpack.IgnorePlugin(/^react-hot-loader$/),
+      ...config.plugins
+    ];
     config.module.rules[1].exclude = /\.\.\/node_modules(?!.*[\/\\](react|@expo|pretty-format|haul|metro))/;
 
     if (config.mode === "development") {

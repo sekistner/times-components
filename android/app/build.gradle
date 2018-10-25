@@ -2,6 +2,9 @@ apply plugin: "com.android.application"
 apply plugin: 'kotlin-android'
 
 import com.android.build.OutputFile
+import groovy.json.JsonSlurper
+
+def packageInfo = new JsonSlurper().parseText(rootProject.file('../package.json').text)
 
 /**
  * The react.gradle file registers a task for each build variant (e.g. bundleDebugJsAndAssets
@@ -77,6 +80,10 @@ project.ext.react = [
     entryFile: "fructose/index.js"
 ]
 
+project.ext.react = [
+  cliPath: "node_modules/haul/bin/cli.js"
+]
+
 apply from: "../../node_modules/react-native/react.gradle"
 
 /**
@@ -149,11 +156,12 @@ android {
 }
 
 repositories {
+    google()
     jcenter()
 }
 
 dependencies {
-    implementation "com.facebook.react:react-native:0.55.4"  // From node_modules
+    implementation "com.facebook.react:react-native:${packageInfo.dependencies.'react-native'}"
     implementation "com.facebook.stetho:stetho:1.5.0"
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }

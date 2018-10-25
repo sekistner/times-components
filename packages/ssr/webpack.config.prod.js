@@ -12,7 +12,7 @@ const babelConfig = {
     options: {
       cacheDirectory: true,
       plugins: ["add-react-displayname", "styled-components"],
-      presets: ["react-native"]
+      presets: ["module:metro-react-native-babel-preset"]
     }
   }
 };
