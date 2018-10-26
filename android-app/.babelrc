@@ -1,6 +1,10 @@
 {
-  "presets": ["module:metro-react-native-babel-preset"],
-  "plugins": ["add-react-displayname",
+  "presets": [
+    "module:metro-react-native-babel-preset"
+  ],
+  "plugins": [
+    "add-react-displayname",
+    "@babel/plugin-proposal-class-properties",
     [
       "module-resolver",
       {
@@ -8,5 +12,6 @@
           "react-dom/server": "../node_modules/react-apollo/react-apollo.browser.umd.js"
         }
       }
-    ]]
+    ]
+  ]
 }

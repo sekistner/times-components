@@ -43,12 +43,12 @@
     "enzyme-adapter-react-16": "1.5.0",
     "eslint": "4.19.1",
     "identity-obj-proxy": "3.0.0",
-    "jest": "23.3.0",
+    "jest": "23.6.0",
     "prettier": "1.14.3",
     "prop-types": "15.6.2",
     "react-art": "16.5.2",
     "react-native-web": "0.9.0",
-    "react-test-renderer": "16.6.0-alpha.8af6728"
+    "react-test-renderer": "16.5.0"
   },
   "dependencies": {
     "css": "^2.2.1",

@@ -1,8 +1,16 @@
 {
-  "presets": ["module:metro-react-native-babel-preset"],
+  "presets": [
+    "module:metro-react-native-babel-preset"
+  ],
   "plugins": [
-    ["flow-react-proptypes", { "ignoreNodeModules": true }],
+    [
+      "flow-react-proptypes",
+      {
+        "ignoreNodeModules": true
+      }
+    ],
     "styled-components",
-    "add-react-displayname"
+    "add-react-displayname",
+    "@babel/plugin-proposal-class-properties"
   ]
 }
