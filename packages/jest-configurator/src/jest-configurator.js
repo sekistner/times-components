@@ -9,11 +9,11 @@ export type Platform = "node" | "android" | "ios" | "web";
 export const mockReactNativeComponent = mockRNComponent;
 
 const nativeSpecific = (platform: Platform) => ({
-  haste: {
-    defaultPlatform: platform,
-    platforms: [platform],
-    providesModuleNodeModules: ["react", "react-native"]
-  }
+  // haste: {
+  //   defaultPlatform: platform,
+  //   platforms: [platform],
+  //   providesModuleNodeModules: ["react", "react-native"]
+  // }
 });
 
 const webSpecific = {

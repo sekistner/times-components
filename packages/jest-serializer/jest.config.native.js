@@ -4,12 +4,12 @@ module.exports = {
     "!**/jest-serializer/src/rnw.js"
   ],
   coverageDirectory: `packages/jest-serializer/coverage/ios`,
-  haste: {
-    defaultPlatform: "ios",
-    moduleFileExtensions: [`ios.js`, "native.js", "js", "json"],
-    platforms: ["ios"],
-    providesModuleNodeModules: ["react", "react-native"]
-  },
+  // haste: {
+  //   defaultPlatform: "ios",
+  //   moduleFileExtensions: [`ios.js`, "native.js", "js", "json"],
+  //   platforms: ["ios"],
+  //   providesModuleNodeModules: ["react", "react-native"]
+  // },
   moduleNameMapper: {
     "\\.(png)$": "identity-obj-proxy"
   },
