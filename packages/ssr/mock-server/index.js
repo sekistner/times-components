@@ -1,9 +1,12 @@
 /* eslint-disable no-console */
 
 const { ApolloServer } = require("apollo-server");
-const { article, makeMocks } = require("@times-components/provider-test-tools");
+const { article, authorProfile,  makeMocks } = require("@times-components/provider-test-tools");
 
-const [{ defaults }] = article();
+// const [{ defaults }] = authorProfile({slug: 'deborah-haynes'});
+const [{ defaults }] = authorProfile({slug: ['jimmy-hayneszzzzzzz']});
+
+console.log('hello craig this is the defaults', defaults);
 
 const schema = makeMocks(defaults);
 

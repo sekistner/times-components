@@ -36,6 +36,10 @@ const biography = [
 const generateAuthors = ({ count, error, hasLeadAssets, slug }) => {
   const query = {
     defaults: {
+      types: {
+        // Slug: () => definition,
+        String: () => 'deborah-heyhey'
+      },
       values: {
         author: () => ({
           __typename: "Author",
@@ -48,7 +52,8 @@ const generateAuthors = ({ count, error, hasLeadAssets, slug }) => {
           image: "//www.thetimes.co.uk/d/img/profile/deborah-haynes.jpg",
           jobTitle: "Defence Editor",
           name: "Deborah Haynes",
-          twitter: "jdoe"
+          twitter: "jdoe",
+          slug: 'deborah-heyizainezzzz'
         })
       }
     },
@@ -79,7 +84,7 @@ export default ({
   count = 200,
   hasLeadAssets = true,
   makeItem = x => x,
-  pageSize,
+  pageSize = 10,
   slug
 }) => [
   ...generateAuthors({ count, error: authorError, hasLeadAssets, slug }),
@@ -90,6 +95,7 @@ export default ({
     return {
       defaults: {
         types: {
+          Slug: () => 'deborah-haynes',
           Article: () => {
             itemIndex += 1;
             return makeItem(
