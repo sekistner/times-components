@@ -1,0 +1,61 @@
+{
+  "name": "@times-components/mock-tpa-server",
+  "version": "1.0.0",
+  "description": "utillity for testing times component clients with mocked api",
+  "main": "./src/index",
+  "scripts": {
+    "fmt": "eslint . --fix && prettier --write '**/*.*'",
+    "prettier:diff": "prettier --list-different '**/*.*'",
+    "depcheck": "depcheck --ignores='babel-*,depcheck,**/eslint*,graphql,jest,prettier,webpack*' --ignore-bin-package=false --skip-missing",
+    "lint": "eslint . && yarn prettier:diff && yarn depcheck",
+    "transpile": "babel src -d dist --copy-files"
+  },
+  "jest": {
+    "preset": "react-native",
+    "rootDir": "../../",
+    "testEnvironment": "jsdom",
+    "coverageDirectory": "<rootDir>/packages/provider-test-tools/coverage/",
+    "collectCoverageFrom": [
+      "**/packages/provider-test-tools/src/*.js"
+    ],
+    "transformIgnorePatterns": [
+      "node_modules/(?!(react-native|@times-components)/)"
+    ],
+    "testMatch": [
+      "<rootDir>/packages/provider-test-tools/__tests__/**.test.js"
+    ],
+    "testURL": "http://localhost"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/newsuk/times-components.git"
+  },
+  "keywords": [
+    "react",
+    "native",
+    "web",
+    "graphql",
+    "provider",
+    "component"
+  ],
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/newsuk/times-components/issues"
+  },
+  "homepage": "https://github.com/newsuk/times-components#readme",
+  "devDependencies": {
+    "@times-components/eslint-config-thetimes": "0.8.5",
+    "babel-core": "6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "depcheck": "0.6.9",
+    "eslint": "4.19.1",
+    "eslint-plugin-graphql": "2.1.1",
+    "prettier": "1.14.3"
+  },
+  "dependencies": {
+    "apollo-server":"2.1.0",
+    "@times-components/schema": "0.1.11",
+    "@times-components/provider-test-tools": "1.8.2",
+    "graphql": "0.13.2"
+  }
+}
