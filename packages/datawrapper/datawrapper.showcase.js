@@ -17,6 +17,11 @@ export default {
       component: () => <Datawrapper embedId="DUDJ7" />,
       name: "Datawrapper (Working)",
       type: "story"
+    },
+    {
+      component: () => <Datawrapper embedId="6WiSR" height={600} />,
+      name: "Datawrapper (Broken with fix - Map)",
+      type: "story"
     }
   ],
   name: "Primitives/Datawrapper"

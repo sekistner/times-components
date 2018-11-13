@@ -1,6 +1,6 @@
 const sharedStyle = {
   DatawrapperBody: {
-    padding: 20
+    width: "100%"
   },
   DatawrapperWebView: {
     width: "100%",

@@ -71,6 +71,7 @@ class InteractiveWrapper extends Component {
   render() {
     return (
       <View style={{ height: this.state.height }}>
+        lol
         <WebView
           onLoadEnd={this.onLoadEnd}
           onMessage={this.onMessage}
