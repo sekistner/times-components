@@ -1,7 +1,7 @@
 import { Text, View } from 'react-native';
 import { configure, addDecorator } from "@storybook/react";
 import { withInfo, setDefaults } from '@storybook/addon-info';
-import { setOptions } from '@storybook/addon-options';
+import { withOptions } from '@storybook/addon-options';
 import { withKnobs } from '@storybook/addon-knobs/react';
 
 const req = require.context(
@@ -14,7 +14,7 @@ setDefaults({
   propTablesExclude: [Text, View]
 })
 
-setOptions({
+withOptions({
   name: 'Times Components',
   hierarchySeparator: /\//
 });
