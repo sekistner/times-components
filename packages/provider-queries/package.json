@@ -39,8 +39,8 @@
   },
   "dependencies": {
     "apollo-utilities": "1.0.18",
-    "graphql": "0.13.2",
-    "graphql-tag": "2.8.0"
+    "graphql": "14.0.2",
+    "graphql-tag": "2.10.0"
   },
   "publishConfig": {
     "access": "public"

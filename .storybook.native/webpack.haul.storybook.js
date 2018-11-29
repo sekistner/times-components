@@ -12,7 +12,8 @@ module.exports = ({ platform }, { module, resolve, plugins }) => ({
         test: /\.jsx?$/,
         loader: require.resolve('babel-loader'),
         options: {
-          presets: ["module:metro-react-native-babel-preset"],
+          plugins: ["@babel/plugin-proposal-class-properties"],
+          presets: ["module:metro-react-native-babel-preset"]
         },
         exclude: /node_modules\/(?!react|@expo|svgs|pretty-format|haul|metro)/,
       },

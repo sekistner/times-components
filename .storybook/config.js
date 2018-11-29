@@ -10,7 +10,7 @@ const req = require.context(
   /^((?!node_modules).)*\.(stories|stories.web)\.js$/
 );
 
-setDefaults({
+withInfo({
   propTablesExclude: [Text, View]
 })
 

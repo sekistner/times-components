@@ -3,10 +3,10 @@ module.exports = (api) => {
    return {
     "presets": ["module:metro-react-native-babel-preset"],
     "plugins": [
-      require.resolve("@babel/plugin-transform-react-display-name"),
-      require.resolve("@babel/plugin-proposal-class-properties"),
-      require.resolve("@babel/plugin-transform-runtime"),
-      require.resolve("@babel/plugin-proposal-export-default-from")
+      "@babel/plugin-transform-react-display-name",
+      "@babel/plugin-proposal-class-properties",
+      "@babel/plugin-transform-runtime",
+      "@babel/plugin-proposal-export-default-from"
     ]
   }
 }

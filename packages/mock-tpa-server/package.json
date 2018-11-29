@@ -40,8 +40,8 @@
   "dependencies": {
     "@times-components/provider-test-tools": "1.10.3",
     "@times-components/schema": "0.1.15",
-    "apollo-server": "2.1.0",
-    "graphql": "0.13.2"
+    "apollo-server": "2.2.5",
+    "graphql": "14.0.2"
   },
   "publishConfig": {
     "access": "public"
