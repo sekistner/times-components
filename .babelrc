@@ -2,7 +2,7 @@
   "presets": ["module:metro-react-native-babel-preset"],
   "plugins": [
     [
-      "babel-plugin-module-resolver",
+      "module-resolver",
       {
         "alias": {
           "react-dom/server": "./node_modules/react-apollo/react-apollo.browser.umd.js"
