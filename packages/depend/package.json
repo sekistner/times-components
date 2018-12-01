@@ -52,7 +52,6 @@
   },
   "homepage": "https://github.com/newsuk/times-components#readme",
   "devDependencies": {
-    "@babel/plugin-transform-runtime": "7.1.0",
     "@babel/runtime-corejs2": "7.1.5",
     "@thetimes/jest-lint": "*",
     "@times-components/eslint-config-thetimes": "0.8.8",

@@ -42,7 +42,6 @@
     "prop-types": "15.6.2"
   },
   "devDependencies": {
-    "@babel/plugin-transform-react-display-name": "7.0.0",
     "@thetimes/jest-lint": "*",
     "@times-components/eslint-config-thetimes": "0.8.8",
     "@times-components/jest-configurator": "2.1.17",

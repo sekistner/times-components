@@ -69,7 +69,6 @@
     "jest-plugins": "2.9.0"
   },
   "devDependencies": {
-    "@babel/plugin-transform-react-display-name": "7.0.0",
     "@thetimes/jest-lint": "*",
     "@times-components/eslint-config-thetimes": "0.8.8",
     "depcheck": "0.6.9",

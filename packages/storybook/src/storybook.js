@@ -1,8 +1,8 @@
 import { storiesOf } from "@storybook/react-native";
 import * as actions from "@storybook/addon-actions";
+import * as knobs from "@storybook/addon-knobs";
 import * as decorators from "./decorators";
 import showcaseToStoryBook from "./showcase-to-storybook";
-import knobs from "./knobs";
 import sections from "./sections";
 
 const {
