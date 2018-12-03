@@ -25,19 +25,19 @@ const ComponentWrapper = ({ children }) => (
   <View style={{ flexDirection: "row", flexWrap: "wrap" }}>{children}</View>
 );
 
-const getProps = (selectV2, decorateAction) => ({
-  color: selectV2("Section colours: ", colours.section),
+const getProps = (select, decorateAction) => ({
+  color: select("Section colours: ", colours.section),
   onAuthorPress: preventDefaultedAction(decorateAction)("onAuthorPress")
 });
 
 export default (Component, name) => ({
   children: [
     {
-      component: ({ selectV2 }, { decorateAction }) => (
+      component: ({ select }, { decorateAction }) => (
         <ComponentWrapper>
           <Component
             ast={authorsAST.singleAuthor}
-            {...getProps(selectV2, decorateAction)}
+            {...getProps(select, decorateAction)}
           />
         </ComponentWrapper>
       ),
@@ -45,11 +45,11 @@ export default (Component, name) => ({
       type: "story"
     },
     {
-      component: ({ selectV2 }, { decorateAction }) => (
+      component: ({ select }, { decorateAction }) => (
         <ComponentWrapper>
           <Component
             ast={authorsAST.singleInlineElement}
-            {...getProps(selectV2, decorateAction)}
+            {...getProps(select, decorateAction)}
           />
         </ComponentWrapper>
       ),
@@ -57,11 +57,11 @@ export default (Component, name) => ({
       type: "story"
     },
     {
-      component: ({ selectV2 }, { decorateAction }) => (
+      component: ({ select }, { decorateAction }) => (
         <ComponentWrapper>
           <Component
             ast={authorsAST.multipleAuthorsPipeSeparated}
-            {...getProps(selectV2, decorateAction)}
+            {...getProps(select, decorateAction)}
           />
         </ComponentWrapper>
       ),
@@ -69,11 +69,11 @@ export default (Component, name) => ({
       type: "story"
     },
     {
-      component: ({ selectV2 }, { decorateAction }) => (
+      component: ({ select }, { decorateAction }) => (
         <ComponentWrapper>
           <Component
             ast={authorsAST.authorInTheBeginning}
-            {...getProps(selectV2, decorateAction)}
+            {...getProps(select, decorateAction)}
           />
         </ComponentWrapper>
       ),
@@ -81,11 +81,11 @@ export default (Component, name) => ({
       type: "story"
     },
     {
-      component: ({ selectV2 }, { decorateAction }) => (
+      component: ({ select }, { decorateAction }) => (
         <ComponentWrapper>
           <Component
             ast={authorsAST.authorAtTheEnd}
-            {...getProps(selectV2, decorateAction)}
+            {...getProps(select, decorateAction)}
           />
         </ComponentWrapper>
       ),
@@ -93,12 +93,12 @@ export default (Component, name) => ({
       type: "story"
     },
     {
-      component: ({ selectV2 }, { decorateAction }) => (
+      component: ({ select }, { decorateAction }) => (
         <ComponentWrapper>
           <Component
             ast={authorsAST.multipleAuthorsPipeSeparated}
             style={styles}
-            {...getProps(selectV2, decorateAction)}
+            {...getProps(select, decorateAction)}
           />
         </ComponentWrapper>
       ),
@@ -106,11 +106,11 @@ export default (Component, name) => ({
       type: "story"
     },
     {
-      component: ({ selectV2 }, { decorateAction }) => (
+      component: ({ select }, { decorateAction }) => (
         <ComponentWrapper>
           <Component
             ast={authorsAST.veryLongByline}
-            {...getProps(selectV2, decorateAction)}
+            {...getProps(select, decorateAction)}
           />
         </ComponentWrapper>
       ),
