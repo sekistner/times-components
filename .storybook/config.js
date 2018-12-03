@@ -10,17 +10,14 @@ const req = require.context(
   /^((?!node_modules).)*\.(stories|stories.web)\.js$/
 );
 
-// setDefaults({
-//   propTablesExclude: [Text, View]
-// })
-
-withOptions({
+addDecorator(withInfo({
+  propTablesExclude: [Text, View]
+}));
+addDecorator(withKnobs);
+addDecorator(withOptions({
   name: 'Times Components',
   hierarchySeparator: /\//
-});
-
-addDecorator(withInfo);
-addDecorator(withKnobs);
+}));
 
 const loadStories = () => req.keys().filter(k => k.indexOf("brightcove-video") === -1).forEach(filename => req(filename));
 
