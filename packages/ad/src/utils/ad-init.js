@@ -433,7 +433,7 @@ const adInit = args => {
       setupAsync(prebidConfig, utils) {
         const scriptPromises = [
           utils.loadScript(
-            "https://www.thetimes.co.uk/d/js/vendor/newPrebid.min-7526ce2390.js"
+            "https://www.thetimes.co.uk/d/js/vendor/prebid.min-4c674b73bd.js"
           )
         ];
 
