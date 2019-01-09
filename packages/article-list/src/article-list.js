@@ -23,6 +23,7 @@ class ArticleList extends Component {
     this.fetchMoreOnEndReached = this.fetchMoreOnEndReached.bind(this);
     this.renderItem = this.renderItem.bind(this);
     this.state = {
+      firstViewableIndex: 0,
       loadingMore: false,
       loadMoreError: null,
       width: normaliseWidth(screenWidthInPixels())
@@ -48,6 +49,12 @@ class ArticleList extends Component {
   onViewableItemsChanged(info) {
     const { articles, onViewed } = this.props;
     if (!info.changed.length) return [];
+
+    if (info.viewableItems.length) {
+      const indexArray = info.viewableItems.map(item => item.index);
+      indexArray.sort();
+      this.setState({ firstViewableIndex: indexArray[0] });
+    }
 
     return info.changed
       .filter(viewableItem => viewableItem.isViewable)
@@ -117,7 +124,7 @@ class ArticleList extends Component {
       receiveChildList,
       refetch
     } = this.props;
-    const { loadMoreError } = this.state;
+    const { loadMoreError, firstViewableIndex } = this.state;
 
     if (error) {
       return (
@@ -197,6 +204,7 @@ class ArticleList extends Component {
       <FlatList
         accessibilityID="scroll-view"
         data={data}
+        initialScrollIndex={firstViewableIndex}
         ItemSeparatorComponent={() => (
           <View style={styles.listItemSeparatorContainer}>
             <ArticleListItemSeparator />
