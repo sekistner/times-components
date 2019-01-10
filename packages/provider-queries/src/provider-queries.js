@@ -5,6 +5,7 @@ import * as authorArticlesWithImagesQuery from "./author-articles-with-images";
 import authorQuery from "./author";
 import topicQuery from "./topic";
 import * as topicArticlesQuery from "./topic-articles";
+import editionQuery from "./latest-edition";
 
 export const article = articleQuery;
 export const articleComments = articleCommentsQuery;
@@ -15,6 +16,7 @@ export const authorArticlesWithImages = authorArticlesWithImagesQuery.default;
 export const authorArticlesWithImagesPTV =
   authorArticlesWithImagesQuery.propsToVariables;
 export const author = authorQuery;
+export const edition = editionQuery;
 export const topic = topicQuery;
 export const topicArticles = topicArticlesQuery.default;
 export const topicArticlesPTV = topicArticlesQuery.propsToVariables;

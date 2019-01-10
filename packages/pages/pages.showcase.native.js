@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import React from "react";
-import { Article, AuthorProfile, Topic } from "./src/pages";
+import { Article, AuthorProfile, Edition, Topic } from "./src/pages";
 
 export default {
   children: [
@@ -32,6 +32,11 @@ export default {
         return <Topic topicSlug={topicSlug} />;
       },
       name: "Topic",
+      type: "story"
+    },
+    {
+      component: () => <Edition />,
+      name: "Edition",
       type: "story"
     }
   ],

@@ -126,7 +126,7 @@ class RelatedArticles extends Component {
 
     return (
       <View>
-        <RelatedArticlesHeading />
+        {/* <RelatedArticlesHeading /> */}
         {renderSlice()}
       </View>
     );
