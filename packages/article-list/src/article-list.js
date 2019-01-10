@@ -4,6 +4,7 @@ import Button from "@times-components/button";
 import { colours } from "@times-components/styleguide";
 import { withTrackScrollDepth } from "@times-components/tracking";
 import { normaliseWidth, screenWidthInPixels } from "@times-components/utils";
+import { ResponsiveContext } from "@times-components/responsive";
 import ArticleListError from "./article-list-error";
 import ArticleListItemWithError from "./article-list-item-with-error";
 import ArticleListItemSeparator from "./article-list-item-separator";
@@ -33,12 +34,18 @@ class ArticleList extends Component {
   shouldComponentUpdate(nextProps, nextState) {
     const { articles } = this.props;
     const { articles: nextArticles } = nextProps;
+    const { loadingMore, loadMoreError } = this.state;
+    const {
+      loadingMore: nextLoadingMore,
+      loadMoreError: nextLoadMoreError
+    } = nextState;
+
     return (
       !articles ||
       !nextArticles ||
       articles !== nextArticles ||
       articles.length !== nextArticles.length ||
-      this.state !== nextState
+      (loadingMore !== nextLoadingMore && loadMoreError !== nextLoadMoreError)
     );
   }
 
@@ -52,7 +59,7 @@ class ArticleList extends Component {
 
     if (info.viewableItems.length) {
       const indexArray = info.viewableItems.map(item => item.index);
-      indexArray.sort();
+      indexArray.sort((a, b) => +a - +b);
       this.setState({ firstViewableIndex: indexArray[0] });
     }
 
@@ -124,7 +131,7 @@ class ArticleList extends Component {
       receiveChildList,
       refetch
     } = this.props;
-    const { loadMoreError, firstViewableIndex } = this.state;
+    const { loadMoreError } = this.state;
 
     if (error) {
       return (
@@ -201,29 +208,38 @@ class ArticleList extends Component {
     }
 
     return (
-      <FlatList
-        accessibilityID="scroll-view"
-        data={data}
-        initialScrollIndex={firstViewableIndex}
-        ItemSeparatorComponent={() => (
-          <View style={styles.listItemSeparatorContainer}>
-            <ArticleListItemSeparator />
-          </View>
-        )}
-        keyExtractor={item => item.elementId}
-        ListFooterComponent={articleListFooter}
-        ListHeaderComponent={articleListHeader}
-        onEndReached={() =>
-          // Workaround for iOS Flatlist bug (https://github.com/facebook/react-native/issues/16067)
-          data.length > 0 ? this.fetchMoreOnEndReached(data) : null
-        }
-        onEndReachedThreshold={2}
-        onViewableItemsChanged={onViewed ? this.onViewableItemsChanged : null}
-        renderItem={this.renderItem}
-        testID="scroll-view"
-        viewabilityConfig={viewabilityConfig}
-        windowSize={5}
-      />
+      <ResponsiveContext.Consumer>
+        {() => {
+          const { firstViewableIndex } = this.state;
+          return (
+            <FlatList
+              accessibilityID="scroll-view"
+              data={data}
+              initialScrollIndex={firstViewableIndex}
+              ItemSeparatorComponent={() => (
+                <View style={styles.listItemSeparatorContainer}>
+                  <ArticleListItemSeparator />
+                </View>
+              )}
+              keyExtractor={item => item.elementId}
+              ListFooterComponent={articleListFooter}
+              ListHeaderComponent={articleListHeader}
+              onEndReached={() =>
+                // Workaround for iOS Flatlist bug (https://github.com/facebook/react-native/issues/16067)
+                data.length > 0 ? this.fetchMoreOnEndReached(data) : null
+              }
+              onEndReachedThreshold={2}
+              onViewableItemsChanged={
+                onViewed ? this.onViewableItemsChanged : null
+              }
+              renderItem={this.renderItem}
+              testID="scroll-view"
+              viewabilityConfig={viewabilityConfig}
+              windowSize={5}
+            />
+          );
+        }}
+      </ResponsiveContext.Consumer>
     );
   }
 }
