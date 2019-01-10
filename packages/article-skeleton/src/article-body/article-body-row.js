@@ -1,5 +1,5 @@
 import React from "react";
-import { Dimensions, View } from "react-native";
+import { Dimensions, View, Text, Image, StyleSheet } from "react-native";
 import PropTypes from "prop-types";
 import ArticleImage from "@times-components/article-image";
 import ArticleParagraph from "@times-components/article-paragraph";
@@ -15,12 +15,15 @@ import Video from "@times-components/video";
 import ArticleLink from "./article-link";
 import InsetCaption from "./inset-caption";
 import styleFactory from "../styles/article-body";
+import Paragraph from "./text-layout/paragraph";
+import InlineElement from "./text-layout/inlineElement";
 
 const styles = styleFactory();
 
 const ArticleRow = ({
   content: { data, index },
   interactiveConfig,
+  next,
   onLinkPress,
   onTwitterLinkPress,
   onVideoPress
@@ -39,10 +42,28 @@ const ArticleRow = ({
         )
       };
     },
-    image(key, { display, ratio, url, caption, credits }) {
+    image(key, { display, ratio, url, caption, credits }, children, i, tree, childrenRendered) {
+      if (childrenRendered) {
+        //console.warn(next())
+      }
       return {
         element: (
           <View key={key}>
+            <View style={{ flex: 1, height: 600, margin: 30, alignItems: 'flex-start', justifyContent: 'flex-start' }}>
+              <Paragraph>
+                <InlineElement start={0} align="left">
+                  {style =>
+                    <View key="test" style={style}>
+                      <Image style={{width: 300, height: 600}} source={{uri:url}}/>
+                    </View>
+                  }
+                </InlineElement>
+                <Text style={{ lineHeight: 16 }}>{caption || "test"}</Text>
+                <Text style={{ lineHeight: 16 }}>{credits || "test"}</Text>
+              </Paragraph>
+            </View>
+
+            {/*
             <ArticleImage
               captionOptions={{
                 caption,
@@ -54,6 +75,7 @@ const ArticleRow = ({
                 uri: url
               }}
             />
+            */}
           </View>
         )
       };
@@ -97,15 +119,15 @@ const ArticleRow = ({
             {({
               theme: { dropCapFont, sectionColour = colours.section.default }
             }) => (
-              <ArticleParagraph
-                ast={node}
-                dropCapColour={sectionColour}
-                dropCapFont={dropCapFont}
-                uid={index}
-              >
-                {children}
-              </ArticleParagraph>
-            )}
+                <ArticleParagraph
+                  ast={node}
+                  dropCapColour={sectionColour}
+                  dropCapFont={dropCapFont}
+                  uid={index}
+                >
+                  {children}
+                </ArticleParagraph>
+              )}
           </Context.Consumer>
         )
       };
@@ -123,20 +145,20 @@ const ArticleRow = ({
             {({
               theme: { pullQuoteFont, sectionColour = colours.section.default }
             }) => (
-              <View>
-                <PullQuote
-                  caption={name}
-                  captionColour={sectionColour}
-                  font={pullQuoteFont}
-                  onTwitterLinkPress={onTwitterLinkPress}
-                  quoteColour={sectionColour}
-                  text={text}
-                  twitter={twitter}
-                >
-                  {children}
-                </PullQuote>
-              </View>
-            )}
+                <View>
+                  <PullQuote
+                    caption={name}
+                    captionColour={sectionColour}
+                    font={pullQuoteFont}
+                    onTwitterLinkPress={onTwitterLinkPress}
+                    quoteColour={sectionColour}
+                    text={text}
+                    twitter={twitter}
+                  >
+                    {children}
+                  </PullQuote>
+                </View>
+              )}
           </Context.Consumer>
         )
       };

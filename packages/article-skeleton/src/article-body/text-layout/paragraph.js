@@ -91,7 +91,7 @@ export default class Article extends React.Component {
     let result = [];
     let tolerance = 1;
     while (!result.length) {
-      const nodes = align(words, inlineElements, 'left', 350, tolerance);
+      const nodes = align(words, inlineElements, 'left', 600, tolerance);
       while (true) {
         const node = nodes.next()
         if (node.done) {

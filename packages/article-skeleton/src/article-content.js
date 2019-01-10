@@ -2,6 +2,12 @@ import React from "react";
 import PropTypes from "prop-types";
 import { FlatList } from "react-native";
 
+const arrayIterator = function* (array) {
+  for (let child of array) {
+    yield child
+  }
+}
+
 const viewabilityConfig = {
   viewAreaCoveragePercentThreshold: 100,
   waitForInteraction: false
@@ -22,17 +28,16 @@ const ArticleContent = ({
   onViewableItemsChanged,
   renderRow,
   width
-}) => (
-  <FlatList
-    data={data}
-    keyExtractor={item =>
-      item.index ? `${item.type}.${item.index}` : item.type
-    }
-    ListHeaderComponent={<Header width={width} />}
-    onViewableItemsChanged={onViewableItemsChanged}
-    renderItem={({ item }) =>
-      renderRow(
-        item,
+}) => {
+  const children = arrayIterator(data)
+  const rows = []
+  for (let row of children) {
+    const next = () => children.next()
+    rows.push({
+      data: row,
+      rendered: renderRow(
+        row,
+        next,
         onAuthorPress,
         onCommentsPress,
         onCommentGuidelinesPress,
@@ -43,11 +48,20 @@ const ArticleContent = ({
         onVideoPress,
         interactiveConfig
       )
+    })
+  }
+  return <FlatList
+    data={rows}
+    keyExtractor={item =>
+      item.index ? `${item.data.type}.${item.data.index}` : item.data.type
     }
+    ListHeaderComponent={<Header width={width} />}
+    onViewableItemsChanged={onViewableItemsChanged}
+    renderItem={({ item }) => item.rendered}
     testID="flat-list-article"
     viewabilityConfig={viewabilityConfig}
   />
-);
+};
 
 ArticleContent.propTypes = {
   data: PropTypes.arrayOf(
@@ -75,7 +89,7 @@ ArticleContent.propTypes = {
 ArticleContent.defaultProps = {
   Header: () => null,
   interactiveConfig: {},
-  onViewableItemsChanged: () => {},
+  onViewableItemsChanged: () => { },
   width: null
 };
 

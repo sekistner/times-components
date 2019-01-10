@@ -25,6 +25,7 @@ const listViewScrollRenderAheadDistance = 10;
 
 const renderRow = analyticsStream => (
   rowData,
+  next,
   onAuthorPress,
   onCommentsPress,
   onCommentGuidelinesPress,
@@ -39,13 +40,14 @@ const renderRow = analyticsStream => (
   switch (rowData.type) {
     case "articleBodyRow": {
       return (
-        <ArticleRow
-          content={rowData}
-          interactiveConfig={interactiveConfig}
-          onLinkPress={onLinkPress}
-          onTwitterLinkPress={onTwitterLinkPress}
-          onVideoPress={onVideoPress}
-        />
+        ArticleRow({
+          content: rowData,
+          next: next,
+          interactiveConfig: interactiveConfig,
+          onLinkPress: onLinkPress,
+          onTwitterLinkPress: onTwitterLinkPress,
+          onVideoPress: onVideoPress
+        })
       );
     }
 

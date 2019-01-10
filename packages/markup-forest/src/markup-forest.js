@@ -15,7 +15,7 @@ export const renderTree = (tree, renderers, key = "0", indx = 0) => {
   const renderedChildren = children.map((child, index) =>
     renderTree(child, renderers, `${key}.${index}`, index)
   );
-  const result = renderer(key, attributes, renderedChildren, indx, tree);
+  const result = renderer(key, attributes, renderedChildren, indx, tree, shouldRenderChildren);
 
   return result.element;
 };
