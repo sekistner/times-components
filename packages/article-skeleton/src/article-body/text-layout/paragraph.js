@@ -3,7 +3,7 @@ import { Text, View } from "react-native"
 import align from "./align"
 import InlineElement from "./inlineElement"
 
-export default class Article extends React.Component {
+export default class Paragraph extends React.Component {
   constructor() {
     super()
     this.state = { result: [], measure: [] }
@@ -70,7 +70,9 @@ export default class Article extends React.Component {
       .filter(el => typeof el.props.children === "string")
 
     const splitEls = textEls.reduce((acc, el) => {
-      return acc.concat(el.props.children.split(/\s/).concat([' ']).map(word => {
+      return acc.concat(
+        el.props.children.split(/[\s]/)
+        .concat(['\n', ' ']).map(word => {
         return <Text style={el.props.style}>{word}</Text>
       }))
     }, [])
@@ -109,10 +111,6 @@ export default class Article extends React.Component {
       this.state.result
       :
       this.state.measure
-    return (
-      <View style={{ flex: 0, alignItems: 'flex-start', justifyContent: 'flex-start' }}>
-        {nodes}
-      </View>
-    );
+    return nodes
   }
 }

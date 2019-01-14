@@ -7,6 +7,7 @@ export default function* align(text, inlines, type, lineLength, tolerance, cente
   const format = formatter(text);
   const nodes = format[type](text);
   const lineLengths = []
+  // TODO: newlines
   for (let i = 0; i < text.length; i++) {
     let hasInline = false
     for (let {start, height: inlineHeight, width, align, children} of inlines) {
@@ -102,6 +103,9 @@ export default function* align(text, inlines, type, lineLength, tolerance, cente
           switch (node.type) {
             case "box":
               if (node.value === ' ') {
+                return null
+              }
+              if (node.value === '\n') {
                 return null
               }
               x += node.width

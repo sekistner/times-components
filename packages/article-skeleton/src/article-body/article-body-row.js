@@ -42,14 +42,14 @@ const ArticleRow = ({
         )
       };
     },
-    image(key, { display, ratio, url, caption, credits }, children, i, tree, childrenRendered) {
-      if (childrenRendered) {
-        //console.warn(next())
-      }
+    image(key, { display, ratio, url, caption, credits }, children, i, tree) {
+const article = "Patients with injuries that are not life-threatening will have to wait longer in A&E, the head of the NHS indicated today. Simon Stevens, chief executive of NHS England, gave a strong hint that the main target will be relaxed after hospitals failed to hit it for two years. Theresa May refused yesterday to guarantee that a £20 billion NHS budget boost, part of a new ten-year plan for the future of the NHS, would bring down waiting times. Today Mr Stevens suggested that the proposals would effectively end the commitment that all A&E patients should be assessed and either treated or admitted to a bed within four hours. The Times revealed this morning the plans will not demand that hospitals start hitting A&E or routine…"
+
       return {
+        shouldRenderChildren: false,
         element: (
           <View key={key}>
-            <View style={{ flex: 1, height: 600, margin: 30, alignItems: 'flex-start', justifyContent: 'flex-start' }}>
+            <View style={{ flex: 1, height: 1000, margin: 30, alignItems: 'flex-start', justifyContent: 'flex-start' }}>
               <Paragraph>
                 <InlineElement start={0} align="left">
                   {style =>
@@ -58,8 +58,8 @@ const ArticleRow = ({
                     </View>
                   }
                 </InlineElement>
-                <Text style={{ lineHeight: 16 }}>{caption || "test"}</Text>
-                <Text style={{ lineHeight: 16 }}>{credits || "test"}</Text>
+                <Text style={{ fontSize: 18 }}>{article}</Text>
+                <Text style={{ fontSize: 18 }}>{article}</Text>
               </Paragraph>
             </View>
 
