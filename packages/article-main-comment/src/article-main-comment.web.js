@@ -27,10 +27,12 @@ class ArticlePage extends Component {
       standfirst
     } = article;
 
-    console.log('byline is', bylines);
+    const authorImage = bylines && bylines.length > 0 && bylines[0].image && Object.keys(bylines[0].image).length !== 0 && bylines[0].image.crop ? bylines[0].image.crop.url : null;
+    // const authorByline = bylines && bylines.length > 0 && bylines[0].byline ? bylines[0].byline : null;
+
     return (
       <ArticleHeader
-        authorImage={bylines[0].image.crop.url}
+        authorImage={authorImage}
         byline={bylines[0].byline}
         flags={flags}
         hasVideo={hasVideo}
