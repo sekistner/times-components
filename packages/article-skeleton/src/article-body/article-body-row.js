@@ -54,12 +54,12 @@ const article = "Patients with injuries that are not life-threatening will have 
                 <InlineElement start={0} align="left">
                   {style =>
                     <View key="test" style={style}>
-                      <Image style={{width: 300, height: 600}} source={{uri:url}}/>
+                      <Image style={{width: 300, height: 600, marginRight: 10}} source={{uri:url}}/>
                     </View>
                   }
                 </InlineElement>
                 <Text style={{ fontSize: 18 }}>{article}</Text>
-                <Text style={{ fontSize: 18 }}>{article}</Text>
+                <Text style={{ fontSize: 18 }}>{article.toUpperCase()}</Text>
               </Paragraph>
             </View>
 

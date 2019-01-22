@@ -3,7 +3,7 @@ import { Text, View } from "react-native"
 import align from "./align"
 import InlineElement from "./inlineElement"
 
-export default class Paragraph extends React.Component {
+export default class Article extends React.Component {
   constructor() {
     super()
     this.state = { result: [], measure: [] }
@@ -68,11 +68,9 @@ export default class Paragraph extends React.Component {
       .filter(el => el.type === InlineElement)
     const textEls = children
       .filter(el => typeof el.props.children === "string")
-
+    
     const splitEls = textEls.reduce((acc, el) => {
-      return acc.concat(
-        el.props.children.split(/[\s]/)
-        .concat(['\n', ' ']).map(word => {
+      return acc.concat(el.props.children.split(/\s/).concat([' ']).map(word => {
         return <Text style={el.props.style}>{word}</Text>
       }))
     }, [])
@@ -90,20 +88,44 @@ export default class Paragraph extends React.Component {
       })
     }
 
-    let result = [];
-    let tolerance = 1;
-    while (!result.length) {
-      const nodes = align(words, inlineElements, 'left', 600, tolerance);
-      while (true) {
-        const node = nodes.next()
-        if (node.done) {
-          break
-        }
-        result.push(node.value)
+    let paragraphs = [[]]
+    for (let word of words) {
+      if (word.value === ' ') {
+        paragraphs[paragraphs.length - 1].push(word);
+        paragraphs.push([])
       }
-      tolerance++
+      paragraphs[paragraphs.length - 1].push(word)
     }
-    this.setState({ result, measure: null })
+
+    let lines = 0
+    for (let paragraph of paragraphs) {
+      let result = [];
+      let tolerance = 1;
+      if (paragraph[0].value === " ") {
+        paragraph = paragraph.slice(1)
+      }
+      while (!result.length) {
+        const nodes = align(lines, paragraph, inlineElements, 'left', 600, tolerance);
+        while (true) {
+          const node = nodes.next()
+          if (node.done) {
+            break
+          }
+          if (typeof node.value === 'number') {
+            lines += node.value + 1
+          } else {
+            result.push(node.value)
+          }
+        }
+        tolerance++
+      }
+      await new Promise(resolve => {
+        this.setState(state => ({
+          result: state.result.concat(result),
+          measure: null
+        }), resolve)
+      });
+    }
   }
 
   render() {
@@ -111,6 +133,10 @@ export default class Paragraph extends React.Component {
       this.state.result
       :
       this.state.measure
-    return nodes
+    return (
+      <View style={{ flex: 0, alignItems: 'flex-start', justifyContent: 'flex-start' }}>
+        {nodes}
+      </View>
+    );
   }
 }

@@ -3,28 +3,21 @@ import { Text } from 'react-native'
 import formatter from "./formatter"
 import linebreak, { infinity } from "./knuth"
 
-export default function* align(text, inlines, type, lineLength, tolerance, center) {
+export default function* align(begin, text, inlines, type, lineLength, tolerance, center) {
   const format = formatter(text);
   const nodes = format[type](text);
-  const lineLengths = []
-  // TODO: newlines
-  for (let i = 0; i < text.length; i++) {
-    let hasInline = false
-    for (let {start, height: inlineHeight, width, align, children} of inlines) {
-      const height = text[i].height
-      const end = start + Math.floor(inlineHeight / height)
-      if (i >= start && i <= end) {
-        hasInline = { start, width, align, children}
-        break
-      }
-    }
-    if (hasInline) {
-      lineLengths.push(lineLength - hasInline.width)
-    } else {
-      lineLengths.push(lineLength)
+  let lineLengths = []
+  for (let {start, height: inlineHeight, width} of inlines) {
+    while (lineLengths.length < start) {
+      lineLength.push(lineLength);
+    };
+    const end = start + Math.floor(inlineHeight / text[0].height)
+    while (lineLengths.length <= end) {
+      lineLengths.push(lineLength - width)
     }
   }
   lineLengths.push(lineLength)
+  lineLengths = lineLengths.slice(begin)
   const breaks = linebreak(nodes, lineLengths, { tolerance: tolerance });
   if (breaks.length !== 0) {
     const lines = []
@@ -43,7 +36,7 @@ export default function* align(text, inlines, type, lineLength, tolerance, cente
       lineStart = point;
     }
     let height = text[0].height
-    let y = -height;
+    let y = (-height) + (begin * height);
     let lineIndex = 0;
     let textIndex = 0
     for (let i = 0; i < lines.length; i++) {
@@ -67,14 +60,14 @@ export default function* align(text, inlines, type, lineLength, tolerance, cente
       for (let i = 0; i < inlines.length; i++) {
         let { start, height: inlineHeight, width, align, children } = inlines[i]
         const end = start + Math.floor(inlineHeight / height)
-        if (lineIndex >= start && lineIndex <= end) {
+        if ((lineIndex + begin) >= start && (lineIndex + begin) <= end) {
           hasInline = { start, end, width, align, children }
           break
         }
       }
 
       if (hasInline && hasInline.align === 'left') {
-        if (lineIndex === hasInline.start) {
+        if ((lineIndex + begin) === hasInline.start) {
           yield hasInline.children({
             top: y,
             left: x,
@@ -87,7 +80,7 @@ export default function* align(text, inlines, type, lineLength, tolerance, cente
       }
 
       if (hasInline && hasInline.align === 'right') {
-        if (lineIndex === hasInline.start) {
+        if ((lineIndex + begin) === hasInline.start) {
           yield hasInline.children({
             top: y,
             left: lineLengths[lineIndex],
@@ -99,7 +92,7 @@ export default function* align(text, inlines, type, lineLength, tolerance, cente
       }
 
       yield (
-        line.nodes.map((node, index) => {
+        line.nodes.map(node => {
           switch (node.type) {
             case "box":
               if (node.value === ' ') {
@@ -130,6 +123,7 @@ export default function* align(text, inlines, type, lineLength, tolerance, cente
         }).filter(el => el !== null))
       lineIndex++
     }
+    yield lineIndex
   }
   return [];
 }
