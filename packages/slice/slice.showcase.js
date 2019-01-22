@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import React from "react";
 import { ScrollView, View } from "react-native";
+import Responsive from "@times-components/responsive";
 import {
   LeadOneAndTwoSlice,
   OpinionOneAndTwoSlice,
@@ -40,19 +41,21 @@ export default {
     {
       component: () => (
         <ScrollView>
-          <LeadOneAndTwoSlice
-            renderLead={() => (
-              <View
-                id="lead"
-                style={{
-                  backgroundColor: "red",
-                  minHeight: 320
-                }}
-              />
-            )}
-            renderSupport1={() => null}
-            renderSupport2={() => null}
-          />
+          <Responsive>
+            <LeadOneAndTwoSlice
+              renderLead={() => (
+                <View
+                  id="lead"
+                  style={{
+                    backgroundColor: "red",
+                    minHeight: 320
+                  }}
+                />
+              )}
+              renderSupport1={() => null}
+              renderSupport2={() => null}
+            />
+          </Responsive>
         </ScrollView>
       ),
       name: "LeadOneAndTwo",
@@ -61,19 +64,21 @@ export default {
     {
       component: () => (
         <ScrollView>
-          <LeadOneAndTwoSlice
-            renderLead={() => (
-              <View
-                id="lead"
-                style={{
-                  backgroundColor: "red",
-                  minHeight: 320
-                }}
-              />
-            )}
-            renderSupport1={() => <Support1 id="support1" />}
-            renderSupport2={() => null}
-          />
+          <Responsive>
+            <LeadOneAndTwoSlice
+              renderLead={() => (
+                <View
+                  id="lead"
+                  style={{
+                    backgroundColor: "red",
+                    minHeight: 320
+                  }}
+                />
+              )}
+              renderSupport1={() => <Support1 id="support1" />}
+              renderSupport2={() => null}
+            />
+          </Responsive>
         </ScrollView>
       ),
       name: "LeadOneAndTwo With 1 Support",
@@ -82,19 +87,21 @@ export default {
     {
       component: () => (
         <ScrollView>
-          <LeadOneAndTwoSlice
-            renderLead={() => (
-              <View
-                id="lead"
-                style={{
-                  backgroundColor: "red",
-                  minHeight: 320
-                }}
-              />
-            )}
-            renderSupport1={() => <Support1 id="support1" />}
-            renderSupport2={() => <Support2 id="support2" />}
-          />
+          <Responsive>
+            <LeadOneAndTwoSlice
+              renderLead={() => (
+                <View
+                  id="lead"
+                  style={{
+                    backgroundColor: "red",
+                    minHeight: 320
+                  }}
+                />
+              )}
+              renderSupport1={() => <Support1 id="support1" />}
+              renderSupport2={() => <Support2 id="support2" />}
+            />
+          </Responsive>
         </ScrollView>
       ),
       name: "LeadOneAndTwo With 2 Supports",
@@ -103,19 +110,21 @@ export default {
     {
       component: () => (
         <ScrollView>
-          <OpinionOneAndTwoSlice
-            renderOpinion={() => (
-              <View
-                id="opinion"
-                style={{
-                  backgroundColor: "red",
-                  minHeight: 150
-                }}
-              />
-            )}
-            renderSupport1={() => null}
-            renderSupport2={() => null}
-          />
+          <Responsive>
+            <OpinionOneAndTwoSlice
+              renderOpinion={() => (
+                <View
+                  id="opinion"
+                  style={{
+                    backgroundColor: "red",
+                    minHeight: 150
+                  }}
+                />
+              )}
+              renderSupport1={() => null}
+              renderSupport2={() => null}
+            />
+          </Responsive>
         </ScrollView>
       ),
       name: "OpinionOneAndTwo",
@@ -124,19 +133,21 @@ export default {
     {
       component: () => (
         <ScrollView>
-          <OpinionOneAndTwoSlice
-            renderOpinion={() => (
-              <View
-                id="opinion"
-                style={{
-                  backgroundColor: "red",
-                  minHeight: 150
-                }}
-              />
-            )}
-            renderSupport1={() => <Support1 id="support1" />}
-            renderSupport2={() => null}
-          />
+          <Responsive>
+            <OpinionOneAndTwoSlice
+              renderOpinion={() => (
+                <View
+                  id="opinion"
+                  style={{
+                    backgroundColor: "red",
+                    minHeight: 150
+                  }}
+                />
+              )}
+              renderSupport1={() => <Support1 id="support1" />}
+              renderSupport2={() => null}
+            />
+          </Responsive>
         </ScrollView>
       ),
       name: "OpinionOneAndTwo With 1 Support",
@@ -145,19 +156,21 @@ export default {
     {
       component: () => (
         <ScrollView>
-          <OpinionOneAndTwoSlice
-            renderOpinion={() => (
-              <View
-                id="opinion"
-                style={{
-                  backgroundColor: "red",
-                  minHeight: 150
-                }}
-              />
-            )}
-            renderSupport1={() => <Support1 id="support1" />}
-            renderSupport2={() => <Support2 id="support2" />}
-          />
+          <Responsive>
+            <OpinionOneAndTwoSlice
+              renderOpinion={() => (
+                <View
+                  id="opinion"
+                  style={{
+                    backgroundColor: "red",
+                    minHeight: 150
+                  }}
+                />
+              )}
+              renderSupport1={() => <Support1 id="support1" />}
+              renderSupport2={() => <Support2 id="support2" />}
+            />
+          </Responsive>
         </ScrollView>
       ),
       name: "OpinionOneAndTwo With 2 Supports",
@@ -174,12 +187,14 @@ export default {
 
         return (
           <ScrollView>
-            <StandardSlice
-              itemCount={Number(select("Number of items:", itemCount, "3"))}
-              renderItems={() =>
-                createItems(select("Number of items:", itemCount, "3"))
-              }
-            />
+            <Responsive>
+              <StandardSlice
+                itemCount={Number(select("Number of items:", itemCount, "3"))}
+                renderItems={() =>
+                  createItems(select("Number of items:", itemCount, "3"))
+                }
+              />
+            </Responsive>
           </ScrollView>
         );
       },
