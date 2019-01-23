@@ -1,5 +1,5 @@
 import React from "react";
-import { Dimensions, View, Text, Image, StyleSheet } from "react-native";
+import { Dimensions, View, Text } from "react-native";
 import PropTypes from "prop-types";
 import ArticleImage from "@times-components/article-image";
 import ArticleParagraph from "@times-components/article-paragraph";
@@ -16,7 +16,7 @@ import ArticleLink from "./article-link";
 import InsetCaption from "./inset-caption";
 import styleFactory from "../styles/article-body";
 import Paragraph from "./text-layout/paragraph";
-import InlineElement from "./text-layout/inlineElement";
+import { InlineElement } from "@times-components/utils";
 
 const styles = styleFactory();
 
@@ -53,8 +53,13 @@ const article = "Patients with injuries that are not life-threatening will have 
               <Paragraph>
                 <InlineElement start={0} align="left">
                   {style =>
-                    <View key="test" style={style}>
-                      <Image style={{width: 300, height: 600, marginRight: 10}} source={{uri:url}}/>
+                    <View key="test" style={{top: style.top, left: style.left}}>
+                      <ArticleImage
+                        imageOptions={{
+                          display,
+                          ratio,
+                          uri: url
+                        }} />
                     </View>
                   }
                 </InlineElement>

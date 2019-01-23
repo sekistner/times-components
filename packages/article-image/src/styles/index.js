@@ -13,7 +13,6 @@ const styles = StyleSheet.create({
   inlineContainer: {
     flexDirection: "row",
     flexWrap: "nowrap",
-    paddingBottom: spacing(5),
     paddingLeft: spacing(2),
     paddingRight: spacing(2),
     width: "100%"
