@@ -4,7 +4,7 @@ import LeadOneAndTwoSlice from "./templates/leadoneandtwo";
 import leadOneAndTwoRoles from "./templates/leadoneandtwo/roles";
 import OpinionOneAndTwoSlice from "./templates/opiniononeandtwo";
 import opinionOneAndTwoRoles from "./templates/opiniononeandtwo/roles";
-import SecondaryFourSlice from "./templates/secondaryfour"
+import SecondaryFourSlice from "./templates/secondaryfour";
 
 export {
   StandardSlice,

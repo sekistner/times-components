@@ -20,7 +20,7 @@ const renderSummaryContent = summary => <ArticleSummaryContent ast={summary} />;
 const PrimaryTile = ({
   tile: {
     article: {
-      hasVideo,
+      hasVideo = false,
       headline,
       label,
       leadAsset,
