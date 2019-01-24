@@ -132,6 +132,7 @@ export const layoutText = (width, {inlines, words, inlineSizes}) => {
       }
       tolerance++
     }
-    return result
+    const height = paragraph[0].height * lines
+    return [result, height]
   }
 }
