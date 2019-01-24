@@ -5,8 +5,8 @@ import { PrimaryTile } from "../../tiles";
 
 const LeadOneAndOneSlice = ({ lead, support }) => (
   <LeadOneAndTwoSlice
-    renderLead={() => <PrimaryTile tile={lead} withImage />}
-    renderSupport1={() => <PrimaryTile tile={support} withImage={false} />}
+    renderLead={() => <PrimaryTile tile={lead} withImagePosition="bottom" />}
+    renderSupport1={() => <PrimaryTile tile={support} />}
     renderSupport2={() => null}
   />
 );

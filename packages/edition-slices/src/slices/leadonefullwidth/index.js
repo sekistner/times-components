@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { PrimaryTile } from "../../tiles";
 
 const LeadOneFullWidthSlice = ({ lead }) => (
-  <PrimaryTile tile={lead} withImage />
+  <PrimaryTile tile={lead} withImagePosition="bottom" />
 );
 
 LeadOneFullWidthSlice.propTypes = {

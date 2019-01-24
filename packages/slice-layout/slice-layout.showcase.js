@@ -1,9 +1,10 @@
 /* eslint-disable react/prop-types */
 import React from "react";
-import { ScrollView, View } from "react-native";
+import { ScrollView, View, Text } from "react-native";
 import {
   LeadOneAndTwoSlice,
   OpinionOneAndTwoSlice,
+  SecondaryFourSlice,
   StandardSlice
 } from "./src/slice-layout";
 
@@ -33,6 +34,17 @@ const Support1 = () => (
 
 const Support2 = () => (
   <View style={[{ minHeight: 150 }, { backgroundColor: "yellow" }]} />
+);
+
+const Support3 = () => (
+  <View style={[{ minHeight: 150 }, { backgroundColor: "red" }]} />
+);
+
+const Support4 = () => (
+  <View style={[{ minHeight: 150 }, { backgroundColor: "blue" }]} />
+);
+const Secondary1 = () => (
+  <Text> hello123 </Text>
 );
 
 export default {
@@ -161,6 +173,20 @@ export default {
         </ScrollView>
       ),
       name: "OpinionOneAndTwo With 2 Supports",
+      type: "story"
+    },
+    {
+      component: () => (
+        <ScrollView>
+          <SecondaryFourSlice
+          renderSecondary1={() => <Support1 id="support1"/>}
+          renderSecondary2={() => <Support2 id="support2"/>}
+          renderSecondary3={() => <Support3 id="support3"/>}
+          renderSecondary4={() => <Support4 id="support4"/>}
+          />
+        </ScrollView>
+      ),
+      name: "12SecondaryFourSlice",
       type: "story"
     },
     {
