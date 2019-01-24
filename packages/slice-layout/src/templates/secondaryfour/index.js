@@ -2,6 +2,22 @@ import React from "react";
 import { View, Text } from "react-native";
 // import styles from "../styles";
 
+const styles = {
+  container: {
+    flex:1,
+    flexDirection:'row',
+    borderBottomWidth: 1,
+    borderStyle: "solid",
+    width:"100%"
+  },
+  itemContainer: {
+    flex:1,
+    borderBottomWidth: 1,
+    borderStyle: "solid",
+    width:"50%"
+  }
+};
+
 const SecondaryFourSlice = ({
   renderSecondary1,
   renderSecondary2,
@@ -13,14 +29,14 @@ const SecondaryFourSlice = ({
     const renderSecondaryRowTwo = [renderSecondary3(), renderSecondary4()];
     return (
       <View >
-        <View>
+        <View style={styles.container}>
           {renderSecondaryRowOne.map(support => (
-            <View key={support.props.id}>{support}</View>
+            <View style={styles.itemContainer} key={support.props.id}>{support}</View>
           ))}
         </View>
-        <View>
+        <View style={styles.container}>
           {renderSecondaryRowTwo.map(support => (
-            <View key={support.props.id}>{support}</View>
+            <View style={styles.itemContainer} key={support.props.id}>{support}</View>
           ))}
         </View>
       </View>

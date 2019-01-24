@@ -1961,6 +1961,32 @@
     webpack-dev-server "3.1.7"
     webpack-merge "^4.1.1"
 
+"@times-components/jest-serializer@3.2.0":
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/@times-components/jest-serializer/-/jest-serializer-3.2.0.tgz#9aaa8bb3cd762de84d96648dbd09ad8bcf8da824"
+  integrity sha512-UhbqErcnmF83GT4xbJ1SCDzbNCj5FpDfFdmchvnbxk6g4TbNqvd2ODfDYGho9NUcV+aRvJJJcq3694EzcI0YcA==
+  dependencies:
+    css "^2.2.1"
+    enzyme-to-json "3.3.4"
+    hyphenate-style-name "1.0.2"
+    lodash.isequal "4.4.0"
+    lodash.omitby "4.6.0"
+
+"@times-components/styleguide@3.14.0":
+  version "3.14.0"
+  resolved "https://registry.yarnpkg.com/@times-components/styleguide/-/styleguide-3.14.0.tgz#3d7c8027d9ad995569253e6a95d3e113cf38327c"
+  integrity sha512-3vsyii6pIDWX8130Ee5hqcSwf4drUVNS3OrYktV9xE02DgO++4zChf5KGf9S6z3oG8+kXJXGEAf6fkpiJ4ZY2Q==
+  dependencies:
+    prop-types "15.6.2"
+    styled-components "3.4.0"
+
+"@times-components/test-utils@2.1.0":
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/@times-components/test-utils/-/test-utils-2.1.0.tgz#b931988418ca062ec5fc0a1fbfc313cfcab6019d"
+  integrity sha512-gFraCyKNVsw6n0sJfND3J/rCHFVAU/5yIBXqR16VlSXDnom2yAhFE1GhW9Qai9AO/rE4EDhFKfx7/wzceci6kw==
+  dependencies:
+    "@times-components/styleguide" "3.14.0"
+
 "@types/accepts@^1.3.5":
   version "1.3.5"
   resolved "https://registry.yarnpkg.com/@types/accepts/-/accepts-1.3.5.tgz#c34bec115cfc746e04fe5a059df4ce7e7b391575"
