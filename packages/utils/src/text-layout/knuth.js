@@ -35,7 +35,21 @@ export const penalty = (width, p, flagged) => ({
 
 export default (nodes, lines, settings = defaults()) => {
   const options = defaults();
+<<<<<<< HEAD
 
+=======
+  if (settings.demerits) {
+    if (settings.demerits.line) {
+      options.demerits.line = settings.demerits.line;
+    }
+    if (settings.demerits.flagged) {
+      options.demerits.flagged = settings.demerits.flagged;
+    }
+    if (settings.demerits.fitness) {
+      options.demerits.fitness = settings.demerits.fitness;
+    }
+  }
+>>>>>>> feat: REPLAT-4861 Integrate tex-layout and use for dropcaps on both IOS and Android
   if (settings.tolerance) {
     options.tolerance = settings.tolerance;
   }
@@ -286,7 +300,14 @@ export default (nodes, lines, settings = defaults()) => {
       });
       tmp = tmp.data.previous;
     }
+<<<<<<< HEAD
   }
 
   return breaks.reverse();
+=======
+    return breaks.reverse();
+  }
+
+  return [];
+>>>>>>> feat: REPLAT-4861 Integrate tex-layout and use for dropcaps on both IOS and Android
 };
