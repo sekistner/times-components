@@ -30,11 +30,11 @@ const PrimaryTile = ({
     }
   },
   withImagePosition
-}) => {
-  console.log('Primary is', headline, 'withImagePosition', withImagePosition);
-  return (
+}) => (
   <View>
-    {withImagePosition && withImagePosition === 'top' ? renderImage(leadAsset.crop169.url) : null}
+    {withImagePosition && withImagePosition === "top"
+      ? renderImage(leadAsset.crop169.url)
+      : null}
     <ArticleSummary
       headline={() => (
         <ArticleSummaryHeadline headline={headline || shortHeadline} />
@@ -46,11 +46,11 @@ const PrimaryTile = ({
         title: label
       }}
     />
-    {withImagePosition && withImagePosition === 'bottom'
+    {withImagePosition && withImagePosition === "bottom"
       ? renderImage(leadAsset.crop169.url)
       : renderSummaryContent(summary125)}
   </View>
-)};
+);
 
 PrimaryTile.propTypes = {
   tile: PropTypes.shape({}).isRequired,

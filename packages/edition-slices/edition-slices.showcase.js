@@ -1,5 +1,9 @@
 import React from "react";
-import { LeadOneFullWidthSlice, LeadOneAndOneSlice, SecondaryFour } from "./src/slices";
+import {
+  LeadOneFullWidthSlice,
+  LeadOneAndOneSlice,
+  SecondaryFour
+} from "./src/slices";
 import leadOneAndOneDataGenerator from "./fixtures/leadoneandone";
 import secondaryFourGenerator from "./fixtures/secondaryfour";
 

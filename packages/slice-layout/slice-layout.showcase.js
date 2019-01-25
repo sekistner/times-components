@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import React from "react";
-import { ScrollView, View, Text } from "react-native";
+import { ScrollView, View } from "react-native";
 import {
   LeadOneAndTwoSlice,
   OpinionOneAndTwoSlice,
@@ -42,9 +42,6 @@ const Support3 = () => (
 
 const Support4 = () => (
   <View style={[{ minHeight: 150 }, { backgroundColor: "blue" }]} />
-);
-const Secondary1 = () => (
-  <Text> hello123 </Text>
 );
 
 export default {
@@ -186,7 +183,7 @@ export default {
           />
         </ScrollView>
       ),
-      name: "12SecondaryFourSlice",
+      name: "SecondaryFourSlice",
       type: "story"
     },
     {

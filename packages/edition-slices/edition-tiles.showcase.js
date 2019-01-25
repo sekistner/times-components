@@ -7,19 +7,21 @@ const leadOneAndOneData = leadOneAndOneDataGenerator();
 export default {
   children: [
     {
-      component: () => <PrimaryTile tile={leadOneAndOneData.lead} withImagePosition='top' />,
+      component: () => (
+        <PrimaryTile tile={leadOneAndOneData.lead} withImagePosition="top" />
+      ),
       name: "Primary (with image) on top",
       type: "story"
     },
     {
-      component: () => <PrimaryTile tile={leadOneAndOneData.lead} withImagePosition='bottom' />,
+      component: () => (
+        <PrimaryTile tile={leadOneAndOneData.lead} withImagePosition="bottom" />
+      ),
       name: "Primary (with image) on bottom",
       type: "story"
     },
     {
-      component: () => (
-        <PrimaryTile tile={leadOneAndOneData.lead} />
-      ),
+      component: () => <PrimaryTile tile={leadOneAndOneData.lead} />,
       name: "Primary (without image)",
       type: "story"
     }

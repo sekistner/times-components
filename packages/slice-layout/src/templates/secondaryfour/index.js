@@ -1,6 +1,7 @@
 import React from "react";
-import { View, Text } from "react-native";
+import { View } from "react-native";
 import styles from "./styles";
+import propTypes from "./proptypes";
 
 const SecondaryFourSlice = ({
   renderSecondary1,
@@ -14,17 +15,19 @@ const SecondaryFourSlice = ({
     return (
         <View style={styles.container}>
           <View style={styles.itemContainer}>
-            <View style={styles.item} key={renderSecondaryRowOne[0].props.id}>{renderSecondaryRowOne[0]}</View>
+            <View key={renderSecondaryRowOne[0].props.id} style={styles.item}>{renderSecondaryRowOne[0]}</View>
             <View style={styles.itemSeparator}/>
-            <View style={styles.item} key={renderSecondaryRowOne[1].props.id}>{renderSecondaryRowOne[1]}</View>
+            <View key={renderSecondaryRowOne[1].props.id} style={styles.item}>{renderSecondaryRowOne[1]}</View>
           </View>
           <View style={styles.itemContainer}>
-            <View style={styles.item} key={renderSecondaryRowTwo[0].props.id}>{renderSecondaryRowTwo[0]}</View>
+            <View key={renderSecondaryRowTwo[0].props.id} style={styles.item}>{renderSecondaryRowTwo[0]}</View>
             <View style={styles.itemSeparator}/>
-            <View style={styles.item} key={renderSecondaryRowTwo[1].props.id}>{renderSecondaryRowTwo[1]}</View>
+            <View key={renderSecondaryRowTwo[1].props.id} style={styles.item}>{renderSecondaryRowTwo[1]}</View>
           </View>
         </View>
       );
   };
+
+  SecondaryFourSlice.propTypes = propTypes;
 
 export default SecondaryFourSlice;
