@@ -1,7 +1,6 @@
 const styles = {
     container: {
-      flex: 1,
-      height: 1,
+      flex: 1
     },
     itemContainer: {
       flexDirection:'row',
@@ -12,9 +11,12 @@ const styles = {
     item: {
       width:"50%",
       padding: 5,
-      borderLeftWidth: 0.5,
-      borderRightWidth: 0.5,
       borderStyle: "solid"
+    },
+    itemSeparator: {
+        borderLeftWidth: 0.25,
+        borderStyle: "solid",
+        margin: 5
     }
   };
 

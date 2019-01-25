@@ -14,14 +14,14 @@ const SecondaryFourSlice = ({
     return (
         <View style={styles.container}>
           <View style={styles.itemContainer}>
-            {renderSecondaryRowOne.map(support => (
-              <View style={styles.item} key={support.props.id}>{support}</View>
-            ))}
+            <View style={styles.item} key={renderSecondaryRowOne[0].props.id}>{renderSecondaryRowOne[0]}</View>
+            <View style={styles.itemSeparator}/>
+            <View style={styles.item} key={renderSecondaryRowOne[1].props.id}>{renderSecondaryRowOne[1]}</View>
           </View>
           <View style={styles.itemContainer}>
-            {renderSecondaryRowTwo.map(support => (
-              <View style={styles.item} key={support.props.id}>{support}</View>
-            ))}
+            <View style={styles.item} key={renderSecondaryRowTwo[0].props.id}>{renderSecondaryRowTwo[0]}</View>
+            <View style={styles.itemSeparator}/>
+            <View style={styles.item} key={renderSecondaryRowTwo[1].props.id}>{renderSecondaryRowTwo[1]}</View>
           </View>
         </View>
       );
