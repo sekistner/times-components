@@ -30,7 +30,9 @@ const PrimaryTile = ({
     }
   },
   withImagePosition
-}) => (
+}) => {
+  console.log('Primary is', headline, 'withImagePosition', withImagePosition);
+  return (
   <View>
     {withImagePosition && withImagePosition === 'top' ? renderImage(leadAsset.crop169.url) : null}
     <ArticleSummary
@@ -48,15 +50,15 @@ const PrimaryTile = ({
       ? renderImage(leadAsset.crop169.url)
       : renderSummaryContent(summary125)}
   </View>
-);
+)};
 
 PrimaryTile.propTypes = {
   tile: PropTypes.shape({}).isRequired,
-  wiwithImagePositionthImage: PropTypes.string
+  withImagePosition: PropTypes.string
 };
 
 PrimaryTile.defaultProps = {
-  withImagePosition: true
+  withImagePosition: null
 };
 
 export default PrimaryTile;
