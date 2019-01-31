@@ -25,6 +25,7 @@ const fontSizes = {
   pagingMeta: 15,
   puffLink: 11,
   secondary: 16,
+  secondaryFourMobileSliceHeadline: 22,
   sliceHeadline: 32,
   smallestHeadline: 20,
   smallHeadline: 22,

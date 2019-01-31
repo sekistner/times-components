@@ -32,9 +32,9 @@ const SecondaryTileImageReversed = ({
   <View>
     {withImage ? renderImage(leadAsset.crop169.url) : null}
     <ArticleSummary
-      flags={() => <ArticleFlags flags={flags} />}
+      flags={() => <ArticleFlags flags={flags}/>}
       headline={() => (
-        <ArticleSummaryHeadline headline={headline || shortHeadline} />
+        <ArticleSummaryHeadline headline={headline || shortHeadline} style={styles.headline}/>
       )}
       label={label}
       labelProps={{
