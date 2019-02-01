@@ -11,10 +11,10 @@ const styles = {
     borderBottomWidth: 0.5,
     borderStyle: "solid",
     flexDirection: "row",
-    marginTop: 10,
     marginBottom: 12,
     marginLeft: 12,
-    marginRight: 12
+    marginRight: 12,
+    marginTop: 10
   },
   itemSeparator: {
     borderLeftWidth: 0.5,
