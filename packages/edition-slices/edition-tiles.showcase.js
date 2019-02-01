@@ -3,7 +3,7 @@ import {
   mockLeadOneFullWidthSlice,
   mockSecondaryFourSlice
 } from "@times-components/fixture-generator";
-import { TileA, TileB, TileC } from "./src/tiles";
+import { TileA, TileB, TileC, TileF } from "./src/tiles";
 
 export default {
   children: [
@@ -30,7 +30,15 @@ export default {
       },
       name: "TileC (Top image, 22pt headline, no teaser",
       type: "story"
-    }
+    },
+    {
+      component: () => {
+        const slice = mockLeadOneFullWidthSlice();
+        return <TileF tile={slice.lead} />;
+      },
+      name: "TileF (No image, 35pt headline with teaser)",
+      type: "story"
+    },
   ],
   name: "Composed/Edition/Tiles"
 };
