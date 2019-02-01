@@ -53,6 +53,11 @@ const sizes = {
       height: 250,
       sizes: [[300, 250]],
       width: 300
+    },
+    {
+      height: 480,
+      sizes: [[320, 480]],
+      width: 320
     }
   ],
   pixel: [
