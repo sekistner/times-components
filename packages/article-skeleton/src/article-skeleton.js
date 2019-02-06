@@ -18,7 +18,7 @@ import {
 } from "./article-skeleton-prop-types";
 import listViewDataHelper from "./data-helper";
 import articleTrackingContext from "./article-tracking-context";
-import insertDropcapIntoAST from "./dropcap-util";
+import { templateWithDropCaps } from "./dropcap-util";
 import styles from "./styles/shared";
 
 const listViewPageSize = 1;
@@ -35,7 +35,8 @@ const renderRow = analyticsStream => (
   onTopicPress,
   onTwitterLinkPress,
   onVideoPress,
-  interactiveConfig
+  interactiveConfig,
+  dropcapsDisabled
 ) => {
   // eslint-disable-next-line default-case
   switch (rowData.type) {
@@ -47,6 +48,7 @@ const renderRow = analyticsStream => (
           onLinkPress={onLinkPress}
           onTwitterLinkPress={onTwitterLinkPress}
           onVideoPress={onVideoPress}
+          dropcapsDisabled={dropcapsDisabled}
         />
       );
     }
@@ -133,23 +135,14 @@ class ArticleSkeleton extends Component {
       receiveChildList
     } = this.props;
     const { dataSource, width } = this.state;
-    const { dropcapsDisabled, template } = dataSource;
+    const { dropcapsDisabled, template, content } = dataSource;
     if (!dataSource.content) {
       return null;
     }
 
-    const newContent = [...dataSource.content];
-    if (newContent && newContent.length > 0) {
-      newContent[0] = insertDropcapIntoAST(
-        newContent[0],
-        template,
-        dropcapsDisabled
-      );
-    }
-
     const articleOrganised = listViewDataHelper({
       ...dataSource,
-      content: newContent
+      content
     });
     const articleData = articleOrganised.map((item, index) => ({
       ...item,
@@ -158,7 +151,7 @@ class ArticleSkeleton extends Component {
     }));
 
     receiveChildList(articleData);
-
+    
     return (
       <AdComposer adConfig={adConfig}>
         <Responsive>
@@ -182,6 +175,7 @@ class ArticleSkeleton extends Component {
             renderRow={renderRow(analyticsStream)}
             scrollRenderAheadDistance={listViewScrollRenderAheadDistance}
             width={width}
+            dropcapsDisabled={dropcapsDisabled || !templateWithDropCaps.includes(template) || false}
           />
         </Responsive>
       </AdComposer>

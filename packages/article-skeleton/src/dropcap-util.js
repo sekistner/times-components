@@ -1,4 +1,4 @@
-const templateWithDropCaps = [
+export const templateWithDropCaps = [
   "indepth",
   "maincomment",
   "magazinestandard",

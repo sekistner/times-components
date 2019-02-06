@@ -25,7 +25,8 @@ const ArticleRow = ({
   interactiveConfig,
   onLinkPress,
   onTwitterLinkPress,
-  onVideoPress
+  onVideoPress,
+  dropcapsDisabled
 }) =>
   renderTree(data, {
     ...coreRenderers,
@@ -122,6 +123,8 @@ const ArticleRow = ({
                 dropCapColour={sectionColour}
                 dropCapFont={dropCapFont}
                 uid={index}
+                dropcapsDisabled={dropcapsDisabled}
+                first={index === 0}
               >
                 {children}
               </ArticleParagraph>

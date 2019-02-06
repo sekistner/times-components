@@ -21,7 +21,8 @@ const ArticleContent = ({
   onVideoPress,
   onViewableItemsChanged,
   renderRow,
-  width
+  width,
+  dropcapsDisabled
 }) => (
   <FlatList
     data={data}
@@ -41,7 +42,8 @@ const ArticleContent = ({
         onTopicPress,
         onTwitterLinkPress,
         onVideoPress,
-        interactiveConfig
+        interactiveConfig,
+        dropcapsDisabled
       )
     }
     testID="flat-list-article"
@@ -69,14 +71,16 @@ ArticleContent.propTypes = {
   onVideoPress: PropTypes.func.isRequired,
   onViewableItemsChanged: PropTypes.func,
   renderRow: PropTypes.func.isRequired,
-  width: PropTypes.number
+  width: PropTypes.number,
+  dropcapsDisabled: PropTypes.bool
 };
 
 ArticleContent.defaultProps = {
   Header: () => null,
   interactiveConfig: {},
   onViewableItemsChanged: () => {},
-  width: null
+  width: null,
+  dropcapsDisabled: true
 };
 
 export default ArticleContent;

@@ -74,7 +74,7 @@ class DropCapParagraph extends Component {
   }
 
   renderChildren() {
-    const { colour, dropCap, font, scale, text } = this.props;
+    const { colour, font, scale, text } = this.props;
     const stylesThemedAndScaled = styleFactory(font, scale);
 
     return [
@@ -90,13 +90,13 @@ class DropCapParagraph extends Component {
                 }
               ]}
             >
-              {dropCap}
+              {text[0]}
             </Text>
           </View>
         )}
       </InlineElement>,
       <Text selectable style={stylesThemedAndScaled.articleTextElement}>
-        {text}
+        {text.slice(1)}
       </Text>
     ];
   }

@@ -14,17 +14,19 @@ const ArticleParagraphWrapper = ({
   children,
   dropCapColour,
   dropCapFont,
-  uid
+  uid,
+  dropcapsDisabled,
+  first
 }) => {
   const { children: astChildren } = ast;
   if (!astChildren || astChildren.length === 0) {
     return null;
   }
 
-  const { name, attributes } = astChildren[0];
-  if (name === "dropCap") {
+  const { attributes } = astChildren[0];
+  if (!dropcapsDisabled && first) {
     const { value } = attributes;
-    const text = renderTreeAsText(ast).slice(1);
+    const text = renderTreeAsText(ast);
     return (
       <DropCapWrapper
         colour={dropCapColour}
@@ -48,12 +50,15 @@ ArticleParagraphWrapper.propTypes = {
   children: PropTypes.node.isRequired,
   dropCapColour: dropCapPropTypes.colour,
   dropCapFont: dropCapPropTypes.font,
-  uid: PropTypes.number.isRequired
+  uid: PropTypes.number.isRequired,
+  dropcapsDisabled: PropTypes.bool.isRequired,
+  first: PropTypes.bool
 };
 
 ArticleParagraphWrapper.defaultProps = {
   dropCapColour: dropCapDefaultProps.dropCapColour,
-  dropCapFont: dropCapDefaultProps.font
+  dropCapFont: dropCapDefaultProps.font,
+  first: false
 };
 
 export default ArticleParagraphWrapper;
