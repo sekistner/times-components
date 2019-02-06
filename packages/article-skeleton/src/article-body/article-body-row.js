@@ -1,5 +1,5 @@
 import React from "react";
-import { View } from "react-native";
+import { View, Text } from "react-native";
 import PropTypes from "prop-types";
 import ArticleImage from "@times-components/article-image";
 import ArticleParagraph from "@times-components/article-paragraph";
@@ -30,6 +30,12 @@ const ArticleRow = ({
 }) =>
   renderTree(data, {
     ...coreRenderers,
+    textFlow(key, attributes, renderedChildren) {
+      return {
+        shouldRenderChildren: false,
+        element: <View>{renderedChildren}</View>
+      }
+    },
     ad(key, attributes) {
       return {
         element: (

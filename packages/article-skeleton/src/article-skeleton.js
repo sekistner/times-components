@@ -151,12 +151,36 @@ class ArticleSkeleton extends Component {
     }));
 
     receiveChildList(articleData);
+
+    const articleDropcapsDisabled = dropcapsDisabled || !templateWithDropCaps.includes(template) || false;
+
+    const articleDataNew = [...articleData];
+    for (let idx = 0; idx < articleData.length; idx += 1) {
+      const row = articleData[idx];
+      const { data } = row;
+      if (idx === 0 && data.name === "paragraph" && !articleDropcapsDisabled) {
+        const children = [];
+        let next = articleData[idx + 1];
+        while (next && next.data.name === "paragraph") {
+          idx += 1;
+          children.push(next.data);
+          next = articleData[idx + 1];
+        }
+        articleDataNew[0] = {
+          ...row,
+          data: {
+            name: 'textFlow',
+            children: [row.data].concat(children)
+          }
+        }
+      }
+    };
     
     return (
       <AdComposer adConfig={adConfig}>
         <Responsive>
           <ArticleContent
-            data={articleData}
+            data={articleDataNew}
             Header={Header}
             initialListSize={listViewSize}
             interactiveConfig={interactiveConfig}
@@ -175,7 +199,7 @@ class ArticleSkeleton extends Component {
             renderRow={renderRow(analyticsStream)}
             scrollRenderAheadDistance={listViewScrollRenderAheadDistance}
             width={width}
-            dropcapsDisabled={dropcapsDisabled || !templateWithDropCaps.includes(template) || false}
+            dropcapsDisabled={articleDropcapsDisabled}
           />
         </Responsive>
       </AdComposer>
