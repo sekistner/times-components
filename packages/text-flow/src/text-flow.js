@@ -49,42 +49,31 @@ class TextFlow extends Component {
   }
 
   async calculateLayout() {
-    const { elements, results } = measureElements(this.renderChildren());
-    const { screenWidth: width } = this.state;
-    this.setState({
-      content: elements
-    });
-    const sizes = await results;
-    const [laidOut, height] = layoutText(width, sizes);
-    this.setState({
-      content: laidOut,
-      height,
-      needsLayout: false
-    });
+    const children = this.renderChildren();
+    if (children.length) {
+      const { elements, results } = measureElements(this.renderChildren());
+      const { screenWidth: width } = this.state;
+      this.setState({
+        content: elements
+      });
+      const sizes = await results;
+      const [laidOut, height] = layoutText(width, sizes);
+      this.setState({
+        content: laidOut,
+        height,
+        needsLayout: false
+      });
+    }
   }
 
   renderChildren() {
-    const { elements } = this.props;
-
-    return [
-      <InlineElement align="left" start={0}>
-        {style => (
-          <View key="dropcap" style={[style]}>
-            <Text
-              selectable
-            >
-            </Text>
-          </View>
-        )}
-      </InlineElement>,
-      <Text selectable>
-      </Text>
-    ];
+    return [];
   }
 
   render() {
     const { elements } = this.props;
     const { height, needsLayout, content } = this.state;
+    console.warn(elements)
 
     return (
       <View
@@ -101,9 +90,7 @@ class TextFlow extends Component {
 }
 
 TextFlow.propTypes = {
-  dropCap: PropTypes.string.isRequired,
-  scale: PropTypes.string.isRequired,
-  text: PropTypes.string.isRequired
+  elements: PropTypes.array.isRequired
 };
 
 TextFlow.defaultProps = {};
