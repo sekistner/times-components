@@ -10,9 +10,8 @@ import {
 } from "@times-components/utils";
 import { tabletWidth } from "@times-components/styleguide";
 import styleFactory from "./styles";
-import { propTypes, defaultProps } from "./drop-cap-prop-types";
 
-class DropCapParagraph extends Component {
+class TextFlow extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -28,13 +27,12 @@ class DropCapParagraph extends Component {
   }
 
   componentDidUpdate(prev) {
-    const { scale, font, text, dropCap } = this.props;
-    const { scale: pScale, font: pFont, text: pText, dropCap: pDropCap } = prev;
+    const { scale, font, paragraphs } = this.props;
+    const { scale: pScale, font: pFont, paragraphs: pParagraphs } = prev;
     if (
       scale !== pScale ||
       font !== pFont ||
-      text !== pText ||
-      dropCap !== pDropCap
+      paragraphs !== pParagraphs
     ) {
       // eslint-disable-next-line react/no-did-update-set-state
       this.setState(
@@ -76,10 +74,11 @@ class DropCapParagraph extends Component {
   }
 
   renderChildren() {
-    const { colour, font, scale, text } = this.props;
+    const { font, scale, children } = this.props;
     const stylesThemedAndScaled = styleFactory(font, scale);
+    const 
 
-    return [
+    /* return [
       <InlineElement align="left" start={0}>
         {style => (
           <View key="dropcap" style={[style]}>
@@ -101,10 +100,11 @@ class DropCapParagraph extends Component {
         {text.slice(1)}
       </Text>
     ];
+    */
   }
 
   render() {
-    const { font, scale, text, dropCap } = this.props;
+    const { font, scale } = this.props;
     const { height, needsLayout, content } = this.state;
     const stylesThemedAndScaled = styleFactory(font, scale);
 
@@ -114,11 +114,9 @@ class DropCapParagraph extends Component {
           <View
             style={[
               stylesThemedAndScaled.articleMainContentRow,
-              stylesThemedAndScaled.dropCapContainer,
               {
                 height
-              },
-              isTablet && stylesThemedAndScaled.dropCapContainerTablet
+              }
             ]}
           >
             {needsLayout === true && (
@@ -126,7 +124,6 @@ class DropCapParagraph extends Component {
                 selectable
                 style={[stylesThemedAndScaled.articleTextElement]}
               >
-                {dropCap + text}
               </Text>
             )}
             {content.length !== 0 && measureContainer(content)}
@@ -137,13 +134,12 @@ class DropCapParagraph extends Component {
   }
 }
 
-DropCapParagraph.propTypes = {
-  ...propTypes,
-  dropCap: PropTypes.string.isRequired,
-  scale: PropTypes.string.isRequired,
-  text: PropTypes.string.isRequired
+TextFlow.propTypes = {
+
 };
 
-DropCapParagraph.defaultProps = defaultProps;
+TextFlow.defaultProps = {
 
-export default DropCapParagraph;
+};
+
+export default TextFlow;
