@@ -13,6 +13,7 @@ import PullQuote from "@times-components/pull-quote";
 import { ResponsiveContext } from "@times-components/responsive";
 import { colours } from "@times-components/styleguide";
 import { screenWidth } from "@times-components/utils";
+import TextFlow from "@times-components/text-flow";
 import Video from "@times-components/video";
 import ArticleLink from "./article-link";
 import InsetCaption from "./inset-caption";
@@ -30,10 +31,10 @@ const ArticleRow = ({
 }) =>
   renderTree(data, {
     ...coreRenderers,
-    textFlow(key, attributes, renderedChildren) {
+    textFlow(key, attributes, children, idx, node) {
       return {
         shouldRenderChildren: false,
-        element: <View>{renderedChildren}</View>
+        element: <TextFlow/>
       }
     },
     ad(key, attributes) {

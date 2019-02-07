@@ -7,7 +7,7 @@ import {
   measureContainer,
   layoutText,
   InlineElement
-} from "@times-components/utils";
+} from "./layout";
 import { tabletWidth } from "@times-components/styleguide";
 import styleFactory from "./styles";
 
@@ -76,7 +76,8 @@ class TextFlow extends Component {
   renderChildren() {
     const { font, scale, children } = this.props;
     const stylesThemedAndScaled = styleFactory(font, scale);
-    const 
+
+    return []
 
     /* return [
       <InlineElement align="left" start={0}>

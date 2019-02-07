@@ -175,7 +175,7 @@ class ArticleSkeleton extends Component {
         }
       }
     };
-    
+
     return (
       <AdComposer adConfig={adConfig}>
         <Responsive>
