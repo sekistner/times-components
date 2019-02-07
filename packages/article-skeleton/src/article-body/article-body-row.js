@@ -34,7 +34,7 @@ const ArticleRow = ({
     textFlow(key, attributes, children, idx, node) {
       return {
         shouldRenderChildren: false,
-        element: <TextFlow/>
+        element: <TextFlow elements={children} />
       }
     },
     ad(key, attributes) {
