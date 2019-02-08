@@ -9,6 +9,8 @@ import {
   InlineElement,
 } from "./layout";
 import { screenWidth } from "@times-components/utils";
+import { renderTree } from "@times-components/markup-forest";
+import coreRenderers from "@times-components/markup";
 
 class TextFlow extends Component {
   constructor(props) {
@@ -73,7 +75,16 @@ class TextFlow extends Component {
   render() {
     const { elements } = this.props;
     const { height, needsLayout, content } = this.state;
-    console.warn(elements)
+
+    const renderers = {
+      paragraph(key, attributes) {
+        return {
+          element: <Text>Foobar</Text>
+        }
+      }
+    }
+
+    const rendered = elements.map(child => renderTree(child, renderers));
 
     return (
       <View
@@ -84,6 +95,7 @@ class TextFlow extends Component {
         ]}
       >
         {content.length !== 0 && measureContainer(content)}
+        {rendered}
       </View>
     );
   }
