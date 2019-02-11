@@ -85,12 +85,25 @@ class TextFlow extends Component {
           element: renderedChildren
         }
       },
+      bold(key, attrs, renderedChildren) {
+        return {
+          shouldRenderChildren: true,
+          element: renderedChildren.map(child => {
+            return React.cloneElement(child, {
+              style: {
+                ...child.props.style,
+                fontWeight: "bold"
+              }
+            })
+          })
+        }
+      },
       text(key, attrs) {
         return {
           element: <Text style={stylesThemedAndScaled.articleTextElement}>{attrs.value}</Text>
         }
       },
-      dropcap(key, attrs, renderChildren) {
+      dropcap(key, attrs, renderedChildren) {
         return {
           element: (<InlineElement align="left" start={0}>
             {style =>
@@ -102,12 +115,14 @@ class TextFlow extends Component {
                 </Text>
               </View>
             }
-          </InlineElement>)
+          </InlineElement>
+          )
         }
       }
     };
 
     const children = elements.map(element => renderTree(element, renderers));
+
     return children;
   }
 

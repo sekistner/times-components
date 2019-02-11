@@ -150,7 +150,7 @@ export const layoutText = (width, { inlines, words, inlineSizes }) => {
   }
 
   let lines = 0;
-  const result = [[]];
+  const result = [];
   let height = 0;
 
   for (let i = 0; i < paragraphs.length; i += 1) {
@@ -160,7 +160,6 @@ export const layoutText = (width, { inlines, words, inlineSizes }) => {
       paragraph = paragraph.slice(1);
     }
     while (result.length === i) {
-      console.warn('===', paragraph)
       const nodes = align(
         lines,
         paragraph,
@@ -175,6 +174,9 @@ export const layoutText = (width, { inlines, words, inlineSizes }) => {
           lines += node + 1;
           result.push([])
         } else {
+          if (!result[result.length - 1]) {
+            result.push([])
+          };
           result[result.length - 1].push(node);
         }
       }

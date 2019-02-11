@@ -166,10 +166,14 @@ class ArticleSkeleton extends Component {
             children: []
           },
           {
-            ...data.children[0],
-            attributes: {
-              value: data.children[0].attributes.value.slice(1)
-            }
+            ...data,
+            children: [{
+              ...data.children[0],
+              attributes: {
+                ...data.children[0].attributes,
+                value: data.children[0].attributes.value.slice(1)
+              }
+            }].concat(data.children.slice(1))
           }
         ];
         let next = articleData[idx + 1];
