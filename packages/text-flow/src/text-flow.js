@@ -100,7 +100,7 @@ class TextFlow extends Component {
       },
       text(key, attrs) {
         return {
-          element: <Text style={stylesThemedAndScaled.articleTextElement}>{attrs.value}</Text>
+          element: <Text style={stylesThemedAndScaled.articleTextElement}>{attrs.value.trim()}</Text>
         }
       },
       dropcap(key, attrs, renderedChildren) {

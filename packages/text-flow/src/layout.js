@@ -137,7 +137,7 @@ export const layoutText = (width, { inlines, words, inlineSizes }) => {
     });
   }
 
-  const paragraphs = [[]];
+  let paragraphs = [[]];
   for (let i = 0; i < words.length; i += 1) {
     const word = words[i];
     if (word.value === " ") {
@@ -149,6 +149,10 @@ export const layoutText = (width, { inlines, words, inlineSizes }) => {
     paragraphs[paragraphs.length - 1].push(word);
   }
 
+  paragraphs = paragraphs.filter(p => {
+    return p.map(w => w.value.trim()).join("") !== ""
+  });
+
   let lines = 0;
   const result = [];
   let height = 0;
@@ -159,7 +163,7 @@ export const layoutText = (width, { inlines, words, inlineSizes }) => {
     if (paragraph[0].value === " ") {
       paragraph = paragraph.slice(1);
     }
-    while (result.length === i) {
+    while (true) {
       const nodes = align(
         lines,
         paragraph,
@@ -179,6 +183,9 @@ export const layoutText = (width, { inlines, words, inlineSizes }) => {
           };
           result[result.length - 1].push(node);
         }
+      }
+      if (nodes.length) {
+        break
       }
       tolerance += 1;
     }
