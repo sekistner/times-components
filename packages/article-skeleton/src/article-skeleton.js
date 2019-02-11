@@ -176,6 +176,7 @@ class ArticleSkeleton extends Component {
         while (next && next.data.name === "paragraph") {
           idx += 1;
           children.push(next.data);
+          articleDataNew[idx + 1] = null;
           next = articleData[idx + 1];
         }
         articleDataNew[0] = {
@@ -192,7 +193,7 @@ class ArticleSkeleton extends Component {
       <AdComposer adConfig={adConfig}>
         <Responsive>
           <ArticleContent
-            data={articleDataNew}
+            data={articleDataNew.slice(0, 1)}
             Header={Header}
             initialListSize={listViewSize}
             interactiveConfig={interactiveConfig}

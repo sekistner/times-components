@@ -73,10 +73,20 @@ export const measureInline = elements => {
   };
 };
 
+const flatten = children => {
+  return children.reduce((acc, child) => {
+    if (Array.isArray(child)) {
+      return acc.concat(flatten(child))
+    } else {
+      return acc.concat([child])
+    }
+  }, [])
+}
+
 export function measureElements(childElements) {
-  const children = Array.isArray(childElements)
+  const children = flatten(Array.isArray(childElements)
     ? childElements
-    : [childElements];
+    : [childElements]);
   const inlines = children.filter(el => el.type === InlineElement);
   const textEls = children.filter(el => typeof el.props.children === "string");
 
@@ -132,21 +142,25 @@ export const layoutText = (width, { inlines, words, inlineSizes }) => {
     const word = words[i];
     if (word.value === " ") {
       paragraphs[paragraphs.length - 1].push(word);
-      paragraphs.push([]);
+      if (i !== (words.length - 1)) {
+        paragraphs.push([]);
+      };
     }
     paragraphs[paragraphs.length - 1].push(word);
   }
 
   let lines = 0;
-  const result = [];
+  const result = [[]];
   let height = 0;
+
   for (let i = 0; i < paragraphs.length; i += 1) {
     let paragraph = paragraphs[i];
     let tolerance = 1;
     if (paragraph[0].value === " ") {
       paragraph = paragraph.slice(1);
     }
-    while (!result.length) {
+    while (result.length === i) {
+      console.warn('===', paragraph)
       const nodes = align(
         lines,
         paragraph,
@@ -159,14 +173,14 @@ export const layoutText = (width, { inlines, words, inlineSizes }) => {
         const node = nodes[j];
         if (typeof node === "number") {
           lines += node + 1;
+          result.push([])
         } else {
-          result.push(node);
+          result[result.length - 1].push(node);
         }
       }
       tolerance += 1;
     }
     height = paragraph[0].height * lines;
-    break;
   }
   return [result, height];
 };

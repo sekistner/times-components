@@ -13,6 +13,7 @@ import { renderTree } from "@times-components/markup-forest";
 import coreRenderers from "@times-components/markup";
 import styleFactory from "./styles";
 import Context from "@times-components/context";
+import { colours } from "@times-components/styleguide";
 
 class TextFlow extends Component {
   constructor(props) {
@@ -73,14 +74,15 @@ class TextFlow extends Component {
 
   renderChildren() {
     const { elements, theme } = this.props;
-    const { dropCap, scale } = theme;
-    const stylesThemedAndScaled = styleFactory(dropCap, scale);
+    const { dropCapFont, scale } = theme;
+    const stylesThemedAndScaled = styleFactory(dropCapFont, scale);
 
     const renderers = {
       ...coreRenderers,
       paragraph(key, attrs, renderedChildren) {
         return {
-          element: <Text style={stylesThemedAndScaled.articleTextElement}>{renderedChildren.join("")}</Text>
+          shouldRenderChildren: true,
+          element: renderedChildren
         }
       },
       text(key, attrs) {
@@ -93,7 +95,9 @@ class TextFlow extends Component {
           element: (<InlineElement align="left" start={0}>
             {style =>
               <View style={style}>
-                <Text style={stylesThemedAndScaled.dropCapTextElement}>
+                <Text style={[stylesThemedAndScaled.dropCapTextElement, {
+                  color: theme.sectionColour || colours.section.default
+                }]}>
                   {attrs.value}
                 </Text>
               </View>
@@ -103,7 +107,8 @@ class TextFlow extends Component {
       }
     };
 
-    return elements.map(element => renderTree(element, renderers));
+    const children = elements.map(element => renderTree(element, renderers));
+    return children;
   }
 
   render() {
