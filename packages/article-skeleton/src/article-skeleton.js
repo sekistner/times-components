@@ -159,7 +159,19 @@ class ArticleSkeleton extends Component {
       const row = articleData[idx];
       const { data } = row;
       if (idx === 0 && data.name === "paragraph" && !articleDropcapsDisabled) {
-        const children = [];
+        const children = [
+          {
+            name: 'dropcap',
+            attributes: { value: data.children[0].attributes.value[0] },
+            children: []
+          },
+          {
+            ...data.children[0],
+            attributes: {
+              value: data.children[0].attributes.value.slice(1)
+            }
+          }
+        ];
         let next = articleData[idx + 1];
         while (next && next.data.name === "paragraph") {
           idx += 1;
@@ -170,7 +182,7 @@ class ArticleSkeleton extends Component {
           ...row,
           data: {
             name: 'textFlow',
-            children: [row.data].concat(children)
+            children
           }
         }
       }

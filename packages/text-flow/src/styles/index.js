@@ -1,8 +1,13 @@
-import { StyleSheet } from "react-native";
-import sharedStyles from "./shared";
+import { spacing } from "@times-components/styleguide";
+import sharedStylesFactory from "./shared";
 
-const styles = StyleSheet.create({
-  ...sharedStyles
-});
-
-export default styles;
+export default (dropCapFont, scale) => {
+  const sharedStyles = sharedStylesFactory(dropCapFont, scale);
+  return {
+    ...sharedStyles,
+    articleTextElement: {
+      ...sharedStyles.articleTextElement,
+      marginBottom: spacing(4)
+    }
+  };
+};

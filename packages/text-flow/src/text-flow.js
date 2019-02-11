@@ -11,6 +11,8 @@ import {
 import { screenWidth } from "@times-components/utils";
 import { renderTree } from "@times-components/markup-forest";
 import coreRenderers from "@times-components/markup";
+import styleFactory from "./styles";
+import Context from "@times-components/context";
 
 class TextFlow extends Component {
   constructor(props) {
@@ -56,7 +58,8 @@ class TextFlow extends Component {
       const { elements, results } = measureElements(this.renderChildren());
       const { screenWidth: width } = this.state;
       this.setState({
-        content: elements
+        content: elements,
+        needsLayout: true
       });
       const sizes = await results;
       const [laidOut, height] = layoutText(width, sizes);
@@ -69,33 +72,57 @@ class TextFlow extends Component {
   }
 
   renderChildren() {
-    return [];
+    const { elements, theme } = this.props;
+    const { dropCap, scale } = theme;
+    const stylesThemedAndScaled = styleFactory(dropCap, scale);
+
+    const renderers = {
+      ...coreRenderers,
+      paragraph(key, attrs, renderedChildren) {
+        return {
+          element: <Text style={stylesThemedAndScaled.articleTextElement}>{renderedChildren.join("")}</Text>
+        }
+      },
+      text(key, attrs) {
+        return {
+          element: <Text style={stylesThemedAndScaled.articleTextElement}>{attrs.value}</Text>
+        }
+      },
+      dropcap(key, attrs, renderChildren) {
+        return {
+          element: (<InlineElement align="left" start={0}>
+            {style =>
+              <View style={style}>
+                <Text style={stylesThemedAndScaled.dropCapTextElement}>
+                  {attrs.value}
+                </Text>
+              </View>
+            }
+          </InlineElement>)
+        }
+      }
+    };
+
+    return elements.map(element => renderTree(element, renderers));
   }
 
   render() {
-    const { elements } = this.props;
     const { height, needsLayout, content } = this.state;
-
-    const renderers = {
-      paragraph(key, attributes) {
-        return {
-          element: <Text>Foobar</Text>
-        }
-      }
-    }
-
-    const rendered = elements.map(child => renderTree(child, renderers));
+    const { elements, theme, isTablet } = this.props;
+    const { dropCap, scale } = theme;
+    const stylesThemedAndScaled = styleFactory(dropCap, scale);
 
     return (
       <View
         style={[
+          stylesThemedAndScaled.articleMainContentRow,
           {
             height
           },
+          isTablet && stylesThemedAndScaled.dropCapContainerTablet,
         ]}
       >
         {content.length !== 0 && measureContainer(content)}
-        {rendered}
       </View>
     );
   }
@@ -108,11 +135,15 @@ TextFlow.propTypes = {
 TextFlow.defaultProps = {};
 
 export default props => (
-  <ResponsiveContext.Consumer>
-    {({ isTablet }) => (
-      <TextFlow {...props} isTablet={isTablet}>
-        {props.children}
-      </TextFlow>
-    )}
-  </ResponsiveContext.Consumer>
+  <Context.Consumer>
+    {({ theme }) =>
+      <ResponsiveContext.Consumer>
+        {({ isTablet }) => (
+          <TextFlow {...props} theme={theme} isTablet={isTablet}>
+            {props.children}
+          </TextFlow>
+        )}
+      </ResponsiveContext.Consumer>
+    }
+  </Context.Consumer>
 );

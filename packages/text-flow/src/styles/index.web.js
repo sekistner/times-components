@@ -1,12 +1,11 @@
-import { StyleSheet } from "react-native";
-import sharedStyles from "./shared";
+import sharedStylesFactory from "./shared";
 
-const styles = StyleSheet.create({
+const sharedStyles = sharedStylesFactory();
+
+export default {
   ...sharedStyles,
-  TextFlowBody: {
-    ...sharedStyles.TextFlowBody,
-    color: "blue"
+  articleTextElement: {
+    ...sharedStyles.articleTextElement,
+    marginTop: 0
   }
-});
-
-export default styles;
+};
