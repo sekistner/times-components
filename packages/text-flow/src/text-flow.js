@@ -56,7 +56,7 @@ class TextFlow extends Component {
   async calculateLayout() {
     const children = this.renderChildren();
     if (children.length) {
-      const { elements, results } = measureElements(this.renderChildren());
+      const { elements, results } = measureElements(children);
       const { screenWidth: width } = this.state;
       this.setState({
         content: elements,
@@ -76,6 +76,7 @@ class TextFlow extends Component {
     const { elements, theme } = this.props;
     const { dropCapFont, scale } = theme;
     const stylesThemedAndScaled = styleFactory(dropCapFont, scale);
+    console.error(JSON.stringify(elements, null, 2))
 
     const renderers = {
       ...coreRenderers,
@@ -96,6 +97,24 @@ class TextFlow extends Component {
               }
             })
           })
+        }
+      },
+      italic(key, attrs, renderedChildren) {
+        return {
+          shouldRenderChildren: true,
+          element: renderedChildren.map(child => {
+            return React.cloneElement(child, {
+              style: {
+                ...child.props.style,
+                fontWeight: "italic"
+              }
+            })
+          })
+        }
+      },
+      link() {
+        return {
+          element: <Text>Link</Text>
         }
       },
       text(key, attrs) {

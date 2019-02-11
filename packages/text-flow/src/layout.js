@@ -191,5 +191,13 @@ export const layoutText = (width, { inlines, words, inlineSizes }) => {
     }
     height = paragraph[0].height * lines;
   }
+  const collapsed = result.map(para => {
+    const allText = para.filter(child => typeof child.props.children !== "string").length === 0
+    if (allText && para.length) {
+      return para[0]
+    } else {
+      return para
+    }
+  })
   return [result, height];
 };

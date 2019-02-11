@@ -176,12 +176,13 @@ class ArticleSkeleton extends Component {
             }].concat(data.children.slice(1))
           }
         ];
-        let next = articleData[idx + 1];
+        idx += 1;
+        let next = articleData[idx];
         while (next && next.data.name === "paragraph") {
-          idx += 1;
           children.push(next.data);
-          articleDataNew[idx + 1] = null;
-          next = articleData[idx + 1];
+          articleDataNew[idx] = null;
+          idx += 1;
+          next = articleData[idx];
         }
         articleDataNew[0] = {
           ...row,
@@ -197,7 +198,7 @@ class ArticleSkeleton extends Component {
       <AdComposer adConfig={adConfig}>
         <Responsive>
           <ArticleContent
-            data={articleDataNew.slice(0, 1)}
+            data={articleDataNew.filter(Boolean)}
             Header={Header}
             initialListSize={listViewSize}
             interactiveConfig={interactiveConfig}
