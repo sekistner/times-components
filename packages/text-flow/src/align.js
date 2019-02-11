@@ -129,10 +129,14 @@ export default function align(
         const { value, height: nodeHeight, index: nodeIndex } = node;
         const { style: nStyle } = text[nodeIndex] || { style: null };
         if (node.type === "box") {
-          span.push(value);
+          span.push(value.trim());
           nHeight = nodeHeight;
           style = nStyle;
         }
+      }
+
+      if (!span.filter(v => v !== "").length) {
+        continue
       }
 
       results.push(
