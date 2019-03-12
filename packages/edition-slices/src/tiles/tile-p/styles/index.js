@@ -18,12 +18,12 @@ const styles = {
     alignItems: "center",
     paddingVertical: spacing(4)
   },
-  headline: (breakpoint) => ({
+  headline: breakpoint => ({
     color: colours.functional.brandColour,
     ...fontFactory({
       font: "headline",
       fontSize: "tileLeadHeadline",
-      breakpoint,
+      breakpoint: breakpoint,
       tileName: "TileP"
     }),
     paddingHorizontal: spacing(2),

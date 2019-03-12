@@ -1,21 +1,7 @@
 import scales from "../scales";
 
-const fontSizes = (breakpoint, tilename) => {
-  switch (tilename) {
-    case "TileP": {
-      switch (breakpoint) {
-        case scales.medium:
-          return {
-            tileLeadHeadline: 25
-          };
-        default:
-          return {
-            tileLeadHeadline: 35
-          };
-      }
-    }
-    default:
-      return {
+const fontSizes  = {
+
         articleHeadline: 45,
         articleMeta: 15,
         body: 18,
@@ -50,7 +36,5 @@ const fontSizes = (breakpoint, tilename) => {
         tertiary: 15,
         tileLeadHeadline: 35
       };
-  }
-};
 
 export default fontSizes;

@@ -3,6 +3,7 @@ import TestRenderer from "react-test-renderer";
 import { iterator } from "@times-components/test-utils";
 import { setDimension } from "@times-components/test-utils/dimensions";
 import {
+  mockCommentLeadAndCartoonSlice,
   mockLeadOneAndOneSlice,
   mockLeadOneFullWidthSlice,
   mockLeadTwoNoPicAndTwoSlice,
@@ -65,7 +66,12 @@ const slices = [
     mock: mockSecondaryTwoNoPicAndTwoSlice(),
     name: "secondary two no pic and two slice",
     Slice: SecondaryTwoNoPicAndTwoSlice
-  }
+  },
+  {
+    mock: mockCommentLeadAndCartoonSlice(),
+    name: "Comment lead and cartoon slice",
+    Slice: CommentLeadAndCartoonSlice
+  },
 ];
 
 export default () => {

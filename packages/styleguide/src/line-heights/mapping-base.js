@@ -1,25 +1,7 @@
 import scales from "../scales";
 
-const mapping = (breakpoint, Tilename) => {
-  switch (Tilename) {
-    case "TileP": {
-      switch (breakpoint) {
-        case scales.medium:
-          return {
-            headline: {
-              tileLeadHeadline: 25
-            }
-          };
-        default:
-          return {
-            headline: {
-              tileLeadHeadline: 35
-            }
-          };
-      }
-    }
-    default:
-      return {
+const mapping = {
+
         body: {
           bodyMobile: 26,
           puffLink: 15,
@@ -73,10 +55,7 @@ const mapping = (breakpoint, Tilename) => {
           link: 13,
           meta: 14,
           pagingMeta: 15,
-          tertiary: 17
-        }
-      };
-  }
+          tertiary: 1}
 };
 
 export default mapping;

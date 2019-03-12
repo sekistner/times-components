@@ -6,23 +6,37 @@ import { ResponsiveSlice } from "../shared";
 
 const CommentLeadAndCartoonSlice = ({ onPress, slice: { lead, cartoon } }) => (
   <ResponsiveSlice
-    renderMedium = {editionBreakpoint => (
+    renderMedium={editionBreakpoint => (
       <CommentLeadAndCartoon
         breakpoint={editionBreakpoint}
         renderCartoon={() => (
-        <TileQ onPress={onPress} tile={cartoon} tileName="cartoon" />
+          <TileQ onPress={onPress} tile={cartoon} tileName="cartoon" />
         )}
-        renderLead={() => <TileP onPress={onPress} tile={lead} tileName="lead"  breakpoint={editionBreakpoint}/>}
+        renderLead={() => (
+          <TileP
+            breakpoint={editionBreakpoint}
+            onPress={onPress}
+            tile={lead}
+            tileName="lead"
+          />
+        )}
       />
     )}
-    renderSmall = {editionBreakpoint => (
+    renderSmall={editionBreakpoint => (
       <CommentLeadAndCartoon
         breakpoint={editionBreakpoint}
         renderCartoon={() => (
-        <TileQ onPress={onPress} tile={cartoon} tileName="cartoon" />
+          <TileQ onPress={onPress} tile={cartoon} tileName="cartoon" />
         )}
-        renderLead={() => <TileP onPress={onPress} tile={lead} tileName="lead"  breakpoint={editionBreakpoint}/>}
-       />
+        renderLead={() => (
+          <TileP
+            breakpoint={editionBreakpoint}
+            onPress={onPress}
+            tile={lead}
+            tileName="lead"
+          />
+        )}
+      />
     )}
   />
 );

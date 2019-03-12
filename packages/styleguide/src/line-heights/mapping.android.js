@@ -1,3 +1,4 @@
+import { editionBreakpoints } from "@times-components/styleguide";
 import scales from "../scales";
 import mappingBase from "./mapping-base";
 
@@ -5,7 +6,7 @@ const mapping = ({ breakpoint, scale, tileName }) => {
   switch (scale) {
     case scales.large:
       return {
-        ...mappingBase(breakpoint, tileName),
+        ...mappingBase,
         body: {
           ...mappingBase.body,
           bodyMobile: 31,
@@ -19,7 +20,7 @@ const mapping = ({ breakpoint, scale, tileName }) => {
       };
     case scales.xlarge:
       return {
-        ...mappingBase(breakpoint, tileName),
+        ...mappingBase,
         body: {
           ...mappingBase.body,
           bodyMobile: 33,
@@ -32,23 +33,26 @@ const mapping = ({ breakpoint, scale, tileName }) => {
         }
       };
     default:
-      return {
-        ...mappingBase(breakpoint, tileName);
         switch (tileName) {
           case "TileP": {
             switch (breakpoint) {
-              case scales.medium:
+              case editionBreakpoints.medium:
                 return {
-                  tileLeadHeadline: 25
+                  headline: {
+                    tileLeadHeadline: 25
+                  }
                 };
               default:
                 return {
-                  tileLeadHeadline: 35
+                  headline: {
+                    tileLeadHeadline: 35
+                  }
                 };
             }
           }
-        }
-      }
+        default:
+         return {...mappingBase}
+    }
   }
 };
 

@@ -18,6 +18,7 @@ class TileP extends Component {
   render() {
     const { onPress, tile, breakpoint } = this.props;
     const { containerWidth } = this.state;
+    console.log('breakpoint in tile is: ', breakpoint);
     return (
       <TileLink onPress={onPress} tile={tile}>
         <View

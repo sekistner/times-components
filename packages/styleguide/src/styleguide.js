@@ -56,15 +56,15 @@ export {
 };
 export default ({
   scale = scales.medium,
-  breakpoint = null,
-  tileName = null
+  breakpoint,
+  tileName
 } = {}) => ({
   Animations,
   colours,
-  fontFactory: timesFontFactory(scale, breakpoint, tileName),
+  fontFactory: timesFontFactory(breakpoint, scale, tileName),
   fonts,
-  fontSizes: timesFontSizes(scale, breakpoint, tileName),
-  lineHeight: timesLineHeightsFactory(scale, breakpoint, tileName),
+  fontSizes: timesFontSizes(breakpoint, scale, tileName),
+  lineHeight: timesLineHeightsFactory(breakpoint, scale, tileName),
   spacing
 });
 

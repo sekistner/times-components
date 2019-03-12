@@ -6,10 +6,24 @@ import { CommentLeadAndCartoon } from "../src/slice-layout";
 export default renderComponent => {
   const tests = [
     {
-      name: "two child element",
+      name: "comment lead and cartoon",
       test() {
         const output = renderComponent(
           <CommentLeadAndCartoon
+            renderCartoon={() => createItem("cartoon-1")}
+            renderLead={() => createItem("lead-1")}
+          />
+        );
+
+        expect(output).toMatchSnapshot();
+      }
+    },
+    {
+      name: "tablet - comment lead and cartoon",
+      test() {
+        const output = renderComponent(
+          <CommentLeadAndCartoon
+            breakpoint={editionBreakpoints.medium}
             renderCartoon={() => createItem("cartoon-1")}
             renderLead={() => createItem("lead-1")}
           />
