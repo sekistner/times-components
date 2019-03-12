@@ -1,7 +1,7 @@
 import timesStyleguide from "../styleguide";
 
-export default scale => ({ font, fontSize }) => {
-  const styleguide = timesStyleguide({ scale });
+export default (breakpoint, scale, tileName) => ({ font, fontSize }) => {
+  const styleguide = timesStyleguide({ breakpoint, scale, tileName });
   return {
     fontFamily: styleguide.fonts[font],
     fontSize: styleguide.fontSizes[fontSize],

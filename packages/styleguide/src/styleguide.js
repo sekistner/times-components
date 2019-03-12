@@ -54,12 +54,18 @@ export {
   tabletWidthMax,
   themeFactory
 };
-export default ({ scale = scales.medium } = {}) => ({
+export default ({
+  scale = scales.medium,
+  breakpoint = null,
+  tileName = null
+} = {}) => ({
   Animations,
   colours,
-  fontFactory: timesFontFactory(scale),
+  fontFactory: timesFontFactory(scale, breakpoint, tileName),
   fonts,
-  fontSizes: timesFontSizes(scale),
-  lineHeight: timesLineHeightsFactory(scale),
+  fontSizes: timesFontSizes(scale, breakpoint, tileName),
+  lineHeight: timesLineHeightsFactory(scale, breakpoint, tileName),
   spacing
 });
+
+// Tile is template agnostic

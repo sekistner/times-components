@@ -1,11 +1,11 @@
 import scales from "../scales";
 import sharedFontSizes from "./font-sizes-base";
 
-const fontSizes = scale => {
+const fontSizes = (scale, breakpoint, Tilename) => {
   switch (scale) {
     case scales.large:
       return {
-        ...sharedFontSizes,
+        ...sharedFontSizes(breakpoint, Tilename),
         bodyMobile: 21,
         button: 17,
         cardMetaMobile: 17,
@@ -15,7 +15,7 @@ const fontSizes = scale => {
       };
     case scales.xlarge:
       return {
-        ...sharedFontSizes,
+        ...sharedFontSizes(breakpoint, Tilename),
         bodyMobile: 23,
         button: 18,
         cardMetaMobile: 19,
@@ -24,7 +24,7 @@ const fontSizes = scale => {
         secondary: 23
       };
     default:
-      return sharedFontSizes;
+      return sharedFontSizes(breakpoint, Tilename);
   }
 };
 

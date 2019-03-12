@@ -1,37 +1,56 @@
-const fontSizes = {
-  articleHeadline: 45,
-  articleMeta: 15,
-  body: 18,
-  bodyMobile: 17,
-  button: 16,
-  caption: 13,
-  cardHeadline: 27,
-  cardMeta: 13,
-  cardMetaMobile: 12,
-  commentsGuidelines: 13,
-  commentsHeadline: 27,
-  credits: 9,
-  headline: 30,
-  imageOverlayTextSmall: 11,
-  infoSubText: 15,
-  infoTitle: 22,
-  keyFactsTitle: 15,
-  leadHeadline: 26,
-  link: 13,
-  meta: 14,
-  pageComponentHeadline: 25,
-  pageHeadline: 40,
-  pageHeadlineLarge: 50,
-  pagingMeta: 15,
-  puffLink: 11,
-  secondary: 16,
-  sliceHeadline: 32,
-  smallestHeadline: 20,
-  smallHeadline: 22,
-  strapline: 19,
-  teaser: 14,
-  tertiary: 15,
-  tileLeadHeadline: 35
+import scales from "../scales";
+
+const fontSizes = (breakpoint, tilename) => {
+  switch (tilename) {
+    case "TileP": {
+      switch (breakpoint) {
+        case scales.medium:
+          return {
+            tileLeadHeadline: 25
+          };
+        default:
+          return {
+            tileLeadHeadline: 35
+          };
+      }
+    }
+    default:
+      return {
+        articleHeadline: 45,
+        articleMeta: 15,
+        body: 18,
+        bodyMobile: 17,
+        button: 16,
+        caption: 13,
+        cardHeadline: 27,
+        cardMeta: 13,
+        cardMetaMobile: 12,
+        commentsGuidelines: 13,
+        commentsHeadline: 27,
+        credits: 9,
+        headline: 30,
+        imageOverlayTextSmall: 11,
+        infoSubText: 15,
+        infoTitle: 22,
+        keyFactsTitle: 15,
+        leadHeadline: 26,
+        link: 13,
+        meta: 14,
+        pageComponentHeadline: 25,
+        pageHeadline: 40,
+        pageHeadlineLarge: 50,
+        pagingMeta: 15,
+        puffLink: 11,
+        secondary: 16,
+        sliceHeadline: 32,
+        smallestHeadline: 20,
+        smallHeadline: 22,
+        strapline: 19,
+        teaser: 14,
+        tertiary: 15,
+        tileLeadHeadline: 35
+      };
+  }
 };
 
 export default fontSizes;

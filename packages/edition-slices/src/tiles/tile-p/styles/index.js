@@ -1,6 +1,7 @@
 import {
   colours,
   fonts,
+  fontFactory,
   fontSizes,
   spacing
 } from "@times-components/styleguide";
@@ -17,15 +18,18 @@ const styles = {
     alignItems: "center",
     paddingVertical: spacing(4)
   },
-  headline: {
+  headline: (breakpoint) => ({
     color: colours.functional.brandColour,
-    fontFamily: fonts.headline,
-    fontSize: fontSizes.tileLeadHeadline,
-    lineHeight: 35,
+    ...fontFactory({
+      font: "headline",
+      fontSize: "tileLeadHeadline",
+      breakpoint,
+      tileName: "TileP"
+    }),
     paddingHorizontal: spacing(2),
     paddingTop: spacing(2),
     textAlign: "center"
-  },
+  }),
   imageContainer: {
     borderColor: colours.functional.contrast,
     borderWidth: 1,

@@ -16,7 +16,7 @@ class TileP extends Component {
   };
 
   render() {
-    const { onPress, tile } = this.props;
+    const { onPress, tile, breakpoint } = this.props;
     const { containerWidth } = this.state;
     return (
       <TileLink onPress={onPress} tile={tile}>
@@ -35,7 +35,7 @@ class TileP extends Component {
           <TileSummary
             byline={tile.article.byline}
             bylineStyle={styles.bylineOpinion}
-            headlineStyle={styles.headline}
+            headlineStyle={styles.headline(breakpoint)}
             strapline={tile.strapline}
             straplineStyle={styles.strapline}
             style={styles.summaryContainer}

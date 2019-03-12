@@ -1,11 +1,11 @@
 import scales from "../scales";
 import mappingBase from "./mapping-base";
 
-const mapping = ({ scale }) => {
+const mapping = ({ breakpoint, scale, tileName }) => {
   switch (scale) {
     case scales.large:
       return {
-        ...mappingBase,
+        ...mappingBase(breakpoint, tileName),
         body: {
           ...mappingBase.body,
           bodyMobile: 31,
@@ -19,7 +19,7 @@ const mapping = ({ scale }) => {
       };
     case scales.xlarge:
       return {
-        ...mappingBase,
+        ...mappingBase(breakpoint, tileName),
         body: {
           ...mappingBase.body,
           bodyMobile: 33,
@@ -32,7 +32,23 @@ const mapping = ({ scale }) => {
         }
       };
     default:
-      return mappingBase;
+      return {
+        ...mappingBase(breakpoint, tileName);
+        switch (tileName) {
+          case "TileP": {
+            switch (breakpoint) {
+              case scales.medium:
+                return {
+                  tileLeadHeadline: 25
+                };
+              default:
+                return {
+                  tileLeadHeadline: 35
+                };
+            }
+          }
+        }
+      }
   }
 };
 

@@ -1,6 +1,6 @@
 import lineHeightMapping from "./mapping";
 
-export default scale => ({ font, fontSize }) => {
-  const mapping = lineHeightMapping({ scale });
+export default (breakpoint, scale, tileName) => ({ font, fontSize }) => {
+  const mapping = lineHeightMapping({ breakpoint, scale, tileName });
   return mapping[font][fontSize];
 };
