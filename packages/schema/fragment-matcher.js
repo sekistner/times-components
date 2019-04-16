@@ -5,6 +5,53 @@ const introspectionQueryResultData = {
     types: [
       {
         kind: "UNION",
+        name: "ArticleByline",
+        description: "",
+        fields: null,
+        inputFields: null,
+        interfaces: null,
+        enumValues: null,
+        possibleTypes: [
+          { kind: "OBJECT", name: "TextByline", ofType: null },
+          { kind: "OBJECT", name: "AuthorByline", ofType: null }
+        ]
+      },
+      {
+        kind: "INTERFACE",
+        name: "Byline",
+        description: "",
+        fields: [
+          {
+            name: "byline",
+            description: "",
+            args: [],
+            type: {
+              kind: "NON_NULL",
+              name: null,
+              ofType: { kind: "SCALAR", name: "Markup", ofType: null }
+            },
+            isDeprecated: false,
+            deprecationReason: null
+          },
+          {
+            name: "image",
+            description: "",
+            args: [],
+            type: { kind: "OBJECT", name: "Image", ofType: null },
+            isDeprecated: false,
+            deprecationReason: null
+          }
+        ],
+        inputFields: null,
+        interfaces: null,
+        enumValues: null,
+        possibleTypes: [
+          { kind: "OBJECT", name: "TextByline", ofType: null },
+          { kind: "OBJECT", name: "AuthorByline", ofType: null }
+        ]
+      },
+      {
+        kind: "UNION",
         name: "Media",
         description: "",
         fields: null,
@@ -59,6 +106,26 @@ const introspectionQueryResultData = {
                   kind: "NON_NULL",
                   name: null,
                   ofType: { kind: "OBJECT", name: "Tile", ofType: null }
+                }
+              }
+            },
+            isDeprecated: false,
+            deprecationReason: null
+          },
+          {
+            name: "sections",
+            description: "",
+            args: [],
+            type: {
+              kind: "NON_NULL",
+              name: null,
+              ofType: {
+                kind: "LIST",
+                name: null,
+                ofType: {
+                  kind: "NON_NULL",
+                  name: null,
+                  ofType: { kind: "INTERFACE", name: "Section", ofType: null }
                 }
               }
             },

@@ -54,7 +54,7 @@
     "prettier": "1.14.3"
   },
   "peerDependencies": {
-    "react-native-web": "0.9.0",
+    "react-native-web": "0.11.0",
     "webpack": ">=4.2.0"
   },
   "publishConfig": {
