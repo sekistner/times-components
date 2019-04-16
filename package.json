@@ -33,7 +33,7 @@
     "storybook:test-build": "build-storybook -c .storybook -s ./dist/public",
     "storybook:publish": "./lib/publish_storybook.sh",
     "prestorybook-native": "rnstl && node ./lib/fetch-fonts",
-    "storybook-native": "storybook -c .storybook.native start -p 7007 --haul ./.storybook.native/webpack.haul.storybook.js --platform all",
+    "storybook-native": "storybook -c .storybook.native start -p 7007 ./.storybook.native/webpack.haul.storybook.js --platform all",
     "preios": "yarn fetch-fonts",
     "ios": "react-native run-ios --no-packager",
     "ios:build-lib": "lerna run --scope @times-components/ios-app build:all --stream",
@@ -142,8 +142,8 @@
     "node-fetch": "2.2.0",
     "prettier": "1.14.3",
     "prop-types": "15.6.2",
-    "react": "16.5.2",
-    "react-dom": "16.5.2",
+    "react": "16.8.3",
+    "react-dom": "16.8.3",
     "react-native": "0.59.4",
     "react-native-storybook-loader": "1.5.1",
     "react-native-web": "0.11.0",
@@ -159,7 +159,7 @@
   },
   "dependencies": {
     "aws-sdk": "2.238.1",
-    "react-art": "16.5.2",
+    "react-art": "16.8.3",
     "react-native": "0.59.4",
     "react-native-showcase-loader": "1.1.0"
   }

@@ -36,9 +36,9 @@
     "eslint": "5.9.0",
     "jest": "23.6.0",
     "prettier": "1.14.3",
-    "react-art": "16.5.2",
+    "react-art": "16.8.3",
     "react-native-web": "0.11.0",
-    "react-test-renderer": "16.5.2"
+    "react-test-renderer": "16.8.3"
   },
   "dependencies": {
     "@storybook/addon-actions": "^4.0.0-alpha.25",
@@ -50,9 +50,9 @@
     "apollo-link-http": "1.5.3",
     "babel-runtime": "6.26.0",
     "prop-types": "15.6.2",
-    "react": "16.5.2",
+    "react": "16.8.3",
     "react-apollo": "2.1.4",
-    "react-test-renderer": "16.5.2"
+    "react-test-renderer": "16.8.3"
   },
   "peerDependencies": {
     "react": ">=16.5",
