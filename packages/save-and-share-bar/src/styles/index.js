@@ -23,7 +23,7 @@ const styles = {
       line-height: 45px;
       height: 40px;
       width: 40px;
-      
+
       &:hover {
         background-color: ${colours.functional.whiteGrey};
       }
@@ -32,7 +32,7 @@ const styles = {
   rowItem: {
     alignItems: "center",
     flexDirection: "row",
-    padding: spacing(3)
+    paddingVertical: spacing(2)
   },
   svgIcon: {
     fb: {
@@ -51,7 +51,7 @@ const styles = {
 const clickedStyles = {
   clickedLink: {
     base: `
-      ${styles.link.base} 
+      ${styles.link.base}
       &:hover {
         background-color: ${colours.functional.keyline};
       }
