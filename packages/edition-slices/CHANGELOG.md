@@ -3,6 +3,41 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.54.3](https://github.com/newsuk/times-components/compare/@times-components/edition-slices@0.54.2...@times-components/edition-slices@0.54.3) (2019-04-18)
+
+**Note:** Version bump only for package @times-components/edition-slices
+
+
+
+
+
+## [0.54.2](https://github.com/newsuk/times-components/compare/@times-components/edition-slices@0.54.1...@times-components/edition-slices@0.54.2) (2019-04-18)
+
+**Note:** Version bump only for package @times-components/edition-slices
+
+
+
+
+
+## [0.54.1](https://github.com/newsuk/times-components/compare/@times-components/edition-slices@0.54.0...@times-components/edition-slices@0.54.1) (2019-04-17)
+
+**Note:** Version bump only for package @times-components/edition-slices
+
+
+
+
+
+# [0.54.0](https://github.com/newsuk/times-components/compare/@times-components/edition-slices@0.53.5...@times-components/edition-slices@0.54.0) (2019-04-16)
+
+
+### Features
+
+* add tracking to save article ([#1876](https://github.com/newsuk/times-components/issues/1876)) ([769d41e](https://github.com/newsuk/times-components/commit/769d41e))
+
+
+
+
+
 ## [0.53.5](https://github.com/newsuk/times-components/compare/@times-components/edition-slices@0.53.2...@times-components/edition-slices@0.53.5) (2019-04-15)
 
 **Note:** Version bump only for package @times-components/edition-slices
