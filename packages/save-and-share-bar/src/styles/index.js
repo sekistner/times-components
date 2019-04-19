@@ -19,7 +19,7 @@ const styles = {
   rowItem: {
     alignItems: "center",
     flexDirection: "row",
-    padding: spacing(4)
+    padding: spacing(3)
   },
   svgIcon: {
     fb: {
