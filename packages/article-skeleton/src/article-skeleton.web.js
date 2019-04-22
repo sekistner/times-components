@@ -120,7 +120,12 @@ class ArticleSkeleton extends Component {
                           this.sticky = el;
                         }}
                       >
-                        <SaveAndShareBar />
+                        <SaveAndShareBar
+                          articleUrl={url}
+                          onCopyLink={() => {}}
+                          onSaveToMyArticles={() => {}}
+                          onShareOnEmail={() => {}}
+                        />
                       </div>
                     </RefContainer>
                   </SaveShareContainer>
