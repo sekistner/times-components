@@ -15,7 +15,8 @@ module.exports = (client, analyticsStream, data) => {
     debounceTimeMs,
     makeArticleUrl,
     mapArticleToAdConfig,
-    spotAccountId
+    spotAccountId,
+    isTeaser
   } = data;
 
   return React.createElement(
@@ -37,7 +38,11 @@ module.exports = (client, analyticsStream, data) => {
               theme: {
                 ...themeFactory(article.section, article.template),
                 scale: scale || defaults.theme.scale
+              },
+              userState:{
+                guest: isTeaser
               }
+
             }
           },
           React.createElement(Article, {

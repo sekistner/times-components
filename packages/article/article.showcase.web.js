@@ -29,6 +29,21 @@ export default {
       name: "Article with template choice",
       platform: "web",
       type: "story"
+    },
+    {
+      component: ({ boolean, color, select }, { decorateAction }) =>
+        renderArticleConfig({
+          boolean,
+          color,
+          decorateAction,
+          hasScaling: false,
+          link,
+          select,
+          isTeaser: true
+        }),
+      name: "Article teaser",
+      platform: "web",
+      type: "story"
     }
   ],
   name: "Pages/Article"

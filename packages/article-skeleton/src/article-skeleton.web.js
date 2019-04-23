@@ -16,6 +16,7 @@ import {
   HeaderAdContainer,
   MainContainer
 } from "./styles/responsive";
+import Context from "@times-components/context";
 
 const adStyle = {
   marginBottom: 0
@@ -79,47 +80,52 @@ class ArticleSkeleton extends Component {
           this.node = node;
         }}
       >
-        <AdComposer adConfig={adConfig}>
-          <LazyLoad rootMargin={spacing(10)} threshold={0.5}>
-            {({ observed, registerNode }) => (
-              <Fragment>
-                <HeaderAdContainer key="headerAd">
-                  <Ad
-                    contextUrl={url}
-                    section={section}
-                    slotName="header"
-                    style={adStyle}
-                  />
-                </HeaderAdContainer>
-                <MainContainer>
-                  <Header width={articleWidth} />
-                  <BodyContainer>
-                    <ArticleBody
-                      content={newContent}
-                      contextUrl={url}
-                      observed={observed}
-                      registerNode={registerNode}
-                      section={section}
-                    />
+        <Context.Consumer>
+          {({ userState }) => {
+            return (
+              <AdComposer adConfig={adConfig}>
+                <LazyLoad rootMargin={spacing(10)} threshold={0.5}>
+                  {({ observed, registerNode }) => (
+                    <Fragment>
+                      <HeaderAdContainer key="headerAd">
+                        <Ad
+                          contextUrl={url}
+                          section={section}
+                          slotName="header"
+                          style={adStyle}
+                        />
+                      </HeaderAdContainer>
+                      <MainContainer>
+                        <Header width={articleWidth} />
+                        <BodyContainer>
+                          <ArticleBody
+                            content={newContent}
+                            contextUrl={url}
+                            observed={observed}
+                            registerNode={registerNode}
+                            section={section}
+                          />
 
-                    <ArticleExtras
-                      analyticsStream={analyticsStream}
-                      articleId={articleId}
-                      commentsEnabled={commentsEnabled}
-                      registerNode={registerNode}
-                      relatedArticleSlice={relatedArticleSlice}
-                      relatedArticlesVisible={
-                        !!observed.get("related-articles")
-                      }
-                      spotAccountId={spotAccountId}
-                      topics={topics}
-                    />
-                  </BodyContainer>
-                </MainContainer>
-              </Fragment>
-            )}
-          </LazyLoad>
-        </AdComposer>
+                          <ArticleExtras
+                            analyticsStream={analyticsStream}
+                            articleId={articleId}
+                            commentsEnabled={commentsEnabled}
+                            registerNode={registerNode}
+                            relatedArticleSlice={userState.guest ? null : relatedArticleSlice}
+                            relatedArticlesVisible={
+                              !!observed.get("related-articles")
+                            }
+                            spotAccountId={userState.guest ? null : spotAccountId}
+                            topics={userState.guest ? null : topics}
+                          />
+                        </BodyContainer>
+                      </MainContainer>
+                    </Fragment>
+                  )}
+                </LazyLoad>
+              </AdComposer>);
+          }}
+        </Context.Consumer>
       </article>
     );
   }

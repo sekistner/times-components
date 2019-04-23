@@ -204,70 +204,74 @@ const renderArticle = ({
   inDepthTextColour,
   scale,
   section,
-  template
+  template,
+  isTeaser
 }) => (
-  <ArticleProvider debounceTimeMs={0} id={id}>
-    {({ article, error, refetch }) => {
-      if (!article) {
-        return null;
-      }
+    <ArticleProvider debounceTimeMs={0} id={id}>
+      {({ article, error, refetch }) => {
+        if (!article) {
+          return null;
+        }
 
-      const data = {
-        ...article,
-        author: {
-          image:
-            "https://feeds.thetimes.co.uk/web/imageserver/imageserver/image/methode%2Ftimes%2Fprod%2Fweb%2Fbin%2F0694e84e-04ff-11e7-976a-0b4b9a1a67a3.jpg?crop=854,854,214,0&resize=400"
-        },
-        backgroundColour: inDepthBackgroundColour,
-        template,
-        textColour: inDepthTextColour
-      };
+        const data = {
+          ...article,
+          author: {
+            image:
+              "https://feeds.thetimes.co.uk/web/imageserver/imageserver/image/methode%2Ftimes%2Fprod%2Fweb%2Fbin%2F0694e84e-04ff-11e7-976a-0b4b9a1a67a3.jpg?crop=854,854,214,0&resize=400"
+          },
+          backgroundColour: inDepthBackgroundColour,
+          template,
+          textColour: inDepthTextColour
+        };
 
-      return (
-        <Context.Provider
-          value={{
-            makeArticleUrl,
-            theme: {
-              ...themeFactory(section, template),
-              scale: scale || defaults.theme.scale
-            }
-          }}
-        >
-          <Article
-            adConfig={adConfig}
-            analyticsStream={analyticsStream}
-            article={data}
-            error={error}
-            isLoading={false}
-            onAuthorPress={preventDefaultedAction(decorateAction)(
-              "onAuthorPress"
-            )}
-            onCommentGuidelinesPress={preventDefaultedAction(decorateAction)(
-              "onCommentGuidelinesPress"
-            )}
-            onCommentsPress={preventDefaultedAction(decorateAction)(
-              "onCommentsPress"
-            )}
-            onLinkPress={preventDefaultedAction(decorateAction)("onLinkPress")}
-            onRelatedArticlePress={preventDefaultedAction(decorateAction)(
-              "onRelatedArticlePress"
-            )}
-            onTopicPress={preventDefaultedAction(decorateAction)(
-              "onTopicPress"
-            )}
-            onTwitterLinkPress={preventDefaultedAction(decorateAction)(
-              "onTwitterLinkPress"
-            )}
-            onVideoPress={preventDefaultedAction(decorateAction)(
-              "onVideoPress"
-            )}
-            refetch={refetch}
-          />
-        </Context.Provider>
-      );
-    }}
-  </ArticleProvider>
-);
+        return (
+          <Context.Provider
+            value={{
+              makeArticleUrl,
+              theme: {
+                ...themeFactory(section, template),
+                scale: scale || defaults.theme.scale
+              },
+              userState: {
+                guest: isTeaser
+              }
+            }}
+          >
+            <Article
+              adConfig={adConfig}
+              analyticsStream={analyticsStream}
+              article={data}
+              error={error}
+              isLoading={false}
+              onAuthorPress={preventDefaultedAction(decorateAction)(
+                "onAuthorPress"
+              )}
+              onCommentGuidelinesPress={preventDefaultedAction(decorateAction)(
+                "onCommentGuidelinesPress"
+              )}
+              onCommentsPress={preventDefaultedAction(decorateAction)(
+                "onCommentsPress"
+              )}
+              onLinkPress={preventDefaultedAction(decorateAction)("onLinkPress")}
+              onRelatedArticlePress={preventDefaultedAction(decorateAction)(
+                "onRelatedArticlePress"
+              )}
+              onTopicPress={preventDefaultedAction(decorateAction)(
+                "onTopicPress"
+              )}
+              onTwitterLinkPress={preventDefaultedAction(decorateAction)(
+                "onTwitterLinkPress"
+              )}
+              onVideoPress={preventDefaultedAction(decorateAction)(
+                "onVideoPress"
+              )}
+              refetch={refetch}
+            />
+          </Context.Provider>
+        );
+      }}
+    </ArticleProvider>
+  );
 
 const templateNames = Object.keys(templates).reduce(
   (t, key) => ({ ...t, [key]: key }),
@@ -285,7 +289,8 @@ const renderArticleConfig = ({
   decorateAction,
   hasScaling,
   link = null,
-  select
+  select,
+  isTeaser = false
 }) => {
   const id = "263b03a1-2ce6-4b94-b053-0d35316548c5";
   const withFlags = boolean("Flags", true);
@@ -297,6 +302,11 @@ const renderArticleConfig = ({
   const withPullQuote = boolean("Pull Quote", false);
   const withStandfirst = boolean("Standfirst", true);
   const withVideo = boolean("Video", true);
+  let withTeaser;
+
+  if (!isTeaser) {
+    withTeaser = boolean("Teaser (only Web)", false);
+  }
 
   const scale = hasScaling ? selectScales(select) : null;
   const section = selectSection(select);
@@ -337,7 +347,8 @@ const renderArticleConfig = ({
             inDepthTextColour,
             scale,
             section,
-            template
+            template,
+            isTeaser: isTeaser || withTeaser
           })}
         </ArticleConfigurator>
       }
@@ -346,3 +357,4 @@ const renderArticleConfig = ({
 };
 
 export default renderArticleConfig;
+
