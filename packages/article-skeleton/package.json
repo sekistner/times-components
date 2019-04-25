@@ -77,7 +77,7 @@
     "@times-components/ad": "2.5.30",
     "@times-components/article-extras": "0.1.10",
     "@times-components/article-image": "5.1.25",
-    "@times-components/save-and-share-bar": "0.0.5",
+    "@times-components/save-and-share-bar": "0.2.0",
     "@times-components/article-paragraph": "0.7.32",
     "@times-components/article-topics": "3.3.60",
     "@times-components/caption": "3.0.22",
