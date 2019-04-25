@@ -26,6 +26,7 @@ require 'json'
 #     validation step in local code for cocoapods gem (Comment out the method call to validate_podspec_files). 
 #     A sample path for file to be changed:
 #     /usr/local/lib/ruby/gems/2.6.0/gems/cocoapods-1.5.3/lib/cocoapods/command/repo/push.rb
+#   - Publish json podspec. Do not publish ruby podspec as it has run time code and it wont work while being used in Podfile.
 # 
 # Issues:
 #   - `pod lib lint` and `pod spec lint` commands fail because React fails to compile without `cocoapods-fix-react-native` patch.
@@ -34,14 +35,14 @@ require 'json'
 # 
 # Update Podspec Steps (with broken React Native):
 #   - Make change in cocoapods:push.rb to disable podspec validation step.
-#   - $ pod repo push newsuk TimesComponents.podspec  --verbose --allow-warnings
+#   - $ pod repo push newsuk TimesComponents.podspec  --verbose --allow-warnings --use-json
 #   - Unroll changes in push.rb
 # 
 # Update Podspec Steps (in future):
 #   - These are not complete steps for publishing podspec. Please refer cocoapods documentation for details.
 #   - $ pod lib lint TimesComponents.podspec --sources='https://github.com/newsuk/times-pod-specs,https://github.com/CocoaPods/Specs'
 #   - $ pod spec lint TimesComponents.podspec --sources='https://github.com/newsuk/times-pod-specs,https://github.com/CocoaPods/Specs' --verbose --allow-warnings
-#   - $ pod repo push newsuk TimesComponents.podspec  --verbose --allow-warnings (assumes you have newsuk podspec repo set!!)
+#   - $ pod repo push newsuk TimesComponents.podspec  --verbose --allow-warnings --use-json (assumes you have newsuk podspec repo set!!)
 
 package = JSON.parse(File.read("./ios-app/package.json"))
 
