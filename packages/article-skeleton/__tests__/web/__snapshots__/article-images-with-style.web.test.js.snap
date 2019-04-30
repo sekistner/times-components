@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`1. a secondary image 1`] = `
-.c5 {
+.c3 {
   width: 100%;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
@@ -22,27 +22,15 @@ exports[`1. a secondary image 1`] = `
   display: none;
 }
 
-.c4 {
+.c2 {
   display: block;
   -webkit-order: 3;
   -ms-flex-order: 3;
   order: 3;
 }
 
-.c2 {
-  background-color: #FFFFFF;
-  height: 55px;
-  margin: 30px 10px;
-}
-
-.c3 {
-  border-top: 1px solid;
-  border-bottom: 1px solid;
-  border-color: #DBDBDB;
-}
-
 @media (min-width:768px) {
-  .c5 {
+  .c3 {
     width: 80.8%;
     margin: 0 auto;
     padding-left: 0;
@@ -51,7 +39,7 @@ exports[`1. a secondary image 1`] = `
 }
 
 @media (min-width:1024px) {
-  .c5 {
+  .c3 {
     width: 56.2%;
   }
 }
@@ -74,30 +62,6 @@ exports[`1. a secondary image 1`] = `
     border-bottom-width: 1px;
     padding-top: 10px;
     padding-bottom: 10px;
-  }
-}
-
-@media (max-width:1320px) {
-  .c2 {
-    position: -webkit-sticky;
-    position: sticky;
-    left: 0;
-    top: 0;
-    z-index: 999;
-  }
-}
-
-@media (min-width:768px) {
-  .c3 {
-    width: 80.8%;
-    margin-left: auto !important;
-    margin-right: auto !important;
-  }
-}
-
-@media (min-width:1024px) {
-  .c3 {
-    width: 56.2%;
   }
 }
 
@@ -135,20 +99,9 @@ exports[`1. a secondary image 1`] = `
     <div
       className="c2 S1"
     >
-      <div
-        className="c3"
-      >
-        <div>
-          <SaveAndShareBar />
-        </div>
-      </div>
-    </div>
-    <div
-      className="c4 S1"
-    >
       <div>
         <div
-          className="c5 S1"
+          className="c3 S1"
         >
           <ArticleImage />
         </div>
@@ -160,7 +113,7 @@ exports[`1. a secondary image 1`] = `
 `;
 
 exports[`2. an inline image 1`] = `
-.c5 {
+.c3 {
   width: 100%;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
@@ -182,27 +135,15 @@ exports[`2. an inline image 1`] = `
   display: none;
 }
 
-.c4 {
+.c2 {
   display: block;
   -webkit-order: 3;
   -ms-flex-order: 3;
   order: 3;
 }
 
-.c2 {
-  background-color: #FFFFFF;
-  height: 55px;
-  margin: 30px 10px;
-}
-
-.c3 {
-  border-top: 1px solid;
-  border-bottom: 1px solid;
-  border-color: #DBDBDB;
-}
-
 @media (min-width:768px) {
-  .c5 {
+  .c3 {
     width: 80.8%;
     margin: 0 auto;
     padding-left: 0;
@@ -211,7 +152,7 @@ exports[`2. an inline image 1`] = `
 }
 
 @media (min-width:1024px) {
-  .c5 {
+  .c3 {
     width: 56.2%;
   }
 }
@@ -234,30 +175,6 @@ exports[`2. an inline image 1`] = `
     border-bottom-width: 1px;
     padding-top: 10px;
     padding-bottom: 10px;
-  }
-}
-
-@media (max-width:1320px) {
-  .c2 {
-    position: -webkit-sticky;
-    position: sticky;
-    left: 0;
-    top: 0;
-    z-index: 999;
-  }
-}
-
-@media (min-width:768px) {
-  .c3 {
-    width: 80.8%;
-    margin-left: auto !important;
-    margin-right: auto !important;
-  }
-}
-
-@media (min-width:1024px) {
-  .c3 {
-    width: 56.2%;
   }
 }
 
@@ -295,20 +212,9 @@ exports[`2. an inline image 1`] = `
     <div
       className="c2 S1"
     >
-      <div
-        className="c3"
-      >
-        <div>
-          <SaveAndShareBar />
-        </div>
-      </div>
-    </div>
-    <div
-      className="c4 S1"
-    >
       <div>
         <div
-          className="c5 S1"
+          className="c3 S1"
         >
           <ArticleImage />
         </div>

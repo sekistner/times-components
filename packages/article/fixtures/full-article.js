@@ -1700,7 +1700,9 @@ const defaultRelatedArticleSlice = {
         },
         publicationName: "TIMES",
         publishedTime: "2015-03-23T20:42:27.000Z",
+        savingEnabled: true,
         section: "",
+        sharingEnabled: true,
         shortHeadline: "Rise of centenarian drivers",
         summary105: [
           {

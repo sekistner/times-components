@@ -64,6 +64,8 @@ export default addTypenameToDocument(gql`
           }
         }
       }
+      sharingEnabled
+      savingEnabled
       standfirst
       template
       textColour {

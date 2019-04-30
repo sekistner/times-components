@@ -26,66 +26,76 @@ class SaveAndShareBar extends Component {
   }
 
   render() {
-    const { articleUrl, onSaveToMyArticles, onShareOnEmail } = this.props;
+    const {
+      articleUrl,
+      onSaveToMyArticles,
+      onShareOnEmail,
+      sharingEnabled,
+      savingEnabled
+    } = this.props;
     return (
       <View style={styles.container}>
-        <View style={styles.rowItem}>
-          <Text style={styles.label}>Share</Text>
-          <BarItem onPress={onShareOnEmail}>
-            <IconEmail
-              fillColour="currentColor"
-              height={styles.svgIcon.height}
-              title="Share by email client"
-            />
-          </BarItem>
-          <BarItem
-            target="_blank"
-            url={`${SharingApiUrls.twitter}?text=${articleUrl}`}
-          >
-            <IconTwitter
-              fillColour="currentColor"
-              height={styles.svgIcon.height}
-              title="Share on Twitter"
-            />
-          </BarItem>
-          <BarItem
-            target="_blank"
-            url={`${SharingApiUrls.facebook}?u=${articleUrl}`}
-          >
-            <IconFacebook
-              fillColour="currentColor"
-              height={styles.svgIcon.fb.height}
-              title="Share on Facebook"
-            />
-          </BarItem>
-          {Clipboard.isAvailable() && (
+        {sharingEnabled && (
+          <View style={styles.rowItem}>
+            <Text style={styles.label}>Share</Text>
+            <BarItem onPress={onShareOnEmail}>
+              <IconEmail
+                fillColour="currentColor"
+                height={styles.svgIcon.height}
+                title="Share by email client"
+              />
+            </BarItem>
+            <BarItem
+              target="_blank"
+              url={`${SharingApiUrls.twitter}?text=${articleUrl}`}
+            >
+              <IconTwitter
+                fillColour="currentColor"
+                height={styles.svgIcon.height}
+                title="Share on Twitter"
+              />
+            </BarItem>
+            <BarItem
+              target="_blank"
+              url={`${SharingApiUrls.facebook}?u=${articleUrl}`}
+            >
+              <IconFacebook
+                fillColour="currentColor"
+                height={styles.svgIcon.fb.height}
+                title="Share on Facebook"
+              />
+            </BarItem>
+            {Clipboard.isAvailable() && (
+              <BarItem
+                color={styles.svgIcon.save.strokeColour}
+                hoverColor={styles.svgIcon.hoverFillColour}
+                onPress={this.copyToClipboard}
+              >
+                <IconCopyLink
+                  fillColour="currentColor"
+                  height={styles.svgIcon.height}
+                  title="Copy link to clipboard"
+                />
+              </BarItem>
+            )}
+          </View>
+        )}
+        {savingEnabled && (
+          <View style={styles.rowItem}>
+            <Text style={styles.label}>Save</Text>
             <BarItem
               color={styles.svgIcon.save.strokeColour}
               hoverColor={styles.svgIcon.hoverFillColour}
-              onPress={this.copyToClipboard}
+              onPress={onSaveToMyArticles}
             >
-              <IconCopyLink
-                fillColour="currentColor"
-                height={styles.svgIcon.height}
-                title="Copy link to clipboard"
+              <IconSaveBookmark
+                fillColour={styles.svgIcon.save.fillColour}
+                strokeColour="currentColor"
+                title="Save to My Articles"
               />
             </BarItem>
-          )}
-        </View>
-        <View style={styles.rowItem}>
-          <Text style={styles.label}>Save</Text>
-          <BarItem
-            color={styles.svgIcon.save.strokeColour}
-            hoverColor={styles.svgIcon.hoverFillColour}
-            onPress={onSaveToMyArticles}
-          >
-            <IconSaveBookmark
-              fillColour={styles.svgIcon.save.fillColour}
-              strokeColour="currentColor"
-              title="Save to My Articles"
-            />
-          </BarItem>
-        </View>
+          </View>
+        )}
       </View>
     );
   }
@@ -95,7 +105,9 @@ SaveAndShareBar.propTypes = {
   articleUrl: PropTypes.string.isRequired,
   onCopyLink: PropTypes.func.isRequired,
   onSaveToMyArticles: PropTypes.func.isRequired,
-  onShareOnEmail: PropTypes.func.isRequired
+  onShareOnEmail: PropTypes.func.isRequired,
+  savingEnabled: PropTypes.bool.isRequired,
+  sharingEnabled: PropTypes.bool.isRequired
 };
 
 export default SaveAndShareBar;
