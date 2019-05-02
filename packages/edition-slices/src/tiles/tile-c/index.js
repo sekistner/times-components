@@ -19,9 +19,11 @@ const TileC = ({ onPress, tile }) => (
       uri={getTileImageUri(tile, "crop169")}
     />
     <TileSummary headlineStyle={styles.headline} tile={tile} withStar={false} />
-    <View style={styles.star}>
-      <TileStar articleId={tile.article.id} />
-    </View>
+    {tile.article.savingEnabled && (
+      <View style={styles.star}>
+        <TileStar articleId={tile.article.id} />
+      </View>
+    )}
   </TileLink>
 );
 

@@ -1295,7 +1295,9 @@ export default gql`
     headline
     id
     label
+    savingEnabled
     section
+    sharingEnabled
     shortHeadline
     url
   }

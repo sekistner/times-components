@@ -29,7 +29,7 @@ class TileSummary extends Component {
   renderFlags() {
     const {
       tile: {
-        article: { expirableFlags, id }
+        article: { expirableFlags, id, savingEnabled }
       },
       flagColour,
       isDarkStar,
@@ -48,9 +48,11 @@ class TileSummary extends Component {
         <View style={tileStyle.flagStyle}>
           <ArticleFlags {...flagColour} flags={expirableFlags} />
         </View>
-        <View style={tileStyle.starButton}>
-          <TileStar articleId={id} isDark={isDarkStar} />
-        </View>
+        {savingEnabled && (
+          <View style={tileStyle.starButton}>
+            <TileStar articleId={id} isDark={isDarkStar} />
+          </View>
+        )}
       </View>
     );
   }
