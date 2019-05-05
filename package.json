@@ -64,6 +64,16 @@
   },
   "jest": {
     "preset": "react-native",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ],
+    "transform": {
+      "^.+\\.(js)$": "<rootDir>/node_modules/babel-jest",
+      "\\.(ts|tsx)$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$",
     "coveragePathIgnorePatterns": [
       "lib/cli/edition-checker/src/main.js"
     ],
@@ -120,8 +130,10 @@
     "@storybook/react": "4.1.18",
     "@storybook/react-native": "4.1.18",
     "@times-components/depend": "*",
+    "@types/jest": "24.0.12",
     "@types/react": "16.8.16",
     "@types/react-native": "0.57.51",
+    "@types/react-test-renderer": "16.8.1",
     "babel-core": "^7.0.0-bridge.0",
     "babel-jest": "23.6.0",
     "babel-loader": "8.0.5",
@@ -163,6 +175,7 @@
     "rimraf": "2.6.1",
     "sort-pkg": "1.1.0",
     "subcommander": "1.0.0",
+    "ts-jest": "24.0.2",
     "typescript": "3.4.5",
     "url": "0.11.0",
     "url-polyfill": "1.1.0",

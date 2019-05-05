@@ -1,7 +1,7 @@
 module.exports = api => {
   api.cache(true);
   return {
-    presets: ["module:metro-react-native-babel-preset"],
+    presets: ["module:metro-react-native-babel-preset", "typescript"],
     plugins: [
       "babel-plugin-styled-components",
       require.resolve("@babel/plugin-transform-react-display-name"),
