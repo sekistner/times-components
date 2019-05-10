@@ -16,7 +16,9 @@ const TileQ = ({ onPress, tile }) => (
       style={styles.imageContainer}
       uri={getTileImageUri(tile, "crop32")}
     />
-    <TileStar articleId={tile.article.id} style={styles.starButton} />
+    {tile.article.savingEnabled && (
+      <TileStar articleId={tile.article.id} style={styles.starButton} />
+    )}
   </TileLink>
 );
 

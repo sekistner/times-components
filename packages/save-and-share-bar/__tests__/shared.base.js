@@ -30,6 +30,8 @@ export default () => {
       test: () => {
         const testInstance = TestRenderer.create(
           <SaveAndShareBar
+            savingEnabled
+            sharingEnabled
             articleUrl=""
             onCopyLink={() => {}}
             onSaveToMyArticles={() => {}}
@@ -51,6 +53,8 @@ export default () => {
 
         const testInstance = TestRenderer.create(
           <SaveAndShareBar
+            savingEnabled
+            sharingEnabled
             articleUrl={articleUrlMock}
             onCopyLink={onCopyLink}
             onSaveToMyArticles={onSaveToMyArticles}
