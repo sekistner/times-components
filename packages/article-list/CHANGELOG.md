@@ -3,6 +3,142 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [8.0.13](https://github.com/newsuk/times-components/compare/@times-components/article-list@8.0.12...@times-components/article-list@8.0.13) (2019-05-10)
+
+**Note:** Version bump only for package @times-components/article-list
+
+
+
+
+
+## [8.0.12](https://github.com/newsuk/times-components/compare/@times-components/article-list@8.0.11...@times-components/article-list@8.0.12) (2019-05-09)
+
+**Note:** Version bump only for package @times-components/article-list
+
+
+
+
+
+## [8.0.11](https://github.com/newsuk/times-components/compare/@times-components/article-list@8.0.10...@times-components/article-list@8.0.11) (2019-05-09)
+
+**Note:** Version bump only for package @times-components/article-list
+
+
+
+
+
+## [8.0.10](https://github.com/newsuk/times-components/compare/@times-components/article-list@8.0.9...@times-components/article-list@8.0.10) (2019-05-08)
+
+**Note:** Version bump only for package @times-components/article-list
+
+
+
+
+
+## [8.0.9](https://github.com/newsuk/times-components/compare/@times-components/article-list@8.0.8...@times-components/article-list@8.0.9) (2019-05-08)
+
+**Note:** Version bump only for package @times-components/article-list
+
+
+
+
+
+## [8.0.8](https://github.com/newsuk/times-components/compare/@times-components/article-list@8.0.7...@times-components/article-list@8.0.8) (2019-05-07)
+
+**Note:** Version bump only for package @times-components/article-list
+
+
+
+
+
+## [8.0.7](https://github.com/newsuk/times-components/compare/@times-components/article-list@8.0.6...@times-components/article-list@8.0.7) (2019-05-03)
+
+**Note:** Version bump only for package @times-components/article-list
+
+
+
+
+
+## [8.0.6](https://github.com/newsuk/times-components/compare/@times-components/article-list@8.0.5...@times-components/article-list@8.0.6) (2019-05-03)
+
+**Note:** Version bump only for package @times-components/article-list
+
+
+
+
+
+## [8.0.5](https://github.com/newsuk/times-components/compare/@times-components/article-list@8.0.4...@times-components/article-list@8.0.5) (2019-05-01)
+
+**Note:** Version bump only for package @times-components/article-list
+
+
+
+
+
+## [8.0.4](https://github.com/newsuk/times-components/compare/@times-components/article-list@8.0.3...@times-components/article-list@8.0.4) (2019-05-01)
+
+**Note:** Version bump only for package @times-components/article-list
+
+
+
+
+
+## [8.0.3](https://github.com/newsuk/times-components/compare/@times-components/article-list@8.0.2...@times-components/article-list@8.0.3) (2019-05-01)
+
+**Note:** Version bump only for package @times-components/article-list
+
+
+
+
+
+## [8.0.2](https://github.com/newsuk/times-components/compare/@times-components/article-list@8.0.1...@times-components/article-list@8.0.2) (2019-04-30)
+
+**Note:** Version bump only for package @times-components/article-list
+
+
+
+
+
+## [8.0.1](https://github.com/newsuk/times-components/compare/@times-components/article-list@8.0.0...@times-components/article-list@8.0.1) (2019-04-30)
+
+**Note:** Version bump only for package @times-components/article-list
+
+
+
+
+
+# [8.0.0](https://github.com/newsuk/times-components/compare/@times-components/article-list@7.0.39...@times-components/article-list@8.0.0) (2019-04-29)
+
+
+* BREAKING CHANGE feat: manage meta tags in times-components  (#1897) ([e2dffc8](https://github.com/newsuk/times-components/commit/e2dffc8)), closes [#1897](https://github.com/newsuk/times-components/issues/1897)
+
+
+### BREAKING CHANGES
+
+* feat: add makeTopicUrl
+
+* feat: move existing topic render tags over to times-components
+
+* feat: move existing author-profile render tags over to times-components
+
+* feat: move exmost article render tags over to times-components
+
+* chore: snaps
+
+* fix: usde short headline if headline not available
+
+* fix: deps
+
+* fix: lint
+
+* fix: lint
+
+* chore: article url should be consistent with topic url
+
+
+
+
+
 ## [7.0.39](https://github.com/newsuk/times-components/compare/@times-components/article-list@7.0.38...@times-components/article-list@7.0.39) (2019-04-24)
 
 **Note:** Version bump only for package @times-components/article-list

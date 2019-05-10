@@ -12,6 +12,7 @@ import shared from "./images.base";
 jest.mock("@times-components/save-and-share-bar", () => "SaveAndShareBar");
 
 const omitProps = new Set([
+  "article",
   "className",
   "data-testid",
   "responsiveLinkStyles",

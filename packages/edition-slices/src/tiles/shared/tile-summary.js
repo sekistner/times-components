@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View } from "react-native";
+import { View, Platform } from "react-native";
 import PropTypes from "prop-types";
 import ArticleSummary, {
   ArticleSummaryContent,
@@ -37,7 +37,7 @@ class TileSummary extends Component {
       starStyle
     } = this.props;
 
-    if (!withStar) {
+    if (!withStar || Platform.OS === "ios") {
       return <ArticleFlags {...flagColour} flags={expirableFlags} />;
     }
 
@@ -49,9 +49,11 @@ class TileSummary extends Component {
           <ArticleFlags {...flagColour} flags={expirableFlags} />
         </View>
         {savingEnabled && (
-          <View style={tileStyle.starButton}>
-            <TileStar articleId={id} isDark={isDarkStar} />
-          </View>
+          <TileStar
+            articleId={id}
+            isDark={isDarkStar}
+            style={tileStyle.starButton}
+          />
         )}
       </View>
     );

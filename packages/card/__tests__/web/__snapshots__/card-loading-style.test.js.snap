@@ -230,13 +230,14 @@ exports[`1. card loading state 1`] = `
           fadeImageIn={false}
           highResSize={800}
           lowResSize={60}
+          rounded={false}
           uri="https://img.io/img"
         />
       </div>
       <div
         className="S6"
       >
-        <Component>
+        <_default>
           <Gradient
             className="IS4"
             degrees={264}
@@ -261,7 +262,7 @@ exports[`1. card loading state 1`] = `
             endPoint="1"
             startPoint="0"
           />
-        </Component>
+        </_default>
       </div>
     </div>
   </div>
@@ -494,7 +495,7 @@ exports[`2. card with reversed loading state 1`] = `
       <div
         className="S4"
       >
-        <Component>
+        <_default>
           <Gradient
             className="IS3"
             degrees={264}
@@ -519,7 +520,7 @@ exports[`2. card with reversed loading state 1`] = `
             endPoint="1"
             startPoint="0"
           />
-        </Component>
+        </_default>
       </div>
       <div
         className="S6"
@@ -529,6 +530,7 @@ exports[`2. card with reversed loading state 1`] = `
           fadeImageIn={false}
           highResSize={800}
           lowResSize={60}
+          rounded={false}
           uri="https://img.io/img"
         />
       </div>

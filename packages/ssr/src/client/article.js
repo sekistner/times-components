@@ -2,15 +2,22 @@ const article = require("../component/article");
 const runClient = require("../lib/run-client");
 
 if (window.nuk && window.nuk.ssr && window.nuk.article) {
-  const { rootTag, makeArticleUrl, mapArticleToAdConfig } = window.nuk.ssr;
+  const {
+    rootTag,
+    makeArticleUrl,
+    makeTopicUrl,
+    mapArticleToAdConfig
+  } = window.nuk.ssr;
   const { articleId, debounceTimeMs, spotAccountId } = window.nuk.article;
 
   const data = {
     articleId,
     debounceTimeMs,
     makeArticleUrl,
+    makeTopicUrl,
     mapArticleToAdConfig,
-    spotAccountId
+    spotAccountId,
+    userState: window.nuk.user
   };
 
   const clientOptions = {

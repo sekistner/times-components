@@ -3,6 +3,180 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.56.11](https://github.com/newsuk/times-components/compare/@times-components/edition-slices@0.56.10...@times-components/edition-slices@0.56.11) (2019-05-10)
+
+**Note:** Version bump only for package @times-components/edition-slices
+
+
+
+
+
+## [0.56.10](https://github.com/newsuk/times-components/compare/@times-components/edition-slices@0.56.9...@times-components/edition-slices@0.56.10) (2019-05-09)
+
+
+### Bug Fixes
+
+* remove tile view container border radius styles ([#1915](https://github.com/newsuk/times-components/issues/1915)) ([8d21d51](https://github.com/newsuk/times-components/commit/8d21d51))
+
+
+
+
+
+## [0.56.9](https://github.com/newsuk/times-components/compare/@times-components/edition-slices@0.56.8...@times-components/edition-slices@0.56.9) (2019-05-09)
+
+**Note:** Version bump only for package @times-components/edition-slices
+
+
+
+
+
+## [0.56.8](https://github.com/newsuk/times-components/compare/@times-components/edition-slices@0.56.7...@times-components/edition-slices@0.56.8) (2019-05-08)
+
+
+### Bug Fixes
+
+* android tile star styling ([#1925](https://github.com/newsuk/times-components/issues/1925)) ([a6528de](https://github.com/newsuk/times-components/commit/a6528de))
+
+
+
+
+
+## [0.56.7](https://github.com/newsuk/times-components/compare/@times-components/edition-slices@0.56.6...@times-components/edition-slices@0.56.7) (2019-05-08)
+
+**Note:** Version bump only for package @times-components/edition-slices
+
+
+
+
+
+## [0.56.6](https://github.com/newsuk/times-components/compare/@times-components/edition-slices@0.56.5...@times-components/edition-slices@0.56.6) (2019-05-07)
+
+**Note:** Version bump only for package @times-components/edition-slices
+
+
+
+
+
+## [0.56.5](https://github.com/newsuk/times-components/compare/@times-components/edition-slices@0.56.4...@times-components/edition-slices@0.56.5) (2019-05-07)
+
+
+### Bug Fixes
+
+* remove ghost article flags view ([#1916](https://github.com/newsuk/times-components/issues/1916)) ([a10cea3](https://github.com/newsuk/times-components/commit/a10cea3))
+
+
+
+
+
+## [0.56.4](https://github.com/newsuk/times-components/compare/@times-components/edition-slices@0.56.3...@times-components/edition-slices@0.56.4) (2019-05-03)
+
+**Note:** Version bump only for package @times-components/edition-slices
+
+
+
+
+
+## [0.56.3](https://github.com/newsuk/times-components/compare/@times-components/edition-slices@0.56.2...@times-components/edition-slices@0.56.3) (2019-05-03)
+
+**Note:** Version bump only for package @times-components/edition-slices
+
+
+
+
+
+## [0.56.2](https://github.com/newsuk/times-components/compare/@times-components/edition-slices@0.56.1...@times-components/edition-slices@0.56.2) (2019-05-03)
+
+
+### Bug Fixes
+
+* use different lead tiles ([#1923](https://github.com/newsuk/times-components/issues/1923)) ([5006462](https://github.com/newsuk/times-components/commit/5006462))
+
+
+
+
+
+## [0.56.1](https://github.com/newsuk/times-components/compare/@times-components/edition-slices@0.56.0...@times-components/edition-slices@0.56.1) (2019-05-03)
+
+**Note:** Version bump only for package @times-components/edition-slices
+
+
+
+
+
+# [0.56.0](https://github.com/newsuk/times-components/compare/@times-components/edition-slices@0.55.5...@times-components/edition-slices@0.56.0) (2019-05-01)
+
+
+### Features
+
+* replat 6101 edition slices keylines ([#1913](https://github.com/newsuk/times-components/issues/1913)) ([4919482](https://github.com/newsuk/times-components/commit/4919482))
+
+
+
+
+
+## [0.55.5](https://github.com/newsuk/times-components/compare/@times-components/edition-slices@0.55.4...@times-components/edition-slices@0.55.5) (2019-05-01)
+
+
+### Bug Fixes
+
+* font size issues on slices ([#1910](https://github.com/newsuk/times-components/issues/1910)) ([61fe0c9](https://github.com/newsuk/times-components/commit/61fe0c9))
+* Issues with lead asset size ([#1904](https://github.com/newsuk/times-components/issues/1904)) ([26334b1](https://github.com/newsuk/times-components/commit/26334b1))
+
+
+
+
+
+## [0.55.4](https://github.com/newsuk/times-components/compare/@times-components/edition-slices@0.55.3...@times-components/edition-slices@0.55.4) (2019-05-01)
+
+**Note:** Version bump only for package @times-components/edition-slices
+
+
+
+
+
+## [0.55.3](https://github.com/newsuk/times-components/compare/@times-components/edition-slices@0.55.2...@times-components/edition-slices@0.55.3) (2019-05-01)
+
+**Note:** Version bump only for package @times-components/edition-slices
+
+
+
+
+
+## [0.55.2](https://github.com/newsuk/times-components/compare/@times-components/edition-slices@0.55.1...@times-components/edition-slices@0.55.2) (2019-04-30)
+
+**Note:** Version bump only for package @times-components/edition-slices
+
+
+
+
+
+## [0.55.1](https://github.com/newsuk/times-components/compare/@times-components/edition-slices@0.55.0...@times-components/edition-slices@0.55.1) (2019-04-30)
+
+**Note:** Version bump only for package @times-components/edition-slices
+
+
+
+
+
+# [0.55.0](https://github.com/newsuk/times-components/compare/@times-components/edition-slices@0.54.5...@times-components/edition-slices@0.55.0) (2019-04-30)
+
+
+### Features
+
+* replat-6101 edition tile summary padding fix ([#1903](https://github.com/newsuk/times-components/issues/1903)) ([bdb7406](https://github.com/newsuk/times-components/commit/bdb7406))
+
+
+
+
+
+## [0.54.5](https://github.com/newsuk/times-components/compare/@times-components/edition-slices@0.54.4...@times-components/edition-slices@0.54.5) (2019-04-29)
+
+**Note:** Version bump only for package @times-components/edition-slices
+
+
+
+
+
 ## [0.54.4](https://github.com/newsuk/times-components/compare/@times-components/edition-slices@0.54.3...@times-components/edition-slices@0.54.4) (2019-04-24)
 
 **Note:** Version bump only for package @times-components/edition-slices

@@ -3,6 +3,81 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.2.29](https://github.com/newsuk/times-components/compare/@times-components/card@5.2.28...@times-components/card@5.2.29) (2019-05-09)
+
+
+### Bug Fixes
+
+* remove tile view container border radius styles ([#1915](https://github.com/newsuk/times-components/issues/1915)) ([8d21d51](https://github.com/newsuk/times-components/commit/8d21d51))
+
+
+
+
+
+## [5.2.28](https://github.com/newsuk/times-components/compare/@times-components/card@5.2.27...@times-components/card@5.2.28) (2019-05-09)
+
+**Note:** Version bump only for package @times-components/card
+
+
+
+
+
+## [5.2.27](https://github.com/newsuk/times-components/compare/@times-components/card@5.2.26...@times-components/card@5.2.27) (2019-05-03)
+
+**Note:** Version bump only for package @times-components/card
+
+
+
+
+
+## [5.2.26](https://github.com/newsuk/times-components/compare/@times-components/card@5.2.25...@times-components/card@5.2.26) (2019-05-03)
+
+**Note:** Version bump only for package @times-components/card
+
+
+
+
+
+## [5.2.25](https://github.com/newsuk/times-components/compare/@times-components/card@5.2.24...@times-components/card@5.2.25) (2019-05-01)
+
+**Note:** Version bump only for package @times-components/card
+
+
+
+
+
+## [5.2.24](https://github.com/newsuk/times-components/compare/@times-components/card@5.2.23...@times-components/card@5.2.24) (2019-05-01)
+
+**Note:** Version bump only for package @times-components/card
+
+
+
+
+
+## [5.2.23](https://github.com/newsuk/times-components/compare/@times-components/card@5.2.22...@times-components/card@5.2.23) (2019-04-30)
+
+**Note:** Version bump only for package @times-components/card
+
+
+
+
+
+## [5.2.22](https://github.com/newsuk/times-components/compare/@times-components/card@5.2.21...@times-components/card@5.2.22) (2019-04-30)
+
+**Note:** Version bump only for package @times-components/card
+
+
+
+
+
+## [5.2.21](https://github.com/newsuk/times-components/compare/@times-components/card@5.2.20...@times-components/card@5.2.21) (2019-04-29)
+
+**Note:** Version bump only for package @times-components/card
+
+
+
+
+
 ## [5.2.20](https://github.com/newsuk/times-components/compare/@times-components/card@5.2.19...@times-components/card@5.2.20) (2019-04-24)
 
 **Note:** Version bump only for package @times-components/card

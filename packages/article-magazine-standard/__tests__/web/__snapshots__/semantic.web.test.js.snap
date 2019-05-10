@@ -2,6 +2,58 @@
 
 exports[`1. a full article 1`] = `
 <article>
+  <Helmet>
+    <title>
+      Some Headline
+       |
+
+      The Times
+    </title>
+    <meta
+      content="Some Headline"
+      name="article:title"
+    />
+    <meta
+      content="The Times"
+      name="article:publication"
+    />
+    <meta
+      content="Some byline"
+      name="author"
+    />
+    <meta
+      content="Some Headline"
+      property="og:title"
+    />
+    <meta
+      content="article"
+      property="og:type"
+    />
+    <meta
+      content="https://www.thetimes.co.uk/article/this-is-slug-2k629tpvh"
+      property="og:url"
+    />
+    <meta
+      content="https://crop169.io"
+      property="og:image"
+    />
+    <meta
+      content="Some Headline"
+      name="twitter:title"
+    />
+    <meta
+      content="summary_large_image"
+      name="twitter:card"
+    />
+    <meta
+      content="https://www.thetimes.co.uk/article/this-is-slug-2k629tpvh"
+      name="twitter:url"
+    />
+    <meta
+      content="https://crop169.io"
+      name="twitter:image"
+    />
+  </Helmet>
   <svg
     height={250}
     viewBox="-630 120 1200 50"
@@ -110,6 +162,22 @@ exports[`1. a full article 1`] = `
       </g>
     </svg>
   </a>
+  <a>
+    <svg
+      aria-label="[title]"
+      height={15}
+      role="img"
+      viewBox="0 0 15 15"
+      width={15}
+    >
+      <title>
+        Copy link to clipboard
+      </title>
+      <path
+        d="f65af77b7574644b0c2e60934732135f"
+      />
+    </svg>
+  </a>
   Save
   <a>
     <svg
@@ -201,7 +269,7 @@ exports[`1. a full article 1`] = `
   />
   <p>
     Comments are subject to our community guidelines, which can be viewed
-     
+
     <a
       href="https://www.thetimes.co.uk/article/f4024fbe-d989-11e6-9063-500e6740fc32"
       role="link"

@@ -4,7 +4,7 @@ const express = require("express");
 const shrinkRay = require("shrink-ray");
 
 const ssr = require("../server");
-const makeArticleUrl = require("../lib/make-url");
+const makeUrls = require("../lib/make-urls");
 const logger = require("../lib/simple-logger");
 
 const port = 3000;
@@ -16,13 +16,13 @@ server.use(express.static("dist"));
 const makeHtml = (
   initialState,
   initialProps,
-  { bundleName, markup, responsiveStyles, styles, title }
+  { bundleName, headMarkup, markup, responsiveStyles, styles }
 ) => `
         <!DOCTYPE html>
         <html>
           <head>
             <meta name="viewport" content="width=device-width, initial-scale=1">
-            <title>${title}</title>
+            ${headMarkup}
             ${styles}
             ${responsiveStyles}
           </head>
@@ -63,23 +63,40 @@ server.get("/article/:id", (request, response) => {
       }
     : null;
 
+  const userState = {
+    isLoggedIn: true
+  };
+
   ssr
-    .article(articleId, headers, {
-      graphqlApiUrl,
-      logger,
-      makeArticleUrl,
-      spotAccountId
-    })
-    .then(({ initialProps, initialState, markup, responsiveStyles, styles }) =>
-      response.send(
-        makeHtml(initialState, initialProps, {
-          bundleName: "article",
-          markup,
-          responsiveStyles,
-          styles,
-          title: "Article"
-        })
-      )
+    .article(
+      articleId,
+      headers,
+      {
+        ...makeUrls,
+        graphqlApiUrl,
+        logger,
+        spotAccountId
+      },
+      userState
+    )
+    .then(
+      ({
+        initialProps,
+        initialState,
+        headMarkup,
+        markup,
+        responsiveStyles,
+        styles
+      }) =>
+        response.send(
+          makeHtml(initialState, initialProps, {
+            bundleName: "article",
+            headMarkup,
+            markup,
+            responsiveStyles,
+            styles
+          })
+        )
     );
 });
 
@@ -94,18 +111,26 @@ server.get("/profile/:slug", (request, response) => {
   ssr
     .authorProfile(
       { authorSlug, currentPage },
-      { graphqlApiUrl, logger, makeArticleUrl }
+      { ...makeUrls, graphqlApiUrl, logger }
     )
-    .then(({ initialProps, initialState, markup, responsiveStyles, styles }) =>
-      response.send(
-        makeHtml(initialState, initialProps, {
-          bundleName: "author-profile",
-          markup,
-          responsiveStyles,
-          styles,
-          title: authorSlug
-        })
-      )
+    .then(
+      ({
+        initialProps,
+        initialState,
+        headMarkup,
+        markup,
+        responsiveStyles,
+        styles
+      }) =>
+        response.send(
+          makeHtml(initialState, initialProps, {
+            bundleName: "author-profile",
+            headMarkup,
+            markup,
+            responsiveStyles,
+            styles
+          })
+        )
     );
 });
 
@@ -118,20 +143,25 @@ server.get("/topic/:slug", (request, response) => {
   const graphqlApiUrl = process.env.GRAPHQL_ENDPOINT;
 
   ssr
-    .topic(
-      { currentPage, topicSlug },
-      { graphqlApiUrl, logger, makeArticleUrl }
-    )
-    .then(({ initialProps, initialState, markup, responsiveStyles, styles }) =>
-      response.send(
-        makeHtml(initialState, initialProps, {
-          bundleName: "topic",
-          markup,
-          responsiveStyles,
-          styles,
-          title: topicSlug
-        })
-      )
+    .topic({ currentPage, topicSlug }, { ...makeUrls, graphqlApiUrl, logger })
+    .then(
+      ({
+        headMarkup,
+        initialProps,
+        initialState,
+        markup,
+        responsiveStyles,
+        styles
+      }) =>
+        response.send(
+          makeHtml(initialState, initialProps, {
+            bundleName: "topic",
+            headMarkup,
+            markup,
+            responsiveStyles,
+            styles
+          })
+        )
     );
 });
 

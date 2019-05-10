@@ -3,6 +3,164 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.13.11](https://github.com/newsuk/times-components/compare/@times-components/section@0.13.10...@times-components/section@0.13.11) (2019-05-10)
+
+**Note:** Version bump only for package @times-components/section
+
+
+
+
+
+## [0.13.10](https://github.com/newsuk/times-components/compare/@times-components/section@0.13.9...@times-components/section@0.13.10) (2019-05-09)
+
+**Note:** Version bump only for package @times-components/section
+
+
+
+
+
+## [0.13.9](https://github.com/newsuk/times-components/compare/@times-components/section@0.13.8...@times-components/section@0.13.9) (2019-05-09)
+
+**Note:** Version bump only for package @times-components/section
+
+
+
+
+
+## [0.13.8](https://github.com/newsuk/times-components/compare/@times-components/section@0.13.7...@times-components/section@0.13.8) (2019-05-08)
+
+**Note:** Version bump only for package @times-components/section
+
+
+
+
+
+## [0.13.7](https://github.com/newsuk/times-components/compare/@times-components/section@0.13.6...@times-components/section@0.13.7) (2019-05-08)
+
+**Note:** Version bump only for package @times-components/section
+
+
+
+
+
+## [0.13.6](https://github.com/newsuk/times-components/compare/@times-components/section@0.13.5...@times-components/section@0.13.6) (2019-05-07)
+
+**Note:** Version bump only for package @times-components/section
+
+
+
+
+
+## [0.13.5](https://github.com/newsuk/times-components/compare/@times-components/section@0.13.4...@times-components/section@0.13.5) (2019-05-07)
+
+**Note:** Version bump only for package @times-components/section
+
+
+
+
+
+## [0.13.4](https://github.com/newsuk/times-components/compare/@times-components/section@0.13.3...@times-components/section@0.13.4) (2019-05-03)
+
+**Note:** Version bump only for package @times-components/section
+
+
+
+
+
+## [0.13.3](https://github.com/newsuk/times-components/compare/@times-components/section@0.13.2...@times-components/section@0.13.3) (2019-05-03)
+
+**Note:** Version bump only for package @times-components/section
+
+
+
+
+
+## [0.13.2](https://github.com/newsuk/times-components/compare/@times-components/section@0.13.1...@times-components/section@0.13.2) (2019-05-03)
+
+**Note:** Version bump only for package @times-components/section
+
+
+
+
+
+## [0.13.1](https://github.com/newsuk/times-components/compare/@times-components/section@0.13.0...@times-components/section@0.13.1) (2019-05-03)
+
+**Note:** Version bump only for package @times-components/section
+
+
+
+
+
+# [0.13.0](https://github.com/newsuk/times-components/compare/@times-components/section@0.12.5...@times-components/section@0.13.0) (2019-05-01)
+
+
+### Features
+
+* replat 6101 edition slices keylines ([#1913](https://github.com/newsuk/times-components/issues/1913)) ([4919482](https://github.com/newsuk/times-components/commit/4919482))
+
+
+
+
+
+## [0.12.5](https://github.com/newsuk/times-components/compare/@times-components/section@0.12.4...@times-components/section@0.12.5) (2019-05-01)
+
+**Note:** Version bump only for package @times-components/section
+
+
+
+
+
+## [0.12.4](https://github.com/newsuk/times-components/compare/@times-components/section@0.12.3...@times-components/section@0.12.4) (2019-05-01)
+
+**Note:** Version bump only for package @times-components/section
+
+
+
+
+
+## [0.12.3](https://github.com/newsuk/times-components/compare/@times-components/section@0.12.2...@times-components/section@0.12.3) (2019-05-01)
+
+**Note:** Version bump only for package @times-components/section
+
+
+
+
+
+## [0.12.2](https://github.com/newsuk/times-components/compare/@times-components/section@0.12.1...@times-components/section@0.12.2) (2019-04-30)
+
+**Note:** Version bump only for package @times-components/section
+
+
+
+
+
+## [0.12.1](https://github.com/newsuk/times-components/compare/@times-components/section@0.12.0...@times-components/section@0.12.1) (2019-04-30)
+
+**Note:** Version bump only for package @times-components/section
+
+
+
+
+
+# [0.12.0](https://github.com/newsuk/times-components/compare/@times-components/section@0.11.5...@times-components/section@0.12.0) (2019-04-30)
+
+
+### Features
+
+* replat-6101 edition tile summary padding fix ([#1903](https://github.com/newsuk/times-components/issues/1903)) ([bdb7406](https://github.com/newsuk/times-components/commit/bdb7406))
+
+
+
+
+
+## [0.11.5](https://github.com/newsuk/times-components/compare/@times-components/section@0.11.4...@times-components/section@0.11.5) (2019-04-29)
+
+**Note:** Version bump only for package @times-components/section
+
+
+
+
+
 ## [0.11.4](https://github.com/newsuk/times-components/compare/@times-components/section@0.11.3...@times-components/section@0.11.4) (2019-04-24)
 
 **Note:** Version bump only for package @times-components/section

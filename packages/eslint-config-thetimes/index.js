@@ -7,14 +7,6 @@ module.exports = {
   ],
   rules: {
     "react/jsx-filename-extension": [1, { extensions: [".js"] }],
-    "react/jsx-sort-props": [
-      2,
-      {
-        ignoreCase: true,
-        reservedFirst: false
-      }
-    ],
-    "sort-keys": ["error", "asc", { caseSensitive: false, natural: true }],
     "import/extensions": "off",
     "import/no-extraneous-dependencies": [
       "error",

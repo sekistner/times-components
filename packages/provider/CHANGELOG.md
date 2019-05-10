@@ -3,6 +3,62 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.16.13](https://github.com/newsuk/times-components/compare/@times-components/provider@1.16.12...@times-components/provider@1.16.13) (2019-05-09)
+
+**Note:** Version bump only for package @times-components/provider
+
+
+
+
+
+## [1.16.12](https://github.com/newsuk/times-components/compare/@times-components/provider@1.16.11...@times-components/provider@1.16.12) (2019-05-09)
+
+**Note:** Version bump only for package @times-components/provider
+
+
+
+
+
+## [1.16.11](https://github.com/newsuk/times-components/compare/@times-components/provider@1.16.10...@times-components/provider@1.16.11) (2019-05-01)
+
+**Note:** Version bump only for package @times-components/provider
+
+
+
+
+
+## [1.16.10](https://github.com/newsuk/times-components/compare/@times-components/provider@1.16.9...@times-components/provider@1.16.10) (2019-05-01)
+
+**Note:** Version bump only for package @times-components/provider
+
+
+
+
+
+## [1.16.9](https://github.com/newsuk/times-components/compare/@times-components/provider@1.16.8...@times-components/provider@1.16.9) (2019-04-30)
+
+**Note:** Version bump only for package @times-components/provider
+
+
+
+
+
+## [1.16.8](https://github.com/newsuk/times-components/compare/@times-components/provider@1.16.7...@times-components/provider@1.16.8) (2019-04-30)
+
+**Note:** Version bump only for package @times-components/provider
+
+
+
+
+
+## [1.16.7](https://github.com/newsuk/times-components/compare/@times-components/provider@1.16.6...@times-components/provider@1.16.7) (2019-04-29)
+
+**Note:** Version bump only for package @times-components/provider
+
+
+
+
+
 ## [1.16.6](https://github.com/newsuk/times-components/compare/@times-components/provider@1.16.5...@times-components/provider@1.16.6) (2019-04-18)
 
 **Note:** Version bump only for package @times-components/provider

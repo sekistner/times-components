@@ -2,6 +2,7 @@
 
 exports[`1. a secondary image 1`] = `
 <article>
+  <Head />
   <div>
     <Ad
       contextUrl="https://url.io"
@@ -10,6 +11,15 @@ exports[`1. a secondary image 1`] = `
     />
   </div>
   <div>
+    <div>
+      <div>
+        <div>
+          <SaveAndShareBar
+            articleUrl="https://url.io"
+          />
+        </div>
+      </div>
+    </div>
     <div>
       <div
         id="0"
@@ -36,9 +46,12 @@ exports[`1. a secondary image 1`] = `
       </div>
       <ArticleExtras
         articleId="198c4b2f-ecec-4f34-be53-c89f83bc1b44"
+        commentsAllowed={true}
         commentsEnabled={true}
+        relatedArticleAllowed={true}
         relatedArticlesVisible={false}
         spotAccountId=""
+        topicsAllowed={true}
       />
     </div>
   </div>
@@ -47,6 +60,7 @@ exports[`1. a secondary image 1`] = `
 
 exports[`2. an inline image 1`] = `
 <article>
+  <Head />
   <div>
     <Ad
       contextUrl="https://url.io"
@@ -55,6 +69,15 @@ exports[`2. an inline image 1`] = `
     />
   </div>
   <div>
+    <div>
+      <div>
+        <div>
+          <SaveAndShareBar
+            articleUrl="https://url.io"
+          />
+        </div>
+      </div>
+    </div>
     <div>
       <div
         id="0"
@@ -81,9 +104,12 @@ exports[`2. an inline image 1`] = `
       </div>
       <ArticleExtras
         articleId="198c4b2f-ecec-4f34-be53-c89f83bc1b44"
+        commentsAllowed={true}
         commentsEnabled={true}
+        relatedArticleAllowed={true}
         relatedArticlesVisible={false}
         spotAccountId=""
+        topicsAllowed={true}
       />
     </div>
   </div>

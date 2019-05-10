@@ -14,6 +14,7 @@ export default addTypenameToDocument(gql`
       }
       commentsEnabled
       content: paywalledContent
+      descriptionMarkup: summary(maxCharCount: 200)
       dropcapsDisabled
       expirableFlags {
         type
@@ -67,6 +68,13 @@ export default addTypenameToDocument(gql`
       sharingEnabled
       savingEnabled
       standfirst
+      tiles {
+        slices {
+          sections {
+            title
+          }
+        }
+      }
       template
       textColour {
         rgba {

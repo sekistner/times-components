@@ -4,8 +4,8 @@ const defaultAdConfig = require("../lib/ads/make-topic-ad-config")
   .defaultServer;
 
 module.exports = (
-  { currentPage, topicSlug },
-  { graphqlApiUrl, logger, makeArticleUrl }
+  { currentPage, topicSlug, useNewTopicDataSource = false },
+  { graphqlApiUrl, logger, makeArticleUrl, makeTopicUrl }
 ) => {
   if (typeof topicSlug !== "string") {
     throw new Error(`Topic slug should be a string. Received ${topicSlug}`);
@@ -26,19 +26,31 @@ module.exports = (
       `Make article url function is required. Received ${makeArticleUrl}`
     );
   }
+  if (!makeTopicUrl) {
+    throw new Error(
+      `Make topic url function is required. Received ${makeTopicUrl}`
+    );
+  }
 
   const options = {
     client: {
       logger,
-      uri: graphqlApiUrl
+      uri: graphqlApiUrl,
+      headers: useNewTopicDataSource
+        ? {
+            "x-new-topic-data-source": true
+          }
+        : {}
     },
     data: {
       debounceTimeMs: 0,
       makeArticleUrl,
+      makeTopicUrl,
       mapTopicToAdConfig: defaultAdConfig,
       page: currentPage,
       pageSize: 20,
-      topicSlug
+      topicSlug,
+      useNewTopicDataSource
     },
     name: "topicPage"
   };

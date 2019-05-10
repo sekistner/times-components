@@ -1,7 +1,10 @@
 /* eslint-disable import/no-extraneous-dependencies, no-bitwise, operator-assignment, react/prop-types */
 import React, { Component, Fragment } from "react";
 import articleAdConfig from "@times-components/ad/fixtures/article-ad-config.json";
-import Context, { defaults } from "@times-components/context";
+import {
+  ContextProviderWithDefaults,
+  defaults
+} from "@times-components/context";
 import { ArticleProvider } from "@times-components/provider";
 import {
   article as makeParams,
@@ -12,12 +15,8 @@ import {
 import { sections } from "@times-components/storybook";
 import { scales, themeFactory } from "@times-components/styleguide";
 import storybookReporter from "@times-components/tealium-utils";
+import { MessageManager } from "@times-components/message-bar";
 import Article, { templates } from "./src/article";
-
-const makeArticleUrl = ({ slug, shortIdentifier }) =>
-  slug && shortIdentifier
-    ? `https://www.thetimes.co.uk/article/${slug}-${shortIdentifier}`
-    : "";
 
 const preventDefaultedAction = decorateAction =>
   decorateAction([
@@ -204,7 +203,8 @@ const renderArticle = ({
   inDepthTextColour,
   scale,
   section,
-  template
+  template,
+  isTeaser
 }) => (
   <ArticleProvider debounceTimeMs={0} id={id}>
     {({ article, error, refetch }) => {
@@ -214,56 +214,59 @@ const renderArticle = ({
 
       const data = {
         ...article,
-        author: {
-          image:
-            "https://feeds.thetimes.co.uk/web/imageserver/imageserver/image/methode%2Ftimes%2Fprod%2Fweb%2Fbin%2F0694e84e-04ff-11e7-976a-0b4b9a1a67a3.jpg?crop=854,854,214,0&resize=400"
-        },
         backgroundColour: inDepthBackgroundColour,
+        descriptionMarkup: [article.content.find(m => m.name === "paragraph")],
         template,
         textColour: inDepthTextColour
       };
 
       return (
-        <Context.Provider
+        <ContextProviderWithDefaults
           value={{
-            makeArticleUrl,
             theme: {
               ...themeFactory(section, template),
               scale: scale || defaults.theme.scale
+            },
+            user: {
+              isLoggedIn: !isTeaser
             }
           }}
         >
-          <Article
-            adConfig={adConfig}
-            analyticsStream={analyticsStream}
-            article={data}
-            error={error}
-            isLoading={false}
-            onAuthorPress={preventDefaultedAction(decorateAction)(
-              "onAuthorPress"
-            )}
-            onCommentGuidelinesPress={preventDefaultedAction(decorateAction)(
-              "onCommentGuidelinesPress"
-            )}
-            onCommentsPress={preventDefaultedAction(decorateAction)(
-              "onCommentsPress"
-            )}
-            onLinkPress={preventDefaultedAction(decorateAction)("onLinkPress")}
-            onRelatedArticlePress={preventDefaultedAction(decorateAction)(
-              "onRelatedArticlePress"
-            )}
-            onTopicPress={preventDefaultedAction(decorateAction)(
-              "onTopicPress"
-            )}
-            onTwitterLinkPress={preventDefaultedAction(decorateAction)(
-              "onTwitterLinkPress"
-            )}
-            onVideoPress={preventDefaultedAction(decorateAction)(
-              "onVideoPress"
-            )}
-            refetch={refetch}
-          />
-        </Context.Provider>
+          <MessageManager animate delay={30000} scale={scales.medium}>
+            <Article
+              adConfig={adConfig}
+              analyticsStream={analyticsStream}
+              article={data}
+              error={error}
+              isLoading={false}
+              onAuthorPress={preventDefaultedAction(decorateAction)(
+                "onAuthorPress"
+              )}
+              onCommentGuidelinesPress={preventDefaultedAction(decorateAction)(
+                "onCommentGuidelinesPress"
+              )}
+              onCommentsPress={preventDefaultedAction(decorateAction)(
+                "onCommentsPress"
+              )}
+              onLinkPress={preventDefaultedAction(decorateAction)(
+                "onLinkPress"
+              )}
+              onRelatedArticlePress={preventDefaultedAction(decorateAction)(
+                "onRelatedArticlePress"
+              )}
+              onTopicPress={preventDefaultedAction(decorateAction)(
+                "onTopicPress"
+              )}
+              onTwitterLinkPress={preventDefaultedAction(decorateAction)(
+                "onTwitterLinkPress"
+              )}
+              onVideoPress={preventDefaultedAction(decorateAction)(
+                "onVideoPress"
+              )}
+              refetch={refetch}
+            />
+          </MessageManager>
+        </ContextProviderWithDefaults>
       );
     }}
   </ArticleProvider>
@@ -285,7 +288,8 @@ const renderArticleConfig = ({
   decorateAction,
   hasScaling,
   link = null,
-  select
+  select,
+  isTeaser = false
 }) => {
   const id = "263b03a1-2ce6-4b94-b053-0d35316548c5";
   const withFlags = boolean("Flags", true);
@@ -297,6 +301,7 @@ const renderArticleConfig = ({
   const withPullQuote = boolean("Pull Quote", false);
   const withStandfirst = boolean("Standfirst", true);
   const withVideo = boolean("Video", true);
+  const withTeaser = !isTeaser && boolean("Teaser (only Web)", false);
 
   const scale = hasScaling ? selectScales(select) : null;
   const section = selectSection(select);
@@ -335,6 +340,7 @@ const renderArticleConfig = ({
             id,
             inDepthBackgroundColour,
             inDepthTextColour,
+            isTeaser: isTeaser || withTeaser,
             scale,
             section,
             template

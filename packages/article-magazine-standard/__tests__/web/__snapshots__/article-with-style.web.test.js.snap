@@ -460,7 +460,7 @@ exports[`full article with style 1`] = `
 .IS3 {
   font-family: TimesDigitalW04;
   font-size: 17;
-  line-height: 26;
+  line-height: 30;
   color: #333333;
   margin-bottom: 25px;
   margin-top: 0;
@@ -507,6 +507,25 @@ exports[`full article with style 1`] = `
 </style>
 
 <article>
+  <Helmet>
+    <title>
+      Some Headline
+       |
+
+      The Times
+    </title>
+    <meta />
+    <meta />
+    <meta />
+    <meta />
+    <meta />
+    <meta />
+    <meta />
+    <meta />
+    <meta />
+    <meta />
+    <meta />
+  </Helmet>
   <div
     className="c0 S1"
   >
@@ -573,7 +592,7 @@ exports[`full article with style 1`] = `
       className="c11 S1"
     >
       <div
-        className="c12"
+        className="c12 S1"
       >
         <div>
           <SaveAndShareBar />
@@ -1134,7 +1153,7 @@ exports[`full article with style in the culture magazine 1`] = `
 .IS5 {
   font-family: TimesDigitalW04;
   font-size: 17;
-  line-height: 26;
+  line-height: 30;
   color: #333333;
   margin-bottom: 25px;
   margin-top: 0;
@@ -1181,6 +1200,25 @@ exports[`full article with style in the culture magazine 1`] = `
 </style>
 
 <article>
+  <Helmet>
+    <title>
+      Some Headline
+       |
+
+      The Times
+    </title>
+    <meta />
+    <meta />
+    <meta />
+    <meta />
+    <meta />
+    <meta />
+    <meta />
+    <meta />
+    <meta />
+    <meta />
+    <meta />
+  </Helmet>
   <div
     className="c0 S1"
   >
@@ -1247,7 +1285,7 @@ exports[`full article with style in the culture magazine 1`] = `
       className="c11 S1"
     >
       <div
-        className="c12"
+        className="c12 S1"
       >
         <div>
           <SaveAndShareBar />
@@ -1808,7 +1846,7 @@ exports[`full article with style in the style magazine 1`] = `
 .IS5 {
   font-family: TimesDigitalW04;
   font-size: 17;
-  line-height: 26;
+  line-height: 30;
   color: #333333;
   margin-bottom: 25px;
   margin-top: 0;
@@ -1855,6 +1893,25 @@ exports[`full article with style in the style magazine 1`] = `
 </style>
 
 <article>
+  <Helmet>
+    <title>
+      Some Headline
+       |
+
+      The Times
+    </title>
+    <meta />
+    <meta />
+    <meta />
+    <meta />
+    <meta />
+    <meta />
+    <meta />
+    <meta />
+    <meta />
+    <meta />
+    <meta />
+  </Helmet>
   <div
     className="c0 S1"
   >
@@ -1921,7 +1978,7 @@ exports[`full article with style in the style magazine 1`] = `
       className="c11 S1"
     >
       <div
-        className="c12"
+        className="c12 S1"
       >
         <div>
           <SaveAndShareBar />
@@ -2482,7 +2539,7 @@ exports[`full article with style in the sunday times magazine 1`] = `
 .IS5 {
   font-family: TimesDigitalW04;
   font-size: 17;
-  line-height: 26;
+  line-height: 30;
   color: #333333;
   margin-bottom: 25px;
   margin-top: 0;
@@ -2529,6 +2586,25 @@ exports[`full article with style in the sunday times magazine 1`] = `
 </style>
 
 <article>
+  <Helmet>
+    <title>
+      Some Headline
+       |
+
+      The Times
+    </title>
+    <meta />
+    <meta />
+    <meta />
+    <meta />
+    <meta />
+    <meta />
+    <meta />
+    <meta />
+    <meta />
+    <meta />
+    <meta />
+  </Helmet>
   <div
     className="c0 S1"
   >
@@ -2595,7 +2671,7 @@ exports[`full article with style in the sunday times magazine 1`] = `
       className="c11 S1"
     >
       <div
-        className="c12"
+        className="c12 S1"
       >
         <div>
           <SaveAndShareBar />

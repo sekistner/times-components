@@ -8,7 +8,7 @@ import {
   normaliseWidthForAssetRequestCache,
   convertToPixels
 } from "@times-components/utils";
-import LazyLoadingImage from "./lazy-loading-image";
+import LazyLoadingImage from "./lazy-loading-image/lazy-loading-image";
 import appendToUrl from "./utils";
 import { defaultProps, propTypes } from "./image-prop-types";
 import Placeholder from "./placeholder";
@@ -68,11 +68,13 @@ class TimesImage extends Component {
   render() {
     const {
       aspectRatio,
-      borderRadius,
       highResSize,
       lowResSize,
+      borderRadius,
       style,
-      uri
+      uri,
+      rounded,
+      ...defaultImageProps
     } = this.props;
     const { isLoaded, dimensions } = this.state;
     const renderedRes = highResSize || (dimensions ? dimensions.width : null);
@@ -89,7 +91,8 @@ class TimesImage extends Component {
             <Placeholder dimensions={dimensions} />
             {lowResSize ? (
               <Image
-                borderRadius={borderRadius}
+                {...defaultImageProps}
+                borderRadius={rounded ? renderedRes / 2 : borderRadius}
                 source={{ uri: getUriAtRes(uri, lowResSize) }}
                 style={styles.image}
               />
@@ -97,7 +100,8 @@ class TimesImage extends Component {
           </Fragment>
         )}
         <LazyLoadingImage
-          borderRadius={borderRadius}
+          {...defaultImageProps}
+          borderRadius={rounded ? renderedRes / 2 : borderRadius}
           onLoad={this.handleLoad}
           source={srcUri && renderedRes ? { uri: srcUri } : null}
           style={styles.image}
@@ -110,7 +114,8 @@ class TimesImage extends Component {
 TimesImage.defaultProps = defaultProps;
 TimesImage.propTypes = {
   ...propTypes,
-  onImageLayout: PropTypes.func
+  onImageLayout: PropTypes.func,
+  rounded: PropTypes.bool
 };
 
 export default TimesImage;

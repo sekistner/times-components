@@ -3,6 +3,89 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.10.40](https://github.com/newsuk/times-components/compare/@times-components/article-summary@3.10.39...@times-components/article-summary@3.10.40) (2019-05-10)
+
+**Note:** Version bump only for package @times-components/article-summary
+
+
+
+
+
+## [3.10.39](https://github.com/newsuk/times-components/compare/@times-components/article-summary@3.10.38...@times-components/article-summary@3.10.39) (2019-05-09)
+
+**Note:** Version bump only for package @times-components/article-summary
+
+
+
+
+
+## [3.10.38](https://github.com/newsuk/times-components/compare/@times-components/article-summary@3.10.37...@times-components/article-summary@3.10.38) (2019-05-09)
+
+**Note:** Version bump only for package @times-components/article-summary
+
+
+
+
+
+## [3.10.37](https://github.com/newsuk/times-components/compare/@times-components/article-summary@3.10.36...@times-components/article-summary@3.10.37) (2019-05-08)
+
+**Note:** Version bump only for package @times-components/article-summary
+
+
+
+
+
+## [3.10.36](https://github.com/newsuk/times-components/compare/@times-components/article-summary@3.10.35...@times-components/article-summary@3.10.36) (2019-05-07)
+
+
+### Bug Fixes
+
+* remove ghost article flags view ([#1916](https://github.com/newsuk/times-components/issues/1916)) ([a10cea3](https://github.com/newsuk/times-components/commit/a10cea3))
+
+
+
+
+
+## [3.10.35](https://github.com/newsuk/times-components/compare/@times-components/article-summary@3.10.34...@times-components/article-summary@3.10.35) (2019-05-01)
+
+**Note:** Version bump only for package @times-components/article-summary
+
+
+
+
+
+## [3.10.34](https://github.com/newsuk/times-components/compare/@times-components/article-summary@3.10.33...@times-components/article-summary@3.10.34) (2019-05-01)
+
+**Note:** Version bump only for package @times-components/article-summary
+
+
+
+
+
+## [3.10.33](https://github.com/newsuk/times-components/compare/@times-components/article-summary@3.10.32...@times-components/article-summary@3.10.33) (2019-04-30)
+
+**Note:** Version bump only for package @times-components/article-summary
+
+
+
+
+
+## [3.10.32](https://github.com/newsuk/times-components/compare/@times-components/article-summary@3.10.31...@times-components/article-summary@3.10.32) (2019-04-30)
+
+**Note:** Version bump only for package @times-components/article-summary
+
+
+
+
+
+## [3.10.31](https://github.com/newsuk/times-components/compare/@times-components/article-summary@3.10.30...@times-components/article-summary@3.10.31) (2019-04-29)
+
+**Note:** Version bump only for package @times-components/article-summary
+
+
+
+
+
 ## [3.10.30](https://github.com/newsuk/times-components/compare/@times-components/article-summary@3.10.29...@times-components/article-summary@3.10.30) (2019-04-24)
 
 **Note:** Version bump only for package @times-components/article-summary

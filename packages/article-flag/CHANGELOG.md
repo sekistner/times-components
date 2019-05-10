@@ -3,6 +3,73 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.6.31](https://github.com/newsuk/times-components/compare/@times-components/article-flag@2.6.30...@times-components/article-flag@2.6.31) (2019-05-09)
+
+**Note:** Version bump only for package @times-components/article-flag
+
+
+
+
+
+## [2.6.30](https://github.com/newsuk/times-components/compare/@times-components/article-flag@2.6.29...@times-components/article-flag@2.6.30) (2019-05-09)
+
+**Note:** Version bump only for package @times-components/article-flag
+
+
+
+
+
+## [2.6.29](https://github.com/newsuk/times-components/compare/@times-components/article-flag@2.6.28...@times-components/article-flag@2.6.29) (2019-05-07)
+
+
+### Bug Fixes
+
+* remove ghost article flags view ([#1916](https://github.com/newsuk/times-components/issues/1916)) ([a10cea3](https://github.com/newsuk/times-components/commit/a10cea3))
+
+
+
+
+
+## [2.6.28](https://github.com/newsuk/times-components/compare/@times-components/article-flag@2.6.27...@times-components/article-flag@2.6.28) (2019-05-01)
+
+**Note:** Version bump only for package @times-components/article-flag
+
+
+
+
+
+## [2.6.27](https://github.com/newsuk/times-components/compare/@times-components/article-flag@2.6.26...@times-components/article-flag@2.6.27) (2019-05-01)
+
+**Note:** Version bump only for package @times-components/article-flag
+
+
+
+
+
+## [2.6.26](https://github.com/newsuk/times-components/compare/@times-components/article-flag@2.6.25...@times-components/article-flag@2.6.26) (2019-04-30)
+
+**Note:** Version bump only for package @times-components/article-flag
+
+
+
+
+
+## [2.6.25](https://github.com/newsuk/times-components/compare/@times-components/article-flag@2.6.24...@times-components/article-flag@2.6.25) (2019-04-30)
+
+**Note:** Version bump only for package @times-components/article-flag
+
+
+
+
+
+## [2.6.24](https://github.com/newsuk/times-components/compare/@times-components/article-flag@2.6.23...@times-components/article-flag@2.6.24) (2019-04-29)
+
+**Note:** Version bump only for package @times-components/article-flag
+
+
+
+
+
 ## [2.6.23](https://github.com/newsuk/times-components/compare/@times-components/article-flag@2.6.22...@times-components/article-flag@2.6.23) (2019-04-18)
 
 **Note:** Version bump only for package @times-components/article-flag
