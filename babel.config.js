@@ -7,6 +7,7 @@ module.exports = api => {
       "@babel/plugin-transform-react-display-name",
       "@babel/plugin-transform-runtime",
       "@babel/plugin-proposal-export-default-from",
+      "transform-react-remove-prop-types",
       ["@babel/plugin-proposal-decorators", { legacy: true }]
     ]
   };
