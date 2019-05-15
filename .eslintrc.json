@@ -1,6 +1,7 @@
 {
   "extends": ["airbnb", "prettier", "prettier/react"],
   "rules": {
+    "func-names": 2,
     "react/jsx-filename-extension": [1, { "extensions": [".js"] }],
     "import/extensions": "off",
     "import/no-extraneous-dependencies": [
