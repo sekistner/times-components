@@ -13,7 +13,6 @@ const bylineRenderers = (renderAuthorComponent, textStyle, props = {}) => ({
     return {
       element: (
         <Text
-          className={props.className}
           key={key}
           style={[textStyle, props.bylineStyle]}
         >

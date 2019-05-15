@@ -12,7 +12,6 @@ const renderAuthorComponent = (
 ) => ({
   element: (
     <Text
-      className={className}
       key={key}
       style={[styles.nonLinkText, bylineStyle]}
     >

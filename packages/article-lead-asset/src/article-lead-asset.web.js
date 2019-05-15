@@ -49,7 +49,7 @@ const ArticleLeadAsset = ({
   );
 
   return (
-    <View className={className} style={style}>
+    <View style={style}>
       <figure style={{ margin: 0 }}>
         <AspectRatioContainer aspectRatio={aspectRatio}>
           {leadAssetView}

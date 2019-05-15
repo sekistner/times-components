@@ -6,7 +6,7 @@ import styles from "./styles";
 
 const renderAuthorComponent = (children, key, attributes, { className }) => ({
   element: (
-    <Text className={className} key={key} style={styles.opinion}>
+    <Text key={key} style={styles.opinion}>
       {children}
     </Text>
   )

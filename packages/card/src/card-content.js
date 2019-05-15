@@ -38,7 +38,6 @@ class CardContent extends Component {
 
       return (
         <View
-          className={imageContainerClass}
           style={[
             isTablet ? styles.imageContainerTablet : styles.imageContainer,
             imageStyle,
@@ -67,7 +66,6 @@ class CardContent extends Component {
           >
             {!isReversed ? renderImage(isTablet) : null}
             <View
-              className={contentContainerClass}
               style={[
                 isTablet
                   ? styles.contentContainerTablet

@@ -9,7 +9,6 @@ const ArticleSummaryHeadline = ({ className, headline, style }) => (
   <Text
     accessibilityRole="header"
     aria-level="3"
-    className={className}
     style={[styles.headline, styles.headlineWrapper, style]}
   >
     {headline}
