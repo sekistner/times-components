@@ -146,7 +146,8 @@
     "react": "16.6.3",
     "react-dom": "16.6.3",
     "react-native-web": "0.11.2",
-    "react-native-web-image-loader": "0.0.6",
+    "react-native-web-image-loader": "0.0.7",
+    "react-scripts": "3.0.1",
     "rimraf": "2.6.1",
     "sort-pkg": "1.1.0",
     "subcommander": "1.0.0",
@@ -156,10 +157,6 @@
     "webpack": "4.30.0"
   },
   "dependencies": {
-    "@babel/core": "7.4.4",
-    "@babel/preset-env": "^7.0.0",
-    "@babel/runtime": "7.4.4",
-    "@babel/runtime-corejs2": "7.4.4",
     "react-art": "16.6.3",
     "react-native": "0.58.6",
     "react-native-showcase-loader": "1.1.0"
