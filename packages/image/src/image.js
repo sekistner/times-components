@@ -89,6 +89,10 @@ class TimesImage extends Component {
       style,
       uri,
       rounded,
+      relativeWidth,
+      relativeHeight,
+      relativeHorizontalOffset,
+      relativeVerticalOffset,
       ...defaultImageProps
     } = this.props;
     const { isLoaded, width } = this.state;
@@ -112,6 +116,10 @@ class TimesImage extends Component {
         <View style={[styles.roundContainer, { borderRadius }]}>
           <LazyLoadingImage
             {...defaultImageProps}
+            relativeWidth={relativeWidth}
+            relativeHeight={relativeHeight}
+            relativeHorizontalOffset={relativeHorizontalOffset}
+            relativeVerticalOffset={relativeVerticalOffset}
             fadeDuration={0}
             onLoad={this.handleLoad}
             source={srcUri && renderedRes ? { uri: srcUri } : null}
