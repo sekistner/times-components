@@ -9,7 +9,7 @@ import ArticleSummary, {
 import { ArticleFlags } from "@times-components/article-flag";
 import { colours } from "@times-components/styleguide";
 import TileStar from "./tile-star";
-import { horizontalStyles } from "./styles";
+import { horizontalStyles, starPadding } from "./styles";
 
 class TileSummary extends Component {
   constructor(props) {
@@ -92,6 +92,7 @@ class TileSummary extends Component {
       strapline,
       style,
       summary,
+      withStar,
       labelColour
     } = this.props;
 
@@ -110,7 +111,7 @@ class TileSummary extends Component {
           title: label
         }}
         strapline={strapline ? this.renderStrapline() : undefined}
-        style={style}
+        style={withStar ? style : [starPadding, style]}
       />
     );
   }
@@ -142,7 +143,7 @@ TileSummary.defaultProps = {
   style: null,
   summary: null,
   summaryStyle: null,
-  withStar: true
+  withStar: false
 };
 
 export default TileSummary;
