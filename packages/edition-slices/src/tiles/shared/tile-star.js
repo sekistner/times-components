@@ -48,6 +48,7 @@ TileStar.propTypes = {
 };
 
 TileStar.defaultProps = {
+  style: null,
   isDark: false
 };
 

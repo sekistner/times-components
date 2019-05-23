@@ -18,11 +18,14 @@ const TileLink = ({
 }) => (
   <Link linkStyle={style} onPress={() => onPress({ id, url })} url={url}>
     {children}
-    {withStar && Platform.OS !== "ios" && <TileStar
-      articleId={id}
-      isDark={isDarkStar}
-      style={[tileStar, starStyle]}
-    />}
+    {withStar &&
+      Platform.OS !== "ios" && (
+        <TileStar
+          articleId={id}
+          isDark={isDarkStar}
+          style={[tileStar, starStyle]}
+        />
+      )}
   </Link>
 );
 

@@ -1,5 +1,3 @@
-import { spacing } from "@times-components/styleguide";
-
 const horizontalStyles = {
   container: {
     flexDirection: "row",
