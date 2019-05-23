@@ -93,6 +93,7 @@ class SaveStarWeb extends Component {
 
 SaveStarWeb.propTypes = {
   articleId: PropTypes.string.isRequired,
+  articleHeadline: PropTypes.string.isRequired,
   colour: PropTypes.string,
   hoverColour: PropTypes.string,
   saveApi: PropTypes.shape({
