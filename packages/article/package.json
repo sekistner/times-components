@@ -68,6 +68,7 @@
     "@times-components/message-bar": "0.2.6",
     "@times-components/provider": "1.17.1",
     "@times-components/responsive": "0.4.37",
+    "@times-components/save-star-web": "0.1.7",
     "@times-components/styleguide": "3.28.19"
   },
   "peerDependencies": {
