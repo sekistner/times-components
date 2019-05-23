@@ -67,20 +67,16 @@ exports[`2. tile b 1`] = `
         ...
       </Text>
     </Text>
-    <View>
-      <View>
-        <ArticleFlags
-          flags={
-            Array [
-              Object {
-                "expiryTime": "2030-03-14T12:00:00.000Z",
-                "type": "EXCLUSIVE",
-              },
-            ]
-          }
-        />
-      </View>
-    </View>
+    <ArticleFlags
+      flags={
+        Array [
+          Object {
+            "expiryTime": "2030-03-14T12:00:00.000Z",
+            "type": "EXCLUSIVE",
+          },
+        ]
+      }
+    />
   </View>
 </Link>
 `;
@@ -114,20 +110,16 @@ exports[`3. tile c 1`] = `
     >
       This is tile headline
     </Text>
-    <View>
-      <View>
-        <ArticleFlags
-          flags={
-            Array [
-              Object {
-                "expiryTime": "2030-03-14T12:00:00.000Z",
-                "type": "EXCLUSIVE",
-              },
-            ]
-          }
-        />
-      </View>
-    </View>
+    <ArticleFlags
+      flags={
+        Array [
+          Object {
+            "expiryTime": "2030-03-14T12:00:00.000Z",
+            "type": "EXCLUSIVE",
+          },
+        ]
+      }
+    />
   </View>
 </Link>
 `;
@@ -158,20 +150,16 @@ exports[`4. tile d 1`] = `
     >
       This is tile headline
     </Text>
-    <View>
-      <View>
-        <ArticleFlags
-          flags={
-            Array [
-              Object {
-                "expiryTime": "2030-03-14T12:00:00.000Z",
-                "type": "EXCLUSIVE",
-              },
-            ]
-          }
-        />
-      </View>
-    </View>
+    <ArticleFlags
+      flags={
+        Array [
+          Object {
+            "expiryTime": "2030-03-14T12:00:00.000Z",
+            "type": "EXCLUSIVE",
+          },
+        ]
+      }
+    />
   </View>
 </Link>
 `;
@@ -202,20 +190,16 @@ exports[`5. tile e 1`] = `
     >
       This is tile headline
     </Text>
-    <View>
-      <View>
-        <ArticleFlags
-          flags={
-            Array [
-              Object {
-                "expiryTime": "2030-03-14T12:00:00.000Z",
-                "type": "EXCLUSIVE",
-              },
-            ]
-          }
-        />
-      </View>
-    </View>
+    <ArticleFlags
+      flags={
+        Array [
+          Object {
+            "expiryTime": "2030-03-14T12:00:00.000Z",
+            "type": "EXCLUSIVE",
+          },
+        ]
+      }
+    />
   </View>
 </Link>
 `;
@@ -255,20 +239,16 @@ exports[`6. tile f 1`] = `
         ...
       </Text>
     </Text>
-    <View>
-      <View>
-        <ArticleFlags
-          flags={
-            Array [
-              Object {
-                "expiryTime": "2030-03-14T12:00:00.000Z",
-                "type": "EXCLUSIVE",
-              },
-            ]
-          }
-        />
-      </View>
-    </View>
+    <ArticleFlags
+      flags={
+        Array [
+          Object {
+            "expiryTime": "2030-03-14T12:00:00.000Z",
+            "type": "EXCLUSIVE",
+          },
+        ]
+      }
+    />
   </View>
 </Link>
 `;
@@ -301,20 +281,16 @@ exports[`7. tile g 1`] = `
     >
       This is tile headline
     </Text>
-    <View>
-      <View>
-        <ArticleFlags
-          flags={
-            Array [
-              Object {
-                "expiryTime": "2030-03-14T12:00:00.000Z",
-                "type": "EXCLUSIVE",
-              },
-            ]
-          }
-        />
-      </View>
-    </View>
+    <ArticleFlags
+      flags={
+        Array [
+          Object {
+            "expiryTime": "2030-03-14T12:00:00.000Z",
+            "type": "EXCLUSIVE",
+          },
+        ]
+      }
+    />
   </View>
 </Link>
 `;
@@ -348,20 +324,16 @@ exports[`8. tile h 1`] = `
         ...
       </Text>
     </Text>
-    <View>
-      <View>
-        <ArticleFlags
-          flags={
-            Array [
-              Object {
-                "expiryTime": "2030-03-14T12:00:00.000Z",
-                "type": "EXCLUSIVE",
-              },
-            ]
-          }
-        />
-      </View>
-    </View>
+    <ArticleFlags
+      flags={
+        Array [
+          Object {
+            "expiryTime": "2030-03-14T12:00:00.000Z",
+            "type": "EXCLUSIVE",
+          },
+        ]
+      }
+    />
     <Text>
       <Text>
         Richard Lloyd Parry
@@ -442,20 +414,16 @@ exports[`10. tile j 1`] = `
     >
       This is tile headline
     </Text>
-    <View>
-      <View>
-        <ArticleFlags
-          flags={
-            Array [
-              Object {
-                "expiryTime": "2030-03-14T12:00:00.000Z",
-                "type": "EXCLUSIVE",
-              },
-            ]
-          }
-        />
-      </View>
-    </View>
+    <ArticleFlags
+      flags={
+        Array [
+          Object {
+            "expiryTime": "2030-03-14T12:00:00.000Z",
+            "type": "EXCLUSIVE",
+          },
+        ]
+      }
+    />
   </View>
 </Link>
 `;
@@ -486,20 +454,16 @@ exports[`11. tile k 1`] = `
     >
       This is tile headline
     </Text>
-    <View>
-      <View>
-        <ArticleFlags
-          flags={
-            Array [
-              Object {
-                "expiryTime": "2030-03-14T12:00:00.000Z",
-                "type": "EXCLUSIVE",
-              },
-            ]
-          }
-        />
-      </View>
-    </View>
+    <ArticleFlags
+      flags={
+        Array [
+          Object {
+            "expiryTime": "2030-03-14T12:00:00.000Z",
+            "type": "EXCLUSIVE",
+          },
+        ]
+      }
+    />
   </View>
 </Link>
 `;
@@ -526,20 +490,16 @@ exports[`12. tile l 1`] = `
     >
       This is tile headline
     </Text>
-    <View>
-      <View>
-        <ArticleFlags
-          flags={
-            Array [
-              Object {
-                "expiryTime": "2030-03-14T12:00:00.000Z",
-                "type": "EXCLUSIVE",
-              },
-            ]
-          }
-        />
-      </View>
-    </View>
+    <ArticleFlags
+      flags={
+        Array [
+          Object {
+            "expiryTime": "2030-03-14T12:00:00.000Z",
+            "type": "EXCLUSIVE",
+          },
+        ]
+      }
+    />
   </View>
 </Link>
 `;
@@ -608,21 +568,17 @@ exports[`14. tile n 1`] = `
     >
       Three Conservative MPs resign
     </Text>
-    <View>
-      <View>
-        <ArticleFlags
-          color="#CCC"
-          flags={
-            Array [
-              Object {
-                "expiryTime": "2030-03-14T12:00:00.000Z",
-                "type": "EXCLUSIVE",
-              },
-            ]
-          }
-        />
-      </View>
-    </View>
+    <ArticleFlags
+      color="#CCC"
+      flags={
+        Array [
+          Object {
+            "expiryTime": "2030-03-14T12:00:00.000Z",
+            "type": "EXCLUSIVE",
+          },
+        ]
+      }
+    />
   </View>
 </Link>
 `;
@@ -650,21 +606,17 @@ exports[`15. tile o 1`] = `
     >
       This is tile headline
     </Text>
-    <View>
-      <View>
-        <ArticleFlags
-          color="#CCC"
-          flags={
-            Array [
-              Object {
-                "expiryTime": "2030-03-14T12:00:00.000Z",
-                "type": "EXCLUSIVE",
-              },
-            ]
-          }
-        />
-      </View>
-    </View>
+    <ArticleFlags
+      color="#CCC"
+      flags={
+        Array [
+          Object {
+            "expiryTime": "2030-03-14T12:00:00.000Z",
+            "type": "EXCLUSIVE",
+          },
+        ]
+      }
+    />
   </View>
 </Link>
 `;
@@ -770,20 +722,16 @@ exports[`18. tile r 1`] = `
     >
       This is tile headline
     </Text>
-    <View>
-      <View>
-        <ArticleFlags
-          flags={
-            Array [
-              Object {
-                "expiryTime": "2030-03-14T12:00:00.000Z",
-                "type": "EXCLUSIVE",
-              },
-            ]
-          }
-        />
-      </View>
-    </View>
+    <ArticleFlags
+      flags={
+        Array [
+          Object {
+            "expiryTime": "2030-03-14T12:00:00.000Z",
+            "type": "EXCLUSIVE",
+          },
+        ]
+      }
+    />
   </View>
   <Image
     aspectRatio={1.7777777777777777}
@@ -856,20 +804,16 @@ exports[`20. tile t 1`] = `
     >
       This is tile headline
     </Text>
-    <View>
-      <View>
-        <ArticleFlags
-          flags={
-            Array [
-              Object {
-                "expiryTime": "2030-03-14T12:00:00.000Z",
-                "type": "EXCLUSIVE",
-              },
-            ]
-          }
-        />
-      </View>
-    </View>
+    <ArticleFlags
+      flags={
+        Array [
+          Object {
+            "expiryTime": "2030-03-14T12:00:00.000Z",
+            "type": "EXCLUSIVE",
+          },
+        ]
+      }
+    />
   </View>
 </Link>
 `;
@@ -897,20 +841,16 @@ exports[`21. tile u 1`] = `
     >
       This is tile headline
     </Text>
-    <View>
-      <View>
-        <ArticleFlags
-          flags={
-            Array [
-              Object {
-                "expiryTime": "2030-03-14T12:00:00.000Z",
-                "type": "EXCLUSIVE",
-              },
-            ]
-          }
-        />
-      </View>
-    </View>
+    <ArticleFlags
+      flags={
+        Array [
+          Object {
+            "expiryTime": "2030-03-14T12:00:00.000Z",
+            "type": "EXCLUSIVE",
+          },
+        ]
+      }
+    />
   </View>
   <Image
     aspectRatio={1.5}
@@ -945,20 +885,16 @@ exports[`22. tile v 1`] = `
     >
       This is tile headline
     </Text>
-    <View>
-      <View>
-        <ArticleFlags
-          flags={
-            Array [
-              Object {
-                "expiryTime": "2030-03-14T12:00:00.000Z",
-                "type": "EXCLUSIVE",
-              },
-            ]
-          }
-        />
-      </View>
-    </View>
+    <ArticleFlags
+      flags={
+        Array [
+          Object {
+            "expiryTime": "2030-03-14T12:00:00.000Z",
+            "type": "EXCLUSIVE",
+          },
+        ]
+      }
+    />
   </View>
 </Link>
 `;
@@ -993,20 +929,16 @@ exports[`23. tile w 1`] = `
         ...
       </Text>
     </Text>
-    <View>
-      <View>
-        <ArticleFlags
-          flags={
-            Array [
-              Object {
-                "expiryTime": "2030-03-14T12:00:00.000Z",
-                "type": "EXCLUSIVE",
-              },
-            ]
-          }
-        />
-      </View>
-    </View>
+    <ArticleFlags
+      flags={
+        Array [
+          Object {
+            "expiryTime": "2030-03-14T12:00:00.000Z",
+            "type": "EXCLUSIVE",
+          },
+        ]
+      }
+    />
   </View>
   <Image
     aspectRatio={1.7777777777777777}
@@ -1050,20 +982,16 @@ exports[`24. tile x 1`] = `
         ...
       </Text>
     </Text>
-    <View>
-      <View>
-        <ArticleFlags
-          flags={
-            Array [
-              Object {
-                "expiryTime": "2030-03-14T12:00:00.000Z",
-                "type": "EXCLUSIVE",
-              },
-            ]
-          }
-        />
-      </View>
-    </View>
+    <ArticleFlags
+      flags={
+        Array [
+          Object {
+            "expiryTime": "2030-03-14T12:00:00.000Z",
+            "type": "EXCLUSIVE",
+          },
+        ]
+      }
+    />
   </View>
 </Link>
 `;
@@ -1098,20 +1026,16 @@ exports[`25. tile y 1`] = `
         ...
       </Text>
     </Text>
-    <View>
-      <View>
-        <ArticleFlags
-          flags={
-            Array [
-              Object {
-                "expiryTime": "2030-03-14T12:00:00.000Z",
-                "type": "EXCLUSIVE",
-              },
-            ]
-          }
-        />
-      </View>
-    </View>
+    <ArticleFlags
+      flags={
+        Array [
+          Object {
+            "expiryTime": "2030-03-14T12:00:00.000Z",
+            "type": "EXCLUSIVE",
+          },
+        ]
+      }
+    />
   </View>
 </Link>
 `;
@@ -1137,20 +1061,16 @@ exports[`26. tile z 1`] = `
     >
       This is tile headline
     </Text>
-    <View>
-      <View>
-        <ArticleFlags
-          flags={
-            Array [
-              Object {
-                "expiryTime": "2030-03-14T12:00:00.000Z",
-                "type": "EXCLUSIVE",
-              },
-            ]
-          }
-        />
-      </View>
-    </View>
+    <ArticleFlags
+      flags={
+        Array [
+          Object {
+            "expiryTime": "2030-03-14T12:00:00.000Z",
+            "type": "EXCLUSIVE",
+          },
+        ]
+      }
+    />
   </View>
   <Image
     aspectRatio={0.8}
@@ -1184,20 +1104,16 @@ exports[`27. tile aa 1`] = `
     >
       This is tile headline
     </Text>
-    <View>
-      <View>
-        <ArticleFlags
-          flags={
-            Array [
-              Object {
-                "expiryTime": "2030-03-14T12:00:00.000Z",
-                "type": "EXCLUSIVE",
-              },
-            ]
-          }
-        />
-      </View>
-    </View>
+    <ArticleFlags
+      flags={
+        Array [
+          Object {
+            "expiryTime": "2030-03-14T12:00:00.000Z",
+            "type": "EXCLUSIVE",
+          },
+        ]
+      }
+    />
   </View>
 </Link>
 `;
@@ -1231,20 +1147,16 @@ exports[`28. tile ab 1`] = `
         ...
       </Text>
     </Text>
-    <View>
-      <View>
-        <ArticleFlags
-          flags={
-            Array [
-              Object {
-                "expiryTime": "2030-03-14T12:00:00.000Z",
-                "type": "EXCLUSIVE",
-              },
-            ]
-          }
-        />
-      </View>
-    </View>
+    <ArticleFlags
+      flags={
+        Array [
+          Object {
+            "expiryTime": "2030-03-14T12:00:00.000Z",
+            "type": "EXCLUSIVE",
+          },
+        ]
+      }
+    />
     <Text>
       <Text>
         Richard Lloyd Parry
@@ -1290,20 +1202,16 @@ exports[`29. tile ae 1`] = `
         ...
       </Text>
     </Text>
-    <View>
-      <View>
-        <ArticleFlags
-          flags={
-            Array [
-              Object {
-                "expiryTime": "2030-03-14T12:00:00.000Z",
-                "type": "EXCLUSIVE",
-              },
-            ]
-          }
-        />
-      </View>
-    </View>
+    <ArticleFlags
+      flags={
+        Array [
+          Object {
+            "expiryTime": "2030-03-14T12:00:00.000Z",
+            "type": "EXCLUSIVE",
+          },
+        ]
+      }
+    />
   </View>
 </Link>
 `;
@@ -1331,11 +1239,7 @@ exports[`30. tile ag 1`] = `
     >
       Three Conservative MPs resign
     </Text>
-    <View>
-      <View>
-        <ArticleFlags />
-      </View>
-    </View>
+    <ArticleFlags />
   </View>
 </Link>
 `;
@@ -1350,6 +1254,7 @@ exports[`31. tile aj 1`] = `
     }
   }
   url="/crossword/123"
+  withStar={false}
 >
   <View>
     <Text
@@ -1379,6 +1284,7 @@ exports[`32. tile ak 1`] = `
     }
   }
   url="/crossword/123"
+  withStar={false}
 >
   <View>
     <Text
@@ -1429,20 +1335,16 @@ exports[`33. tile al 1`] = `
         ...
       </Text>
     </Text>
-    <View>
-      <View>
-        <ArticleFlags
-          flags={
-            Array [
-              Object {
-                "expiryTime": "2030-03-14T12:00:00.000Z",
-                "type": "EXCLUSIVE",
-              },
-            ]
-          }
-        />
-      </View>
-    </View>
+    <ArticleFlags
+      flags={
+        Array [
+          Object {
+            "expiryTime": "2030-03-14T12:00:00.000Z",
+            "type": "EXCLUSIVE",
+          },
+        ]
+      }
+    />
   </View>
 </Link>
 `;
@@ -1480,20 +1382,16 @@ exports[`34. tile am 1`] = `
         ...
       </Text>
     </Text>
-    <View>
-      <View>
-        <ArticleFlags
-          flags={
-            Array [
-              Object {
-                "expiryTime": "2030-03-14T12:00:00.000Z",
-                "type": "EXCLUSIVE",
-              },
-            ]
-          }
-        />
-      </View>
-    </View>
+    <ArticleFlags
+      flags={
+        Array [
+          Object {
+            "expiryTime": "2030-03-14T12:00:00.000Z",
+            "type": "EXCLUSIVE",
+          },
+        ]
+      }
+    />
   </View>
 </Link>
 `;
@@ -1532,20 +1430,16 @@ exports[`35. tile an 1`] = `
         ...
       </Text>
     </Text>
-    <View>
-      <View>
-        <ArticleFlags
-          flags={
-            Array [
-              Object {
-                "expiryTime": "2030-03-14T12:00:00.000Z",
-                "type": "EXCLUSIVE",
-              },
-            ]
-          }
-        />
-      </View>
-    </View>
+    <ArticleFlags
+      flags={
+        Array [
+          Object {
+            "expiryTime": "2030-03-14T12:00:00.000Z",
+            "type": "EXCLUSIVE",
+          },
+        ]
+      }
+    />
   </View>
 </Link>
 `;
@@ -1577,20 +1471,16 @@ exports[`36. tile ap 1`] = `
     >
       This is tile headline
     </Text>
-    <View>
-      <View>
-        <ArticleFlags
-          flags={
-            Array [
-              Object {
-                "expiryTime": "2030-03-14T12:00:00.000Z",
-                "type": "EXCLUSIVE",
-              },
-            ]
-          }
-        />
-      </View>
-    </View>
+    <ArticleFlags
+      flags={
+        Array [
+          Object {
+            "expiryTime": "2030-03-14T12:00:00.000Z",
+            "type": "EXCLUSIVE",
+          },
+        ]
+      }
+    />
   </View>
 </Link>
 `;
@@ -1621,20 +1511,16 @@ exports[`37. tile ad 1`] = `
     >
       This is tile headline
     </Text>
-    <View>
-      <View>
-        <ArticleFlags
-          flags={
-            Array [
-              Object {
-                "expiryTime": "2030-03-14T12:00:00.000Z",
-                "type": "EXCLUSIVE",
-              },
-            ]
-          }
-        />
-      </View>
-    </View>
+    <ArticleFlags
+      flags={
+        Array [
+          Object {
+            "expiryTime": "2030-03-14T12:00:00.000Z",
+            "type": "EXCLUSIVE",
+          },
+        ]
+      }
+    />
   </View>
 </Link>
 `;
@@ -1664,20 +1550,16 @@ exports[`38. tile ac 1`] = `
     >
       This is tile headline
     </Text>
-    <View>
-      <View>
-        <ArticleFlags
-          flags={
-            Array [
-              Object {
-                "expiryTime": "2030-03-14T12:00:00.000Z",
-                "type": "EXCLUSIVE",
-              },
-            ]
-          }
-        />
-      </View>
-    </View>
+    <ArticleFlags
+      flags={
+        Array [
+          Object {
+            "expiryTime": "2030-03-14T12:00:00.000Z",
+            "type": "EXCLUSIVE",
+          },
+        ]
+      }
+    />
   </View>
 </Link>
 `;

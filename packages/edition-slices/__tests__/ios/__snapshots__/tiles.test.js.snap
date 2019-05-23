@@ -1238,6 +1238,7 @@ exports[`31. tile aj 1`] = `
     }
   }
   url="/crossword/123"
+  withStar={false}
 >
   <View>
     <Text
@@ -1267,6 +1268,7 @@ exports[`32. tile ak 1`] = `
     }
   }
   url="/crossword/123"
+  withStar={false}
 >
   <View>
     <Text
