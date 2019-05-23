@@ -37,6 +37,7 @@
     "@times-components/link": "3.4.12",
     "@times-components/provider-queries": "2.2.1",
     "@times-components/styleguide": "3.28.19",
+    "@times-components/tracking": "2.4.38",
     "@times-components/utils": "4.11.6",
     "prop-types": "15.7.2"
   },
